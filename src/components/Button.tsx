@@ -3,9 +3,9 @@ import { ButtonProps } from "../types/button.type";
 //@ts-ignore
 import '../assets/style/button.css';
 
-const Button:React.FC<ButtonProps> = ({type, textStyle, valueIcon, valueText}) =>{
+const Button:React.FC<ButtonProps> = ({type, textStyle, valueIcon, valueText, ...props}) =>{
     return (
-        <button className={`btn btn-${type} ${textStyle}`}>
+        <button className={`btn btn-${type} ${textStyle}`} {...props}>
             {valueIcon && <FontAwesomeIcon icon={valueIcon}/>}
             {valueText && valueText}
         </button>

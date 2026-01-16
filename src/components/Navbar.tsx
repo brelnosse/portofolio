@@ -2,36 +2,54 @@ import { Link, useLocation } from "react-router-dom";
 //@ts-ignore
 import '../assets/style/navbar.css';
 import Button from "./Button";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MenuItems } from "../data/MenuItem";
 import { MenuItemType } from "../types/navbar.types";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {fas} from '@fortawesome/free-solid-svg-icons';
 
 const NavbarItem:React.FC<MenuItemType> = ({path, displayText}) => {
     const location = useLocation();
-    const navItem = useRef<HTMLLIElement>(null);
 
-    if(navItem.current){
-        (navItem.current as Element).addEventListener('click', function(e){
-            e.preventDefault();
-            console.log('clicked')
-        })
-    }
     const isActive = (current: string): string =>{
         return (current === location.pathname ? 'active' : '');
     }
 
     return (
-        <li className={`navbar-item ${isActive(path)}`} ref={navItem}><Link to={path}>{displayText}</Link></li>
+        <li className={`navbar-item ${isActive(path)}`}><Link to={path}>{displayText}</Link></li>
     );
 }
 
 const Navbar: React.FC = () =>{
+    const [isVisible, setIsVisible] = useState<boolean>(true);
+
+    useEffect(()=>{
+        if(window.innerWidth <= 915){
+            setIsVisible(false)
+        }else{
+            setIsVisible(true)
+        }
+        window.onresize = (e) =>{
+            if(window.innerWidth <= 915){
+                setIsVisible(false)
+            }else{
+                setIsVisible(true)
+            }
+        }
+    }, [])
+    const handleShowMenu = (): void =>{
+        setIsVisible(prev => !prev);
+    }
     return (
         <nav className="navbar-container">
             <h2>Portofolio</h2>
-            <ul className="navbar-item_container">
-                <span className="bubble" ></span>
+            <ul className={`navbar-item_container ${isVisible ? 'show' : 'hide'}`}>
+                <div className="r-nav-header">
+                    <h2>Portofolio</h2>
+                    <span className="close-r-menu">
+                        {/* <FontAwesomeIcon icon={fas.faTimes}/> */}
+                    </span>
+                </div>
                 {
                     MenuItems.map((el:MenuItemType, i: number) => {
                         return <NavbarItem path={el.path} displayText={el.displayText} key={`${el.path+i}`}/>
@@ -39,7 +57,8 @@ const Navbar: React.FC = () =>{
                 }
             </ul>
             <div className="navbar-actions_container">
-                <Button type="default" valueText="Contact Me" textStyle="bold"/>
+                <Button type="default" valueText="Contact Me" textStyle="bold" id="contactMeNavbtn"/>
+                <Button type="default" valueIcon={isVisible ? fas.faTimes : fas.faBars} id="responsive-action" onClick={handleShowMenu}/>
             </div>
         </nav>
     );

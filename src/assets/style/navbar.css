@@ -14,10 +14,22 @@
     flex-direction: row;
     place-content: center;
 }
+.navbar-item_container.show{
+    display: flex;
+}
+.navbar-item_container.hide{
+    display: none;
+}
 .navbar-item{
     padding: 5px 8px;
     border: 1px solid transparent;
+    transition: all 0.2s;
     position: relative;
+}
+.navbar-container h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .navbar-item:not(.active)::before{
     content: '';
@@ -39,16 +51,50 @@
     color: var(--black);
 }
 .navbar-item.active{
-    border-color: var(--border-color);
+    border-color: none;
     border-radius: var(--border-radius);
     background-color: var(--primary-color);
-    box-shadow: 1px 1px 0px 0px var(--black);
 }
-.bubble{
-    background-color: blue;
-    padding: 20px;
-    position: absolute;
+.r-nav-header{
+    display: none;
+}
+#responsive-action{
+    display: none;
 }
 .navbar-item.active a{
     font-weight: bold;
+}
+@media screen and (max-width: 915px){
+    body{
+        background-color: black;
+    }
+    .navbar-container{
+        padding: 10px 20px;
+    }
+    .r-nav-header{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        padding: 20px;
+    }
+    #responsive-action{
+        display: block;
+    }
+    #contactMeNavbtn{
+        display: none;
+    }
+    .navbar-item_container{
+        display: none;
+        position: absolute;
+        width: 100%;
+        left: 0px;
+        top: 0px;
+        flex-direction: column;
+        background-color: var(--white);
+        padding: 0px 20px;
+    }
 }
