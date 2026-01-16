@@ -1,7 +1,7 @@
 .btn{
     color: var(--border-color);
     background-color: var(--primary-color);
-    padding: 10px 15px;
+    padding: 5px 8px;
     border: 1px solid var(--border-color);
     box-shadow: 2px 4px 0px 0px var(--border-color);
     border-radius: var(--border-radius);
@@ -17,4 +17,8 @@
 .btn:hover{
     box-shadow: 1px 1px 0px 0px var(--border-color);
     transform: translateY(5px);
+}
+
+.btn.btn-light{
+    background-color: var(--white);
 }
