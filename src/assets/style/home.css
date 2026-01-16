@@ -1,0 +1,7 @@
+.hero{
+    background-color: blue;
+    overflow: hidden;
+}
+.hero img{
+    width: 100%;
+}
