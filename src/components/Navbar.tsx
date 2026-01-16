@@ -2,10 +2,9 @@ import { Link, useLocation } from "react-router-dom";
 //@ts-ignore
 import '../assets/style/navbar.css';
 import Button from "./Button";
-import { useEffect, useRef, useState } from "react";
+import { useEffect,  useState } from "react";
 import { MenuItems } from "../data/MenuItem";
 import { MenuItemType } from "../types/navbar.types";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {fas} from '@fortawesome/free-solid-svg-icons';
 
 const NavbarItem:React.FC<MenuItemType> = ({path, displayText}) => {
@@ -47,7 +46,7 @@ const Navbar: React.FC = () =>{
                 <div className="r-nav-header">
                     <h2>Portofolio</h2>
                     <span className="close-r-menu">
-                        {/* <FontAwesomeIcon icon={fas.faTimes}/> */}
+
                     </span>
                 </div>
                 {
@@ -55,10 +54,12 @@ const Navbar: React.FC = () =>{
                         return <NavbarItem path={el.path} displayText={el.displayText} key={`${el.path+i}`}/>
                     })
                 }
+               
+                <li> <Button type="default" valueText="Contact Me" textStyle="bold" style={{margin: '10px 0px'}}/></li>
             </ul>
             <div className="navbar-actions_container">
                 <Button type="default" valueText="Contact Me" textStyle="bold" id="contactMeNavbtn"/>
-                <Button type="default" valueIcon={isVisible ? fas.faTimes : fas.faBars} id="responsive-action" onClick={handleShowMenu}/>
+                <Button type="default" valueIcon={isVisible ? fas.faTimes : fas.faBars} id="responsive-action" onClick={handleShowMenu} style={{zIndex: '999', position: 'relative'}}/>
             </div>
         </nav>
     );
