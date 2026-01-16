@@ -26,6 +26,7 @@
     transition: all 0.2s;
     position: relative;
 }
+
 .navbar-container h2{
     display: flex;
     align-items: center;
@@ -41,6 +42,9 @@
     left: 2px;
     background-color: var(--underline-color);
     border-radius: 10px;
+}
+.navbar-container li.action{
+    display: none;
 }
 .navbar-item:hover::before{
     width: calc(100% - 2px);
@@ -70,6 +74,9 @@
     }
     .navbar-container{
         padding: 10px 20px;
+    }
+    .navbar-container li.action{
+        display: block;
     }
     .r-nav-header{
         position: absolute;

@@ -54,8 +54,7 @@ const Navbar: React.FC = () =>{
                         return <NavbarItem path={el.path} displayText={el.displayText} key={`${el.path+i}`}/>
                     })
                 }
-               
-                <li> <Button type="default" valueText="Contact Me" textStyle="bold" style={{margin: '10px 0px'}}/></li>
+                <li className="action"> <Button type="default" valueText="Contact Me" textStyle="bold" style={{margin: '10px 0px'}}/></li>
             </ul>
             <div className="navbar-actions_container">
                 <Button type="default" valueText="Contact Me" textStyle="bold" id="contactMeNavbtn"/>
