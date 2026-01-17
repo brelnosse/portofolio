@@ -3,7 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 import '../assets/style/navbar.css';
 import Button from "./Button";
 import { useEffect,  useState } from "react";
-import { MenuItems } from "../data/MenuItem";
+//@ts-ignore
+import { MenuItems } from "../data/menuItems";
 import { MenuItemType } from "../types/navbar.types";
 import {fas} from '@fortawesome/free-solid-svg-icons';
 //@ts-ignore

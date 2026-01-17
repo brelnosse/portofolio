@@ -2,7 +2,13 @@
 import '../assets/style/home.css';
 import Button from '../components/Button';
 import Navbar from '../components/Navbar';
+import SkillsCard from '../components/SkillsCard';
+import SkillsResumeCard from '../components/SkillsResumeCard';
 import Underlined from '../components/Underlined';
+import { Skills } from '../data/skills';
+import { skillsResumeItems } from '../data/skillsresumeItems';
+import { SkillsCardProps } from '../types/skillscard.type';
+import { SkillsResumeCardprops } from '../types/skillsresumecard.type';
 
 const Home:React.FC = () =>{
     return (
@@ -27,21 +33,21 @@ const Home:React.FC = () =>{
             <section className='resume'>
                 <Underlined text='What Do I Do ?'/>
                 <div className="skillsResume_container">
-                    <div className="skills-resume_card">
-                        <img src={require('../assets/images/d.webp')} alt="" />
-                        <h3>UI UX Designer</h3>
-                        <p>create a design that is aestheticaly pleasing but does not compromise user experience</p>
-                    </div>
-                    <div className="skills-resume_card">
-                        <img src={require('../assets/images/d.webp')} alt="" />
-                        <h3>UI UX Designer</h3>
-                        <p>create a design that is aestheticaly pleasing but does not compromise user experience</p>
-                    </div>
-                    <div className="skills-resume_card">
-                        <img src={require('../assets/images/d.webp')} alt="" />
-                        <h3>UI UX Designer</h3>
-                        <p>create a design that is aestheticaly pleasing but does not compromise user experience</p>
-                    </div>
+                    {
+                        skillsResumeItems.map((el:SkillsResumeCardprops) => {
+                            return <SkillsResumeCard image={el.image} title={el.title} description={el.description}/>
+                        })
+                    }
+                </div>
+            </section>
+            <section className='skills'>
+                <Underlined text='Skills'/>
+                <div className="skills_container">
+                    {
+                        Skills.map((el:SkillsCardProps) => {
+                            return <SkillsCard text={el.text}/>
+                        })
+                    }
                 </div>
             </section>
         </div>

@@ -1,0 +1,10 @@
+.skills-card{
+    padding: 15px 10px;
+    text-transform: capitalize;
+    background-color: var(--white);
+    border-radius: 30px;
+    font-weight: bold;
+    border: 2px solid var(--black);
+    font-size: 1em;
+    box-shadow: 3px 3px 0px 0px var(--black);
+}
