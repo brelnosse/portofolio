@@ -1,0 +1,27 @@
+/* .underlined{ background-color: red;} */
+:root{
+    --dash-width: 25px
+}
+.underlined h2{
+    font-size: 3em;
+}
+.dashed_container{
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.dashed_container .dash{
+    display: inline-block;
+    height: 6px;
+    border-radius: 8px;
+    width: var(--dash-width);
+    background-color: var(--primary-color);
+}
+.dash.middle{
+    width: calc(var(--dash-width) - 5px);
+}
+.dash.small{
+    width: calc(var(--dash-width) - 10px);
+}

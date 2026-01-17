@@ -1,5 +1,5 @@
 .navbar-container{
-    background-color: var(--white);
+    background-color: var(--bg-fade-color);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
