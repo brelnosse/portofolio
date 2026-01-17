@@ -8,6 +8,7 @@
     --bg-color: rgb(255, 254, 215);
     --bg-fade-color: #fffaf5;
     --text-secondary: rgb(98, 98, 98);
+    --default: rgb(143, 143, 143);
 }
 
 *{
@@ -20,6 +21,13 @@
 #root{
     max-width: 1600px;
     margin: auto;
+}
+.card{
+    background-color: var(--white);
+    border: 2px solid var(--black);
+    border-radius: var(--border-radius);
+    padding: 15px 20px;
+    box-shadow: 5px 5px 0px 0px var(--black);
 }
 .primary{
     color: var(--primary-color);

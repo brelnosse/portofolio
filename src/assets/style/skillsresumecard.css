@@ -1,11 +1,6 @@
 .skills-resume_card{
-    background-color: var(--white);
-    border: 2px solid var(--black);
     max-width: 350px;
     height: 180px;
-    border-radius: var(--border-radius);
-    padding: 15px 20px;
-    box-shadow: 5px 5px 0px 0px var(--black);
 }
 .skills-resume_card img{
     width: 50px;

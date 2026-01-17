@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 //@ts-ignore
 import '../assets/style/home.css';
 import Button from '../components/Button';
@@ -9,8 +10,60 @@ import { Skills } from '../data/skills';
 import { skillsResumeItems } from '../data/skillsresumeItems';
 import { SkillsCardProps } from '../types/skillscard.type';
 import { SkillsResumeCardprops } from '../types/skillsresumecard.type';
+import { schoolCareer } from '../data/schoolCareer';
+import { CareerProps } from '../types/career.type';
+import Career from '../components/Carreer';
 
 const Home:React.FC = () =>{
+    const scrollIndicator = useRef<HTMLSpanElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
+    const educationSectionRef = useRef<HTMLElement>(null);
+
+    useEffect(() => {
+        const indicator = scrollIndicator.current;
+        const track = containerRef.current;
+        const section = educationSectionRef.current;
+
+        if (!indicator || !track || !section) return;
+
+        const handleScroll = () => {
+            const rect = track.getBoundingClientRect();
+            const viewHeight = window.innerHeight;
+
+            const progress = (viewHeight - rect.top) / (viewHeight + rect.height);
+            const clampedProgress = Math.max(0, Math.min(1, progress));
+
+            const maxTravel = (track.offsetHeight) - indicator.offsetHeight;
+            const translateY = clampedProgress * maxTravel;
+
+            indicator.style.transform = `translate(-50%, ${translateY}px)`;
+        };
+        window.onresize = () =>{
+            if(window.innerWidth <= 597){
+                
+            }
+        }
+        const observer = new IntersectionObserver((entries) => {
+            const entry = entries[0];
+            
+            if (entry.isIntersecting) {
+                window.addEventListener('scroll', handleScroll);
+                handleScroll();
+            } else {
+                window.removeEventListener('scroll', handleScroll);
+            }
+        }, { 
+            threshold: 0.3
+        });
+
+        observer.observe(section); 
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            observer.disconnect();
+        };
+    }, []);
+
     return (
         <div className="container">
             <Navbar />
@@ -34,8 +87,8 @@ const Home:React.FC = () =>{
                 <Underlined text='What Do I Do ?'/>
                 <div className="skillsResume_container">
                     {
-                        skillsResumeItems.map((el:SkillsResumeCardprops) => {
-                            return <SkillsResumeCard image={el.image} title={el.title} description={el.description}/>
+                        skillsResumeItems.map((el:SkillsResumeCardprops, i:number) => {
+                            return <SkillsResumeCard image={el.image} title={el.title} description={el.description} key={`${el.title+i}`}/>
                         })
                     }
                 </div>
@@ -44,10 +97,55 @@ const Home:React.FC = () =>{
                 <Underlined text='Skills'/>
                 <div className="skills_container">
                     {
-                        Skills.map((el:SkillsCardProps) => {
-                            return <SkillsCard text={el.text}/>
+                        Skills.map((el:SkillsCardProps, i:number) => {
+                            return <SkillsCard text={el.text} key={`${el.text+i}`}/>
                         })
                     }
+                </div>
+            </section>
+            <section className='education' ref={educationSectionRef}>
+                <Underlined text='Education'/>
+                <div className="scholar-career_container">
+                    <div className="sliderLevel" ref={containerRef}>
+                        <span className="scrolling-indicator" ref={scrollIndicator}></span>
+                        {
+                            schoolCareer.map((el: CareerProps, i:number) =>{
+                                return <Career step={el.step} postTitle={el.postTitle} period={el.period} skills={el.skills} key={el.step+el.postTitle.split(' ').join('')}/>
+                            })
+                        }
+                    </div>
+                </div>
+            </section>
+            <section className="hero">
+                <div className="heroDescription">
+                    <h3>Hi, There</h3>
+                    <h1>I'm <span className="primary">Brel nosse</span></h1>
+                    <h4>
+                        Web <span style={{fontFamily: 'calibri', margin: '0px 3px', fontWeight: 200, fontSize:'0.8em'}}>&</span> mobile app developer
+                    </h4>
+                    <div className="actions">
+                        <Button type='light' valueText='Download cv'/>
+                        <Button type='default' valueText='Download portofolio'/>
+                    </div>
+                </div>
+                <div className="heroImg">
+                    <img src={require('../assets/images/d.webp')} alt="brel nosse" />
+                </div>
+            </section>
+            <section className="hero">
+                <div className="heroDescription">
+                    <h3>Hi, There</h3>
+                    <h1>I'm <span className="primary">Brel nosse</span></h1>
+                    <h4>
+                        Web <span style={{fontFamily: 'calibri', margin: '0px 3px', fontWeight: 200, fontSize:'0.8em'}}>&</span> mobile app developer
+                    </h4>
+                    <div className="actions">
+                        <Button type='light' valueText='Download cv'/>
+                        <Button type='default' valueText='Download portofolio'/>
+                    </div>
+                </div>
+                <div className="heroImg">
+                    <img src={require('../assets/images/d.webp')} alt="brel nosse" />
                 </div>
             </section>
         </div>
