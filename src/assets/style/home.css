@@ -61,11 +61,9 @@ section.resume{
     padding: 40px 0px;
     display: flex;
     flex-direction: row;
-    gap: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
-}
-section.skills{
-    /* background-color: var(--bg-color); */
 }
 .skills_container{
     display: flex;
@@ -223,16 +221,19 @@ section.education{
         font-size: 1em;
     }
     .scholar-career .step{
-        font-size: 2em;
-        display: inline-flex;
+        font-size: 1.8em;
         min-height: 40px;
         min-width: 40px;
         height: 40px;
         width: 40px;
-        border-radius: 50%;
-        background-color: var(--primary-color);
-        align-items: center;
-        border: 2px solid var(--black);
-        justify-content: center;
     } 
+}
+@media screen and (max-width: 597px) {
+    .scholar-career_container div.sliderLevel{
+        margin-left: 0px;
+    }
+    .career .scholar-career{
+        flex-wrap: wrap;
+        min-width: calc(100vw - 100px);
+    }
 }

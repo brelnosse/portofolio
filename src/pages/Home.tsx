@@ -38,11 +38,6 @@ const Home:React.FC = () =>{
 
             indicator.style.transform = `translate(-50%, ${translateY}px)`;
         };
-        window.onresize = () =>{
-            if(window.innerWidth <= 597){
-                
-            }
-        }
         const observer = new IntersectionObserver((entries) => {
             const entry = entries[0];
             

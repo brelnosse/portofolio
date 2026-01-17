@@ -23,7 +23,7 @@ const NavbarItem:React.FC<MenuItemType> = ({path, displayText}) => {
 }
 
 const Navbar: React.FC = () =>{
-    const [isVisible, setIsVisible] = useState<boolean>(true);
+    const [isVisible, setIsVisible] = useState<boolean>(false);
 
     useEffect(()=>{
         if(window.innerWidth <= 915){
@@ -31,13 +31,15 @@ const Navbar: React.FC = () =>{
         }else{
             setIsVisible(true)
         }
-        window.onresize = (e) =>{
+        const handleResize = ():void => {
             if(window.innerWidth <= 915){
                 setIsVisible(false)
             }else{
                 setIsVisible(true)
             }
         }
+        window.addEventListener('resize',  handleResize)
+        return () => window.removeEventListener('resize', handleResize);
     }, [])
     const handleShowMenu = (): void =>{
         setIsVisible(prev => !prev);

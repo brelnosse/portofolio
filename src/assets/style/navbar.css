@@ -5,6 +5,9 @@
     justify-content: space-between;
     padding: 20px 40px;
     border-bottom: 4px solid var(--border-color);
+    position: sticky;
+    top: 0px;
+    z-index: 999;
 }
 .navbar-item_container{
     list-style: none;
@@ -100,12 +103,12 @@
     }
     .navbar-item_container{
         display: none;
-        position: absolute;
+        position: fixed;
         width: 100%;
         left: 0px;
         top: 0px;
         flex-direction: column;
-        background-color: var(--white);
+        background-color: var(--bg-fade-color);
         padding: 0px 20px;
     }
 }
