@@ -1,6 +1,7 @@
 import { TabNavigationprops, TabProps } from "../types/tabnavigation.types";
 //@ts-ignore
 import '../assets/style/tabnavigation.css';
+import { tabs } from "../data/tabs";
 
 const Tab:React.FC<TabProps> = ({value, isSelected, setActiveTab, ...props}) =>{
     return <span 
@@ -17,7 +18,7 @@ const TabNavigation:React.FC<TabNavigationprops> = ({activeTab, setActiveTab, ..
     return (
         <div className="tab-navigation" {...props}>
             {
-                ['All', 'UI Design', 'Websites or web Apps', 'Mobile Apps'].map((el:string, i:number)=>
+                tabs.map((el:string, i:number)=>
                     <Tab value={el} key={el+i} isSelected={isSelected} setActiveTab={setActiveTab}/>
                 )
             }

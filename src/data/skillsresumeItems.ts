@@ -12,7 +12,7 @@ export const skillsResumeItems:SkillsResumeCardprops[] = [
         description: 'create a design that is aestheticaly pleasing but does not compromise user experience',
     },
     {
-        image: require('../assets/images/d.webp'),
+        image: require('../assets/images/pencil.png'),
         title: 'UX UI designer',
         description: 'create a design that is aestheticaly pleasing but does not compromise user experience',
     }   
