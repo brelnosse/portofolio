@@ -1,0 +1,39 @@
+.tab-navigation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0px;
+    gap: 10px;
+}
+
+.tab-navigation span{
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    padding: 10px 0px;
+    color: var(--text-secondary);
+    font-size: 1.1em;
+}
+.tab-navigation span::before{
+    content: '';
+    transition: all 0.2s;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    width: 0px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    position: absolute;
+
+}
+.tab-navigation span:hover::before{
+    width: 100%;
+}
+.tab-navigation span.active{
+    font-weight: bold;
+    color: var(--black);
+}
+.tab-navigation span.active::before{
+    width: 100%;
+}

@@ -120,9 +120,76 @@ section.education{
 .experience_container{
     padding: 60px 0px;
 }
+.projects_container .my-projects{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 200px);
+    gap: 10px;
+    padding: 10px;
+    width: 100%;
+}
+.projects_container .my-projects .project{
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid var(--black);
+    box-shadow: 5px 5px 0px 0px var(--black);
+}
+.project-header{
+    background-color: white;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    border-bottom: 2px solid var(--black);
+    gap: 10px;
+    padding: 10px;
+}
+.projects_container .my-projects .project img{
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+    object-position: top left;
+}
+.projects_container .project.project-1{
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.projects_container .project.project-2{
+    grid-column-start: 5;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.projects_container .project.project-3{
+    grid-column-start: 3;
+    grid-column-end: 7;
+    grid-row-start: 3;
+    grid-row-end: 6;
+}
+.projects_container .project.project-4{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 6;
+}
+.projects_container .project.project-5{
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row-start: 6;
+    grid-row-end: 7;
+}
+
 @media screen and (max-width: 1100px){
     section.experiences{
         padding: 60px;
+    }
+    section.projects{
+        padding: 60px 20px;
     }
 }
 @media  screen and (max-width: 940px) {

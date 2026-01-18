@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 //@ts-ignore
 import '../assets/style/home.css';
 import Button from '../components/Button';
@@ -16,11 +16,14 @@ import Career from '../components/Carreer';
 import { experiences } from '../data/experiences';
 import { ExperienceProps } from '../types/experience.type';
 import Experience from '../components/Experience';
-
+import TabNavigation from '../components/TabNavigation';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 const Home:React.FC = () =>{
     const scrollIndicator = useRef<HTMLSpanElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const educationSectionRef = useRef<HTMLElement>(null);
+    const [activeTab, setActiveTab] = useState<string>('all');
 
     useEffect(() => {
         const indicator = scrollIndicator.current;
@@ -135,6 +138,32 @@ const Home:React.FC = () =>{
             </section>
             <section className="projects">
                 <Underlined text='Projets'/>
+                <div className="projects_container">
+                    <div className="projects-container_header" style={{position: 'sticky', top: '90px', backdropFilter: 'blur(5px)'}}>
+                        <TabNavigation activeTab={activeTab} setActiveTab={setActiveTab}/>
+                    </div>
+                    <div className="my-projects">
+                        <div className="project project-1">
+                            <div className="project-header">
+                                <Button type='default' valueText='Visit' valueIcon={fas.faUpRightFromSquare} title='Visit the project online'/>
+                                <Button type='light' valueText='Github' valueIcon={faGithub} title='View project on github'/>
+                            </div>
+                            <img src={require('../assets/images/d.webp')} alt="" />
+                        </div>
+                        <div className="project project-2">
+                            <img src={require('../assets/images/d.webp')} alt="" />
+                        </div>
+                        <div className="project project-3">
+                            <img src={require('../assets/images/d.webp')} alt="" />
+                        </div>
+                        <div className="project project-4">
+                            <img src={require('../assets/images/d.webp')} alt="" />
+                        </div>
+                        <div className="project project-5">
+                            <img src={require('../assets/images/d.webp')} alt="" />
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
     );
