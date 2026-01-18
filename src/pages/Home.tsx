@@ -13,6 +13,9 @@ import { SkillsResumeCardprops } from '../types/skillsresumecard.type';
 import { schoolCareer } from '../data/schoolCareer';
 import { CareerProps } from '../types/career.type';
 import Career from '../components/Carreer';
+import { experiences } from '../data/experiences';
+import { ExperienceProps } from '../types/experience.type';
+import Experience from '../components/Experience';
 
 const Home:React.FC = () =>{
     const scrollIndicator = useRef<HTMLSpanElement>(null);
@@ -75,7 +78,9 @@ const Home:React.FC = () =>{
                     </div>
                 </div>
                 <div className="heroImg">
-                    <img src={require('../assets/images/d.webp')} alt="brel nosse" />
+                    <img src={require('../assets/images/square.png')} alt="squares" style={{height: '80px', width: '100px'}} className='s'/>
+                    <img src={require('../assets/images/d.webp')} alt="brel nosse" className='profil'/>
+                    <img src={require('../assets/images/star.png')} alt="star" style={{height: '120px', width: '120px'}} className='r'/>
                 </div>
             </section>
             <section className='resume'>
@@ -111,37 +116,25 @@ const Home:React.FC = () =>{
                     </div>
                 </div>
             </section>
-            <section className="hero">
-                <div className="heroDescription">
-                    <h3>Hi, There</h3>
-                    <h1>I'm <span className="primary">Brel nosse</span></h1>
-                    <h4>
-                        Web <span style={{fontFamily: 'calibri', margin: '0px 3px', fontWeight: 200, fontSize:'0.8em'}}>&</span> mobile app developer
-                    </h4>
-                    <div className="actions">
-                        <Button type='light' valueText='Download cv'/>
-                        <Button type='default' valueText='Download portofolio'/>
-                    </div>
-                </div>
-                <div className="heroImg">
-                    <img src={require('../assets/images/d.webp')} alt="brel nosse" />
+            <section className="experiences">
+                <Underlined text='Experience'/>
+                <div className="experience_container">
+                   {
+                    experiences.map((el:ExperienceProps, i:number) => 
+                        <Experience 
+                            key={el.enterprise.split(' ').join(' ')+i}
+                            enterprise={el.enterprise} 
+                            period={el.period} 
+                            postTitle={el.postTitle} 
+                            location={el.location}
+                            skills={el.skills}
+                            tools={el.tools}
+                        />)
+                   }
                 </div>
             </section>
-            <section className="hero">
-                <div className="heroDescription">
-                    <h3>Hi, There</h3>
-                    <h1>I'm <span className="primary">Brel nosse</span></h1>
-                    <h4>
-                        Web <span style={{fontFamily: 'calibri', margin: '0px 3px', fontWeight: 200, fontSize:'0.8em'}}>&</span> mobile app developer
-                    </h4>
-                    <div className="actions">
-                        <Button type='light' valueText='Download cv'/>
-                        <Button type='default' valueText='Download portofolio'/>
-                    </div>
-                </div>
-                <div className="heroImg">
-                    <img src={require('../assets/images/d.webp')} alt="brel nosse" />
-                </div>
+            <section className="projects">
+                <Underlined text='Projets'/>
             </section>
         </div>
     );

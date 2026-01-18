@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { CareerProps } from "../types/career.type";
-
+//@ts-ignore
+import '../assets/style/career.css';
 const Career: React.FC<CareerProps> = ({step, postTitle, period, skills, ...props}) =>{
     const [windowSize, setWindowSize] = useState<number>(window.innerWidth);
     const handleResize = (): void =>{

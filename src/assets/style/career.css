@@ -1,0 +1,73 @@
+.scholar-career{
+    max-width: 350px;
+    min-width: 350px;
+    display: flex;
+    gap: 5px;
+}
+.scholar-career .step{
+    font-size: 2em;
+    display: inline-flex;
+    min-height: 50px;
+    min-width: 50px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    align-items: center;
+    border: 2px solid var(--black);
+    justify-content: center;
+}
+.scholar-career_container .career.left{
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    margin-left: 21px; 
+    flex-direction: row-reverse;  
+}
+.scholar-career_container .career.left .scholar-career{
+    flex-direction: row-reverse;
+}
+.scholar-career_container .career{
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    margin-left: -19px;
+}
+.indicator{
+    background-color: var(--white);
+    display: inline-block;
+    border: 2px solid var(--black);
+    min-height: 40px;
+    min-width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+@media  screen and (max-width: 915px) {
+    .scholar-career{
+        max-width: 300px;
+        min-width: 300px;
+    }
+}
+@media  screen and (max-width: 720px) {
+    .scholar-career{
+        max-width: 250px;
+        min-width: 250px;
+    } 
+    .scholar-career.card{
+        padding: 15px 10px;
+        font-size: 1em;
+    }
+    .scholar-career .step{
+        font-size: 1.8em;
+        min-height: 40px;
+        min-width: 40px;
+        height: 40px;
+        width: 40px;
+    } 
+}
+@media screen and (max-width: 597px) {
+    .career .scholar-career{
+        flex-wrap: wrap;
+        min-width: calc(100vw - 100px);
+    }
+}
