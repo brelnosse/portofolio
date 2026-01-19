@@ -1,3 +1,4 @@
+import { faPhp } from "@fortawesome/free-brands-svg-icons";
 import { ProjectProps } from "../types/project.type";
 
 export const projects:ProjectProps[] = [
@@ -9,6 +10,7 @@ export const projects:ProjectProps[] = [
         githubUrl: '',
         skills: [
             {
+                icon: faPhp,
                 text: 'Php'
             }
         ] 
@@ -21,6 +23,7 @@ export const projects:ProjectProps[] = [
         githubUrl: '',
         skills: [
             {
+                icon: faPhp,
                 text: 'Php'
             }
         ] 
@@ -32,6 +35,7 @@ export const projects:ProjectProps[] = [
         githubUrl: '',
         skills: [
             {
+                icon: faPhp,
                 text: 'Php'
             }
         ] 
@@ -43,6 +47,7 @@ export const projects:ProjectProps[] = [
         githubUrl: '',
         skills: [
             {
+                icon: faPhp,
                 text: 'Php'
             }
         ] 
@@ -54,6 +59,7 @@ export const projects:ProjectProps[] = [
         githubUrl: '',
         skills: [
             {
+                icon: faPhp,
                 text: 'Php'
             }
         ] 
@@ -65,6 +71,7 @@ export const projects:ProjectProps[] = [
         githubUrl: '',
         skills: [
             {
+                icon: faPhp,
                 text: 'Php'
             }
         ] 
@@ -76,6 +83,7 @@ export const projects:ProjectProps[] = [
         githubUrl: '',
         skills: [
             {
+                icon: faPhp,
                 text: 'Php'
             }
         ] 
@@ -87,6 +95,7 @@ export const projects:ProjectProps[] = [
         githubUrl: '',
         skills: [
             {
+                icon: faPhp,
                 text: 'Php'
             }
         ] 
@@ -95,9 +104,10 @@ export const projects:ProjectProps[] = [
         type: 'websites-or-web-apps',
         imgUrl: require('../assets/images/d.webp'),
         url: 'h',
-        githubUrl: '',
+        githubUrl: 'h',
         skills: [
             {
+                icon: faPhp,
                 text: 'Php'
             }
         ] 

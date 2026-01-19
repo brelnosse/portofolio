@@ -127,3 +127,9 @@
 .project-footer .skills-card{
     padding: 8px;
 }
+@media screen and (max-width: 615px) {
+    .project{
+        grid-column: 1 / -1 !important;
+        grid-row: auto !important;
+    }
+}

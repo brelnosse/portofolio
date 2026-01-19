@@ -18,7 +18,7 @@ const Project: React.FC<ProjectProps> = ({title, imgUrl, url, githubUrl, skills,
             <div className="project-footer">
                 {
                     skills.map((el:SkillsCardProps, i:number) => {
-                        return <SkillsCard text={el.text} key={`${el.text+i+title}`}/>
+                        return <SkillsCard icon={el.icon} text={el.text} key={`${el.text+i+title}`}/>
                     })
                 }
             </div>

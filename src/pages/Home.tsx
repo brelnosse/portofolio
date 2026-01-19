@@ -17,8 +17,7 @@ import { experiences } from '../data/experiences';
 import { ExperienceProps } from '../types/experience.type';
 import Experience from '../components/Experience';
 import TabNavigation from '../components/TabNavigation';
-import { fas } from '@fortawesome/free-solid-svg-icons';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import {motion} from 'motion/react';
 import { projects } from '../data/projects';
 import { ProjectProps } from '../types/project.type';
 import Project from '../components/Project';
@@ -76,11 +75,11 @@ const Home:React.FC = () =>{
                     <h3>Hi, There</h3>
                     <h1>I'm <span className="primary">Brel nosse</span></h1>
                     <h4>
-                        Web <span style={{fontFamily: 'calibri', margin: '0px 3px', fontWeight: 200, fontSize:'0.8em'}}>&</span> mobile app developer
+                        web <span style={{fontFamily: 'calibri', margin: '0px 3px', fontWeight: 200, fontSize:'0.8em'}}>&</span> mobile app developer
                     </h4>
                     <div className="actions">
-                        <Button type='light' valueText='Download cv'/>
-                        <Button type='default' valueText='Download portofolio'/>
+                        <Button type='default' valueText='Download cv'/>
+                        <Button type='light' valueText='Download portofolio'/>
                     </div>
                 </div>
                 <div className="heroImg">
@@ -104,7 +103,7 @@ const Home:React.FC = () =>{
                 <div className="skills_container">
                     {
                         Skills.map((el:SkillsCardProps, i:number) => {
-                            return <SkillsCard text={el.text} key={`${el.text+i}`}/>
+                            return  <SkillsCard icon={el.icon} text={el.text} key={`${el.text+i}`}/>
                         })
                     }
                 </div>
@@ -140,7 +139,7 @@ const Home:React.FC = () =>{
                 </div>
             </section>
             <section className="projects">
-                <Underlined text='Projets'/>
+                <Underlined text='Projects'/>
                 <div className="projects_container">
                     <div className="projects-container_header">
                         <TabNavigation activeTab={activeTab} setActiveTab={setActiveTab}/>

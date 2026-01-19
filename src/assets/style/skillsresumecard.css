@@ -1,6 +1,7 @@
 .skills-resume_card{
     max-width: 350px;
     height: 180px;
+    cursor: pointer;
 }
 .skills-resume_card img{
     width: 50px;

@@ -31,15 +31,62 @@
     border: 1px solid transparent;
     transition: all 0.2s;
     position: relative;
-}
-.navbar-container h2{
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+.navbar-item span{
+    display: inline-flex;
+    position: absolute;
+    bottom: -50px;
+    transition: all 0.2s;
+    left: 2px;
+    align-items: center;
     justify-content: center;
-    -webkit-text-fill-color: var(--primary-color);
-    -webkit-text-stroke-width: 1px;
-    font-size: 2em;
+    width: '30px';
+    font-size: 0.8em;
+    margin-bottom: 2px;
+    height: 100%;   
+    transform: scale(0);
+}
+.navbar-item.isHovered:not(.navbar-item.active){
+    padding-left: 1.4rem;
+}
+.navbar-item.isHovered:not(.navbar-item.active) span{
+    transform: scale(1);
+    bottom: 0px;
+}
+.navbar-item a{
+    text-decoration: none;
+    font-size: 1.1em;
     color: var(--black);
+}
+.navbar-item.active{
+    border-color: none;
+    border-radius: var(--border-radius);
+    background-color: transparent;
+    padding-left: 1.4rem;
+}
+.navbar-item.active span{
+    bottom: 0px;
+    transform: scale(1);
+    z-index: 2;
+}
+.navbar-item.active span::before{
+    content: '';
+    height: 5px;
+    width: 5px;
+    background-color: var(--primary-color);
+    position: absolute;
+    z-index: -1;
+    bottom: 2px;
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.navbar-item.active a{
+    font-weight: bold;
 }
 .navbar-item:not(.active)::before{
     content: '';
@@ -52,30 +99,26 @@
     background-color: var(--underline-color);
     border-radius: 10px;
 }
+.navbar-container h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-text-fill-color: var(--primary-color);
+    -webkit-text-stroke-width: 1px;
+    font-size: 2em;
+    color: var(--black);
+}
 .navbar-container li.action{
     display: none;
 }
 .navbar-item:hover::before{
     width: calc(100% - 2px);
 }
-.navbar-item a{
-    text-decoration: none;
-    font-size: 1.1em;
-    color: var(--black);
-}
-.navbar-item.active{
-    border-color: none;
-    border-radius: var(--border-radius);
-    background-color: var(--primary-color);
-}
 .r-nav-header{
     display: none;
 }
 #responsive-action{
     display: none;
-}
-.navbar-item.active a{
-    font-weight: bold;
 }
 @media screen and (max-width: 915px){
     body{

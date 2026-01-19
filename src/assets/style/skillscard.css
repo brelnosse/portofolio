@@ -7,4 +7,11 @@
     border: 2px solid var(--black);
     font-size: 1em;
     box-shadow: 3px 3px 0px 0px var(--black);
+    transition: all 0.2s;
+    cursor: pointer;
+}
+.skills-card:hover{
+    background-color: var(--primary-color);
+    transform: translateY(3px);
+    box-shadow: 1px 1px 0px 0px var(--black);
 }
