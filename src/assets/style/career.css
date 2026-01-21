@@ -1,17 +1,17 @@
 .scholar-career{
-    max-width: 350px;
-    min-width: 350px;
+    max-width: 21.875rem;
+    min-width: 21.875rem;
     display: flex;
-    gap: 5px;
+    gap: 0.3125rem;
     opacity: 1;
 }
 .scholar-career .step{
     font-size: 2em;
     display: inline-flex;
-    min-height: 50px;
-    min-width: 50px;
-    height: 50px;
-    width: 50px;
+    min-height: 3.125rem;
+    min-width: 3.125rem;
+    height: 3.125rem;
+    width: 3.125rem;
     border-radius: 50%;
     background-color: var(--primary-color);
     align-items: center;
@@ -20,9 +20,9 @@
 }
 .scholar-career_container .career.left{
     display: flex;
-    gap: 10px;
-    margin-top: 10px;
-    margin-left: 21px; 
+    gap: 0.625rem;
+    margin-top: 0.625rem;
+    margin-left: 1.3125rem; 
     flex-direction: row-reverse;  
 }
 .scholar-career_container .career.left .scholar-career{
@@ -30,12 +30,12 @@
 }
 .scholar-career_container .career{
     display: flex;
-    gap: 10px;
-    margin-top: 10px;
-    margin-left: -19px;
+    gap: 0.625rem;
+    margin-top: 0.625rem;
+    margin-left: -1.3125rem;
     transition: all 0.4s;
-    transform: translateX(-100px);
-    opacity: 0;
+    transform: translateX(0);
+    opacity: 1;
 }
 .scholar-career_container .career.visible{
     transform: translateX(0px);
@@ -55,10 +55,10 @@
     width: fit-content;
     background: white;
     margin: 3px 0px;
-    padding: 3px 5px;
+    padding:  0.1875rem;
     font-size: 0.8em;
     border: 1px solid var(--black);
-    border-radius: 20px;
+    border-radius: 1.25rem;
     position: relative;
     align-self: flex-end;
     cursor: pointer;
@@ -68,7 +68,7 @@
 .career .badge::before{
     content: '';
     position: absolute;
-    border-radius: 20px;
+    border-radius: 1.25rem;
     left: 0px;
     top: 0px;
     z-index: -1;
@@ -84,37 +84,37 @@
     background-color: var(--white);
     display: inline-block;
     border: 2px solid var(--black);
-    min-height: 40px;
-    min-width: 40px;
-    height: 40px;
+    min-height: 2.5rem;
+    min-width: 2.5rem;
+    height: 2.5rem;
     border-radius: 50%;
 }
 @media  screen and (max-width: 915px) {
     .scholar-career{
-        max-width: 300px;
-        min-width: 300px;
+        max-width: 18.75rem;
+        min-width: 18.75rem;
     }
 }
 @media  screen and (max-width: 720px) {
     .scholar-career{
-        max-width: 250px;
-        min-width: 250px;
+        max-width: 16.625rem;
+        min-width: 16.625rem;
     } 
     .scholar-career.card{
-        padding: 15px 10px;
+        padding: 0.99rem 0.6rem;
         font-size: 1em;
     }
     .scholar-career .step{
         font-size: 1.8em;
-        min-height: 40px;
-        min-width: 40px;
-        height: 40px;
-        width: 40px;
+        min-height: 2.5rem;
+        min-width: 2.5rem;
+        height: 2.5rem;
+        width: 2.5rem;
     } 
 }
 @media screen and (max-width: 597px) {
     .career .scholar-career{
         flex-wrap: wrap;
-        min-width: calc(100vw - 100px);
+        min-width: calc(100vw - 6.25rem);
     }
 }

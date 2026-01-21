@@ -11,7 +11,7 @@ export const Skills:SkillsCardProps[] = [
                 icon: faFigma,
                 text: 'Figma'
             },
-            description: 'XP: 1 ans',
+            description: 'Exp. 1 ans',
         },
         active: true,
     },
@@ -24,7 +24,7 @@ export const Skills:SkillsCardProps[] = [
                 icon: faFigma,
                 text: 'React.js'
             },
-            description: 'XP: 1 ans',
+            description: 'Exp. 1 ans',
         },
     },
     {
@@ -50,7 +50,7 @@ export const Skills:SkillsCardProps[] = [
                 icon: faFigma,
                 text: 'CSS'
             },
-            description: 'XP: 1 ans',
+            description: 'Exp. 1 ans',
         },
         active: true,
     },

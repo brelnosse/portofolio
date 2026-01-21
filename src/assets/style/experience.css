@@ -1,6 +1,6 @@
 .experience{
     font-size: 0.9em;
-    margin-top: 20px;
+    margin-top: 1.25rem;
 }
 
 .experience .line{
@@ -8,11 +8,11 @@
     justify-content: space-between;
 }
 .experience .line:not(.experience .line:nth-of-type(1)){
-    margin-top: 5px;
+    margin-top: 0.3125rem;
 }
 .experience ul{
-    margin-top: 5px;
-    margin-left: 30px;
+    margin-top: 0.3125rem;
+    margin-left: 1.875rem;
     color: var(--text-secondary);
 }
 .experience .line:nth-of-type(1){
@@ -20,11 +20,11 @@
 }
 @media screen and (max-width: 1100px){
     section.experiences{
-        padding: 60px;
+        padding: 3.75rem;
     }
 }
 @media  screen and (max-width: 915px) {
     section.experiences{
-        padding: 20px;
+        padding: 2.5rem;
     }
 }

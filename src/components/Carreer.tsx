@@ -33,7 +33,7 @@ const Career: React.FC<CareerProps> = ({step, postTitle, organization, period, s
     return (
         <div 
             ref={careerRef}
-            className={`career ${windowSize > 597 ? (step%2 === 0 ? 'left' : '') : ''}`} 
+            className={`career${windowSize > 597 ? (step%2 === 0 ? ' Zleft' : '') : ''}`} 
             {...props}>
             <span className="indicator"></span>
             <div className="card scholar-career">

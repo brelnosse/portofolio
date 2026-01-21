@@ -1,8 +1,8 @@
 .skills-card{
-    padding: 15px 10px;
+    padding: 0.9rem 0.7rem;
     text-transform: capitalize;
     background-color: var(--white);
-    border-radius: 30px;
+    border-radius: 2rem;
     font-weight: bold;
     border: 2px solid var(--black);
     font-size: 1em;
@@ -10,6 +10,7 @@
     transition: all 0.2s;
     cursor: pointer;
     display: inline;
+    position: relative;
 }
 .skills-card:hover, .skills-card.active{
     background-color: var(--primary-color);
@@ -18,7 +19,7 @@
 }
 .skills-card .tooltip.visible{
     transform: scale(1);
-    top: -92px;
+    top: -5.3rem;
     opacity: 1;
 }
 

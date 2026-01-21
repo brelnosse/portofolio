@@ -29,13 +29,13 @@
     background-color: var(--white);
     border: 2px solid var(--black);
     border-radius: var(--border-radius);
-    padding: 15px 20px;
-    box-shadow: 5px 5px 0px 0px var(--black);
+    padding: 0.9375rem 1.25rem;
+    box-shadow: 0.3125rem 0.3125rem 0px 0px var(--black);
     transition: all 0.2s;
 }
 .card:hover{
     box-shadow: 2px 2px 0px 0px var(--black);
-    transform: translateY(5px);
+    transform: translateY(0.3125rem);
 }
 .primary{
     color: var(--primary-color);
