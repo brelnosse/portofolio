@@ -11,6 +11,7 @@
     cursor: pointer;
     display: inline;
     position: relative;
+    user-select: none;
 }
 .skills-card:hover, .skills-card.active{
     background-color: var(--primary-color);
