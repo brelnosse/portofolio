@@ -1,24 +1,49 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { CareerProps } from "../types/career.type";
 //@ts-ignore
 import '../assets/style/career.css';
-const Career: React.FC<CareerProps> = ({step, postTitle, period, skills, ...props}) =>{
+const Career: React.FC<CareerProps> = ({step, postTitle, organization, period, skills, ...props}) =>{
     const [windowSize, setWindowSize] = useState<number>(window.innerWidth);
-    const handleWindowResize = (): void =>{
-        setWindowSize(window.innerWidth);
-    }
+    const careerRef = useRef<HTMLDivElement>(null);
+
+    const handleWindowResize = useCallback((): void =>{
+        setWindowSize(window.innerWidth); 
+    }, []);
     useEffect(()=>{
         window.addEventListener('resize', handleWindowResize);
-        return () => window.removeEventListener('resize', handleWindowResize);
-    }, [])   
+        if(!careerRef.current) return;
+        const career:HTMLDivElement = careerRef.current as HTMLDivElement;
+
+        const observer = new IntersectionObserver((entries)=>{
+            const entry = entries[0];
+
+            if(entry.isIntersecting){
+                career.classList.add('visible')
+            }
+        },{
+            threshold: 0.6
+        });
+
+        observer.observe(career);
+        return () => {
+            window.removeEventListener('resize', handleWindowResize);
+            observer.disconnect();
+        }
+    }, [handleWindowResize, windowSize])   
     return (
-        <div className={`career ${windowSize > 597 ? (step%2 === 0 ? 'left' : '') : ''}`} {...props}>
+        <div 
+            ref={careerRef}
+            className={`career ${windowSize > 597 ? (step%2 === 0 ? 'left' : '') : ''}`} 
+            {...props}>
             <span className="indicator"></span>
             <div className="card scholar-career">
                 <span className='step'>{step}</span>
                 <div className="scholar-career_text">
                     <h3>{postTitle}</h3>
-                    <h4>{period}</h4>
+                    <div className="timeline">
+                        <h4>{organization}</h4>
+                        <span className="badge">{period}</span>
+                    </div>
                     <p>
                         <span className="primary">Compétences acquises:</span>
                         {skills}

@@ -121,9 +121,6 @@
     display: none;
 }
 @media screen and (max-width: 915px){
-    body{
-        background-color: black;
-    }
     .navbar-container{
         padding: 10px 20px;
     }

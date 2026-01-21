@@ -125,6 +125,7 @@ const Home:React.FC = () =>{
                                 return <Career 
                                         step={el.step} 
                                         postTitle={el.postTitle} 
+                                        organization={el.organization}
                                         period={el.period} 
                                         skills={el.skills} 
                                         key={el.step+el.postTitle.split(' ').join('')}/>

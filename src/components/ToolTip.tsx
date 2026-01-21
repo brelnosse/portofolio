@@ -31,7 +31,6 @@ const ToolTip:React.FC<ToolTipProps> = ({isHovered, setIsHovered, title, active,
         }else{
             ToolElem.style.left = '0px';
             ToolElem.classList.remove('spaceRight');            
-            // ToolElem.classList.remove('triangleLeft');
         }
     }, []);
 

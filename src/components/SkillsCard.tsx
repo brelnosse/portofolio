@@ -8,16 +8,23 @@ import { useEffect, useRef, useState } from "react";
 const SkillsCard:React.FC<SkillsCardProps> = ({icon, text, active, tooltip, skillsData, setSkillsData, ...props}) => {
     const [isHovered, setIsHovered] = useState<boolean>(false);
     const skillsRef = useRef<HTMLDivElement>(null);
-
     useEffect(()=>{
         if(!skillsRef.current) return;
         const skillsElem = skillsRef.current as HTMLElement;
+        const tooltip:HTMLElement =  (skillsElem.childNodes[0] as HTMLElement);
         const observer = new IntersectionObserver((entries)=>{
-
             if(entries[0].isIntersecting){
-                if((skillsElem.childNodes[0] as HTMLElement).classList.contains('tooltip') && active){
-                    skillsElem.firstElementChild?.classList.add('visible');
-                    setIsHovered(true);
+                if(tooltip.classList.contains('tooltip')){
+                    if(active){
+                        tooltip?.classList.add('visible');
+                        setIsHovered(true);
+                    }else{
+                        tooltip?.classList.remove('visible');
+                        setIsHovered(false);
+                    }
+                }else{
+                    tooltip?.classList.remove('visible');
+                    setIsHovered(false);    
                 }
             }
         },{
@@ -28,7 +35,7 @@ const SkillsCard:React.FC<SkillsCardProps> = ({icon, text, active, tooltip, skil
         return ()=>{
             observer.disconnect();
         }
-    });
+    }, [active]);
     return (
         <div 
             ref={skillsRef}
@@ -52,7 +59,7 @@ const SkillsCard:React.FC<SkillsCardProps> = ({icon, text, active, tooltip, skil
                     skillsData={skillsData}
                     active={active}
                     setSkillsData={setSkillsData}
-                    isHovered={(isHovered) ? true : false}
+                    isHovered={isHovered}
                     setIsHovered={setIsHovered}
                     description={tooltip.description}/>
             }
