@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 1.25rem 2.5rem;
+    padding: 2.5rem 2.5rem;
     border-bottom: 0.25rem solid var(--border-color);
     position: sticky;
     align-items: center;
@@ -121,7 +121,8 @@
 }
 @media screen and (max-width: 915px){
     .navbar-container{
-        padding: 0.625rem 1.25rem;
+        height: 3.75rem;
+
     }
     .navbar-container li.action{
         display: block;
@@ -135,8 +136,7 @@
         border-bottom: 0.25rem solid var(--black);
         justify-content: space-between;
         width: 100%;
-        padding: 1.25rem;
-        height: 6.375rem;
+        padding: 1.25rem 2.5rem;
     }
     #responsive-action{
         display: block;
