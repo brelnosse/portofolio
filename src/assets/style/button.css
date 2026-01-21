@@ -1,7 +1,7 @@
 .btn{
     color: var(--border-color);
     background-color: var(--primary-color);
-    padding: 5px 8px;
+    padding: 8px 11px;
     border: 1px solid var(--border-color);
     box-shadow: 2px 4px 0px 0px var(--border-color);
     border-radius: var(--border-radius);
