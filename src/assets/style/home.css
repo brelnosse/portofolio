@@ -13,7 +13,7 @@ section.hero{
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    height: 70vh;
+    height: 75vh;
 }
 .heroDescription h4{
     display: flex;
@@ -142,7 +142,7 @@ section.education{
         padding: 60px 20px;
     }
     .heroDescription h1{
-        font-size: 5em;
+        font-size: 6em;
     }
 }
 @media  screen and (max-width: 940px) {
@@ -214,5 +214,18 @@ section.education{
     .career .scholar-career{
         flex-wrap: wrap;
         min-width: calc(100vw - 100px);
+    }
+    .heroDescription h4{
+        flex-direction: column;
+        padding: 20px 0px;
+        position: relative;
+    }
+    .heroDescription h4::before{
+        position: absolute;
+        margin: 0px;
+        width: 150px;
+        bottom: 0px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }

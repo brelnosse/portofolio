@@ -75,7 +75,7 @@ const Home:React.FC = () =>{
                     <h3>Hi, There</h3>
                     <h1>I'm <span className="primary">Brel nosse</span></h1>
                     <h4>
-                        web <span style={{fontFamily: 'calibri', margin: '0px 3px', fontWeight: 200, fontSize:'0.8em'}}>&</span> mobile app developer
+                        fullstack web & mobile app developer
                     </h4>
                     <div className="actions">
                         <Button type='default' valueText='Download cv'/>

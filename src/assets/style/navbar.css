@@ -45,7 +45,7 @@
     align-items: center;
     justify-content: center;
     width: '30px';
-    font-size: 0.8em;
+    font-size: 1em;
     margin-bottom: 2px;
     height: 100%;   
     transform: scale(0);
@@ -59,7 +59,7 @@
 }
 .navbar-item a{
     text-decoration: none;
-    font-size: 1.1em;
+    font-size: 1.2em;
     color: var(--black);
 }
 .navbar-item.active{
