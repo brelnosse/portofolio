@@ -9,9 +9,21 @@
     box-shadow: 3px 3px 0px 0px var(--black);
     transition: all 0.2s;
     cursor: pointer;
+    display: inline;
 }
-.skills-card:hover{
+.skills-card:hover, .skills-card.active{
     background-color: var(--primary-color);
     transform: translateY(3px);
     box-shadow: 1px 1px 0px 0px var(--black);
 }
+.skills-card .tooltip.visible{
+    transform: scale(1);
+    top: -92px;
+    opacity: 1;
+}
+
+/* @media screen and (max-width: 300px) {
+    .skills-card.active .tooltip.visible{
+        top: -100px;
+    }
+} */

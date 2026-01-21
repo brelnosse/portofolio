@@ -17,7 +17,6 @@ import { experiences } from '../data/experiences';
 import { ExperienceProps } from '../types/experience.type';
 import Experience from '../components/Experience';
 import TabNavigation from '../components/TabNavigation';
-import {motion} from 'motion/react';
 import { projects } from '../data/projects';
 import { ProjectProps } from '../types/project.type';
 import Project from '../components/Project';
@@ -26,6 +25,7 @@ const Home:React.FC = () =>{
     const containerRef = useRef<HTMLDivElement>(null);
     const educationSectionRef = useRef<HTMLElement>(null);
     const [activeTab, setActiveTab] = useState<string>('all');
+    const [skillsData, setSkillsData] = useState<SkillsCardProps[]>(Skills);
 
     useEffect(() => {
         const indicator = scrollIndicator.current;
@@ -102,8 +102,15 @@ const Home:React.FC = () =>{
                 <Underlined text='Skills'/>
                 <div className="skills_container">
                     {
-                        Skills.map((el:SkillsCardProps, i:number) => {
-                            return  <SkillsCard icon={el.icon} text={el.text} key={`${el.text+i}`}/>
+                        skillsData.map((el:SkillsCardProps, i:number) => {
+                            return  <SkillsCard 
+                                        icon={el.icon} 
+                                        text={el.text} 
+                                        key={`${el.text+i}`} 
+                                        tooltip={el.tooltip} 
+                                        skillsData={skillsData}
+                                        setSkillsData={setSkillsData}
+                                        active={el.active}/>
                         })
                     }
                 </div>
@@ -115,7 +122,12 @@ const Home:React.FC = () =>{
                         <span className="scrolling-indicator" ref={scrollIndicator}></span>
                         {
                             schoolCareer.map((el: CareerProps, i:number) =>{
-                                return <Career step={el.step} postTitle={el.postTitle} period={el.period} skills={el.skills} key={el.step+el.postTitle.split(' ').join('')}/>
+                                return <Career 
+                                        step={el.step} 
+                                        postTitle={el.postTitle} 
+                                        period={el.period} 
+                                        skills={el.skills} 
+                                        key={el.step+el.postTitle.split(' ').join('')}/>
                             })
                         }
                     </div>

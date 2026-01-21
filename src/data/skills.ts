@@ -5,86 +5,128 @@ import { faAws, faCss, faFigma, faFlutter, faGithub, faHtml5, faJava, faJs, faNo
 export const Skills:SkillsCardProps[] = [
     {
         icon: faFigma,
-        text: 'Figma'
+        text: 'Figma',
+        tooltip: {
+            title: {
+                icon: faFigma,
+                text: 'Figma'
+            },
+            description: 'XP: 1 ans',
+        },
+        active: true,
     },
     {
         icon: faReact,
-        text: 'React.js'
+        text: 'React.js',
+        active: false,
+        tooltip: {
+            title: {
+                icon: faFigma,
+                text: 'React.js'
+            },
+            description: 'XP: 1 ans',
+        },
     },
     {
         icon: faJs,
-        text: 'TypeScript'
+        text: 'TypeScript',
+        active: false,
     },
     {
         icon: faBullhorn,
-        text: 'communication'
+        text: 'communication',
+        active: false,
     },
     {
         icon: fas.faHandshake,
-        text: 'collaboration'
+        text: 'collaboration',
+        active: false,
     },
     {
         icon: faCss,
-        text: 'CSS'
+        text: 'CSS',
+        tooltip: {
+            title: {
+                icon: faFigma,
+                text: 'CSS'
+            },
+            description: 'XP: 1 ans',
+        },
+        active: true,
     },
     {
         icon: faHtml5,
-        text: 'HTML'
+        text: 'HTML',
+        active: false,
     },
     {
         icon: faPhp,
-        text: 'PHP natif'
+        text: 'PHP natif',
+        active: false,
     },
     {
         icon: faTable,
-        text: 'MySQL'
+        text: 'MySQL',
+        active: false,
     },
     {
         icon: faDatabase,
-        text: 'MongoDB'
+        text: 'MongoDB',
+        active: false,
     },
     {
         icon: faJava,
-        text: 'Java'
+        text: 'Java',
+        active: false,
     },
     {
         icon: faGears,
-        text: 'CI/CD'
+        text: 'CI/CD',
+        active: false,
     },
     {
         icon: faExchangeAlt,
-        text: 'Rest API'
+        text: 'Rest API',
+        active: false,
     },
     {
         icon: faNodeJs,
-        text: 'Node.js'
+        text: 'Node.js',
+        active: false,
     },
     {
         icon: faCode,
-        text: 'Frontend'
+        text: 'Frontend',
+        active: false,
     }, 
     {
         icon: faServer,
-        text: 'Backend'
+        text: 'Backend',
+        active: false,
     },
     {
         icon: faSitemap,
-        text: 'web integrator'
+        text: 'web integrator',
+        active: false,
     },
     {
         icon: faAws,
-        text: 'Amazon web service'
+        text: 'Amazon web service',
+        active: false,
     },
     {
         icon: fas.faFire,
-        text: 'Firebase'
+        text: 'Firebase',
+        active: false,
     },
     {
         icon: faFlutter,
-        text: 'Flutter'
+        text: 'Flutter',
+        active: false,
     },
     {
         icon: faGithub,
-        text: 'Github / gitLab'
+        text: 'Github / gitLab',
+        active: false,
     }
 ]

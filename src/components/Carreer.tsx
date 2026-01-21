@@ -4,12 +4,12 @@ import { CareerProps } from "../types/career.type";
 import '../assets/style/career.css';
 const Career: React.FC<CareerProps> = ({step, postTitle, period, skills, ...props}) =>{
     const [windowSize, setWindowSize] = useState<number>(window.innerWidth);
-    const handleResize = (): void =>{
+    const handleWindowResize = (): void =>{
         setWindowSize(window.innerWidth);
     }
     useEffect(()=>{
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
+        window.addEventListener('resize', handleWindowResize);
+        return () => window.removeEventListener('resize', handleWindowResize);
     }, [])   
     return (
         <div className={`career ${windowSize > 597 ? (step%2 === 0 ? 'left' : '') : ''}`} {...props}>

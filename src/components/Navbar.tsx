@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 //@ts-ignore
 import '../assets/style/navbar.css';
 import Button from "./Button";
-import { useEffect,  useRef,  useState } from "react";
+import { useEffect,  useState } from "react";
 //@ts-ignore
 import { MenuItems } from "../data/menuItems";
 import { MenuItemType } from "../types/navbar.types";
