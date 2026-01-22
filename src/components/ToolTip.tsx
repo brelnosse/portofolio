@@ -27,7 +27,6 @@ const ToolTip:React.FC<ToolTipProps> = ({isHovered, setIsHovered, title, active,
         let right = window.innerWidth-(ToolElem.getBoundingClientRect().x+ToolElem.offsetWidth+20);
         let left = ToolElem.getBoundingClientRect().x;
 
-        console.log(left)
         if(right < 0){
             ToolElem.classList.add('spaceRight');
             ToolElem.style.left = -ToolElem.offsetWidth+45 + 'px';

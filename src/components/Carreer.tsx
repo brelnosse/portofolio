@@ -9,27 +9,32 @@ const Career: React.FC<CareerProps> = ({step, postTitle, organization, period, s
     const handleWindowResize = useCallback((): void =>{
         setWindowSize(window.innerWidth); 
     }, []);
-    useEffect(()=>{
-        window.addEventListener('resize', handleWindowResize);
-        if(!careerRef.current) return;
-        const career:HTMLDivElement = careerRef.current as HTMLDivElement;
 
-        const observer = new IntersectionObserver((entries)=>{
-            const entry = entries[0];
+    useEffect(() => {
+  window.addEventListener('resize', handleWindowResize);
 
-            if(entry.isIntersecting){
-                career.classList.add('visible')
-            }
-        },{
-            threshold: 0.6
-        });
+  let observer: IntersectionObserver | null = null;
 
-        observer.observe(career);
-        return () => {
-            window.removeEventListener('resize', handleWindowResize);
-            observer.disconnect();
-        }
-    }, [handleWindowResize, windowSize])   
+  if (careerRef.current) {
+    const career = careerRef.current;
+    observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      if (entry.isIntersecting) {
+        career.classList.add('visible');
+      }else{
+        career.classList.remove('visible');
+      }
+    }, { threshold: 0.4 });
+
+    observer.observe(career);
+  }
+
+  return () => {
+    window.removeEventListener('resize', handleWindowResize);
+    if (observer) observer.disconnect();
+  };
+}, [handleWindowResize]);
+
     return (
         <div 
             ref={careerRef}

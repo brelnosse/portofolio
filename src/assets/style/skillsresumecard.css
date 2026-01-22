@@ -2,6 +2,9 @@
     max-width: 350px;
     height: 180px;
     cursor: pointer;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.8s linear ease-in;
 }
 .skills-resume_card img{
     width: 50px;
@@ -11,3 +14,7 @@
 .skills-resume_card p{
     color: var(--text-secondary);
 } 
+.skills-resume_card.visible {
+  transform: translateY(0);
+  opacity: 1;
+}

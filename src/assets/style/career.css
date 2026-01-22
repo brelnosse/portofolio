@@ -33,12 +33,12 @@
     gap: 0.625rem;
     margin-top: 0.625rem;
     margin-left: -1.3125rem;
-    transition: all 0.4s;
-    transform: translateX(0);
-    opacity: 1;
+    transition: all 0.6s;
+    transform: translateY(100px);
+    opacity: 0;
 }
 .scholar-career_container .career.visible{
-    transform: translateX(0px);
+    transform: translateY(0px);
     opacity: 1;
 }
 .career .timeline{

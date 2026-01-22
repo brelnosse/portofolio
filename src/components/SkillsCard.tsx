@@ -26,6 +26,9 @@ const SkillsCard:React.FC<SkillsCardProps> = ({icon, text, active, tooltip, skil
                     tooltip?.classList.remove('visible');
                     setIsHovered(false);    
                 }
+            }else{
+                tooltip?.classList.remove('visible');
+                setIsHovered(false);      
             }
         },{
             threshold: 0.5,

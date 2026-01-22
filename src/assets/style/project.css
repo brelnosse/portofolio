@@ -11,9 +11,9 @@
     box-shadow: 2px 2px 0px 0px var(--black);
     transform: translateY(5px);
 }
-.project:not(.project.disabled):hover .project-header{
+/* .project:not(.project.disabled):hover .project-header{
     opacity: 0.8;
-}
+} */
 .project.disabled::before{
     content: '';
     position: absolute;
@@ -30,16 +30,17 @@
     box-shadow: 5px 5px 0px 0px var(--black-secondary);
 }
 .project-header{
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.748);
     position: absolute;
     top: 0px;
     left: 0px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     width: 100%;
-    opacity: 0;
-    height: 100%;
+    opacity: 1;
+    height: fit-content;
+    padding: 8px 8px;
     gap: 10px;
     z-index: 99;
     transition: all 0.4s;
@@ -126,6 +127,7 @@
 }
 .project-footer .skills-card{
     padding: 8px;
+    font-size: 0.8em;
 }
 @media screen and (max-width: 615px) {
     .project{
