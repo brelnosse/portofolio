@@ -3,14 +3,14 @@
     --primary-dark-color: rgb(255, 230, 0);
     --underline-color: rgb(247, 222, 0);
     --border-color: black;
-    --border-secondary: rgb(85, 85, 85);
-    --black-secondary: rgb(85, 85, 85);
+    --border-secondary: rgb(72, 72, 72);
+    --black-secondary: rgb(72, 72, 72);
     --border-radius: 4px;
     --white: rgb(255, 255, 255);
     --black: black;
     --bg-color: rgb(255, 254, 215);
     --bg-fade-color: #fffaf5;
-    --text-secondary: rgb(98, 98, 98);
+    --text-secondary: rgb(69, 69, 69);
     --default: rgb(143, 143, 143);
 }
 

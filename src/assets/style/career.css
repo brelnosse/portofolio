@@ -97,8 +97,8 @@
 }
 @media  screen and (max-width: 720px) {
     .scholar-career{
-        max-width: 16.625rem;
-        min-width: 16.625rem;
+        max-width: 16rem;
+        min-width: 16rem;
     } 
     .scholar-career.card{
         padding: 0.99rem 0.6rem;

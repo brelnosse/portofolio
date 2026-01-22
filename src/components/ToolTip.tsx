@@ -24,15 +24,19 @@ const ToolTip:React.FC<ToolTipProps> = ({isHovered, setIsHovered, title, active,
     const resizingBox = useCallback(() =>{
         if(!ToolRef.current) return;
         const ToolElem = ToolRef.current as HTMLElement;
-        let right = window.innerWidth-(ToolElem.getBoundingClientRect().x+ToolElem.offsetWidth+10);
+        let right = window.innerWidth-(ToolElem.getBoundingClientRect().x+ToolElem.offsetWidth+20);
+        let left = ToolElem.getBoundingClientRect().x;
+
+        console.log(left)
         if(right < 0){
-            ToolElem.style.left = -ToolElem.offsetWidth+45 + 'px';
             ToolElem.classList.add('spaceRight');
-        }else{
+            ToolElem.style.left = -ToolElem.offsetWidth+45 + 'px';
+        }
+        else if(left < 0){
             ToolElem.style.left = '0px';
             ToolElem.classList.remove('spaceRight');            
         }
-    }, []);
+    }, [isHovered]);
 
     const handleScreenRezise = useCallback(()=>{
         if(!ToolRef.current) return;
@@ -42,9 +46,12 @@ const ToolTip:React.FC<ToolTipProps> = ({isHovered, setIsHovered, title, active,
         }
     }, [resizingBox]);
 
-    useLayoutEffect(()=>{
-        if(!ToolRef.current) return;
+    useLayoutEffect(() => {
+        if (!ToolRef.current || !isHovered) return;
         resizingBox();
+    }, [isHovered, resizingBox]);
+
+    useLayoutEffect(()=>{
         window.addEventListener('resize', handleScreenRezise);
         return () =>{
             window.removeEventListener('resize', handleScreenRezise);

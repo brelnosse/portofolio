@@ -6,7 +6,6 @@
     top: 0px;
     min-width: 9.37rem;
     border-radius: var(--border-radius);
-    z-index: 80;
     border: 2px solid var(--border-color);
     box-shadow: 3px 3px 0px 0px var(--black);
     transform: scale(0);

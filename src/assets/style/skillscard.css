@@ -20,12 +20,12 @@
 }
 .skills-card .tooltip.visible{
     transform: scale(1);
-    top: -5.3rem;
+    top: -6rem;
     opacity: 1;
 }
 
-/* @media screen and (max-width: 300px) {
-    .skills-card.active .tooltip.visible{
-        top: -100px;
+@media screen and (max-width: 300px) {
+    .skills-card .tooltip.visible{
+        top: -5.8rem;
     }
-} */
+}

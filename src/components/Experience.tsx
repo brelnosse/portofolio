@@ -16,8 +16,12 @@ const Experience: React.FC<ExperienceProps> = ({enterprise, period, postTitle, l
             <ul>
                 {skills.map((el: string, i: number) => <li key={el+i}>{el}</li>)}                
             </ul>
-            <b>Tools:</b>
-            {skills.map((el: string, i:number) => <span className="tools" key={el+i}>{el}</span>)}             
+            <div className="tools_container">
+                <b>Tools:</b>
+                <div className="toools">
+                    {skills.map((el: string, i:number) => <span className="tools" key={el+i}>{el}</span>)} 
+                </div>
+            </div>            
         </div>        
     );
 }
