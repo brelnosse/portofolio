@@ -13,9 +13,13 @@ const App: React.FC = () => {
                 setIsloading(false)
             }, 100)
         };
-        window.addEventListener('load', handleLoading);
-        return () => window.removeEventListener('load', handleLoading);
-    }, [isLoading])
+        if (document.readyState === "complete") {
+            handleLoading();
+        } else {
+            window.addEventListener("load", handleLoading);
+            return () => window.removeEventListener("load", handleLoading);
+        }
+    }, [])
 
     if(isLoading){
         return <PageLoader />;
