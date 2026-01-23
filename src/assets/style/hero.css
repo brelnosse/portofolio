@@ -1,0 +1,157 @@
+section.hero{
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 75vh;
+}
+.heroDescription h4{
+    display: flex;
+    font-size: 1.6em;
+    align-items: center;
+}
+.heroDescription h3{
+    font-size: 2em;
+}
+.heroDescription h1{
+    font-size: 6.5em;
+}
+.heroDescription .actions{
+    padding: 1.25rem 0px;
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+}
+.heroImg{
+    border-radius: 50%;
+    width: 18.125rem;
+    height: 18.125rem;
+    position: relative;
+    border: 0.25rem solid var(--border-color);
+}
+.heroImg .profil{
+    width: 100%;
+    border-radius: 50%;
+    height: 100%;
+    object-fit: cover;
+}
+.heroImg .s{
+    position: absolute;
+    bottom: -1.25rem;
+    left: 0px;
+}
+.heroImg .r{
+    position: absolute;
+    top: 0px;
+    right: -30px;
+}
+.letter {
+    display: inline-block;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.letter-hidden {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.letter-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Optional: Add a subtle scale effect */
+.letter-visible {
+    animation: letterPop 0.3s ease forwards;
+}
+
+@keyframes letterPop {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.8);
+    }
+    50% {
+        transform: translateY(-5px) scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Line animation for h4 */
+.hero-line {
+    display: inline-block;
+    height: 1px;
+    background-color: var(--border-color);
+    margin-right: 2px;
+    transition: width 0.8s ease;
+}
+
+.hero-line.line-hidden {
+    width: 0;
+}
+
+.hero-line.line-visible {
+    width: 9.375rem;
+}
+@media  screen and (max-width: 940px) {
+    section.hero{
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 2.5rem;
+        padding-top: 5.625rem;
+    }
+    .heroDescription{
+       text-align: center;
+    }
+    .heroDescription h1{
+        font-size: 5em;
+        line-height: 5.625rem;
+        text-align: center;
+    }
+    .heroDescription .actions{
+        padding: 1.25rem 0px;
+        justify-content: center;
+    }
+    .heroImg{
+        width: 18.125rem;
+        height: 18.125rem;
+        margin: 2.5rem 0px;
+    }
+}
+@media  screen and (max-width: 720px) {
+    .hero-line.line-visible {
+        width: 5rem;
+    }
+    .heroDescription h4::before{
+        width: 5rem;
+    }
+}
+@media screen and (max-width: 597px) {
+    .heroDescription h4{
+        flex-direction: column;
+        padding: 1.25rem 0px;
+        position: relative;
+    }
+    .heroDescription h4::before{
+        position: absolute;
+        margin: 0px;
+        width: 6.3125rem;
+        bottom: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .hero-line {
+        position: absolute;
+        margin: 0px;
+        bottom: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .hero-line.line-visible {
+        width: 6.3125rem;
+    }
+}

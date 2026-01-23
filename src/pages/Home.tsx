@@ -20,6 +20,7 @@ import TabNavigation from '../components/TabNavigation';
 import { projects } from '../data/projects';
 import { ProjectProps } from '../types/project.type';
 import Project from '../components/Project';
+import Hero from '../components/Hero';
 const Home:React.FC = () =>{
     const scrollIndicator = useRef<HTMLSpanElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
@@ -70,24 +71,7 @@ const Home:React.FC = () =>{
     return (
         <div className="container">
             <Navbar />
-            <section className="hero">
-                <div className="heroDescription">
-                    <h3>Hi, There</h3>
-                    <h1>I'm <span className="primary">Brel nosse</span></h1>
-                    <h4>
-                        fullstack web & mobile app developer
-                    </h4>
-                    <div className="actions">
-                        <Button type='default' valueText='Download cv'/>
-                        <Button type='light' valueText='Download portofolio'/>
-                    </div>
-                </div>
-                <div className="heroImg">
-                    <img src={require('../assets/images/square.png')} alt="squares" style={{height: '80px', width: '100px'}} className='s'/>
-                    <img src={require('../assets/images/d.webp')} alt="brel nosse" className='profil'/>
-                    <img src={require('../assets/images/star.png')} alt="star" style={{height: '120px', width: '120px'}} className='r'/>
-                </div>
-            </section>
+            <Hero/>
             <section className='resume'>
                 <Underlined text='What Do I Do ?'/>
                 <div className="skillsResume_container">

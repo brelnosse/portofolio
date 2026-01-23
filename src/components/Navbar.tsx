@@ -2,78 +2,180 @@ import { Link, useLocation } from "react-router-dom";
 //@ts-ignore
 import '../assets/style/navbar.css';
 import Button from "./Button";
-import { useEffect,  useState } from "react";
+import { useEffect, useState } from "react";
 //@ts-ignore
 import { MenuItems } from "../data/menuItems";
 import { MenuItemType } from "../types/navbar.types";
-import {fas} from '@fortawesome/free-solid-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons';
 //@ts-ignore
 import 'animate.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const NavbarItem:React.FC<MenuItemType> = ({icon, path, displayText}) => {
+const NavbarItem: React.FC<MenuItemType & { animationDelay: number; isResponsive: boolean; isClosing: boolean }> = ({ 
+    icon, 
+    path, 
+    displayText, 
+    animationDelay,
+    isResponsive,
+    isClosing 
+}) => {
     const location = useLocation();
-    const [isHovered, setIsHovered] = useState(false); 
-    const isActive = (current: string): string =>{
+    const [isHovered, setIsHovered] = useState(false);
+    const [isAnimated, setIsAnimated] = useState(false);
+
+    useEffect(() => {
+        if (isClosing) {
+            // When closing, start visible then hide
+            setIsAnimated(true);
+            const timer = setTimeout(() => {
+                setIsAnimated(false);
+            }, animationDelay);
+            return () => clearTimeout(timer);
+        } else {
+            // When opening, start hidden then show
+            setIsAnimated(false);
+            const timer = setTimeout(() => {
+                setIsAnimated(true);
+            }, animationDelay);
+            return () => clearTimeout(timer);
+        }
+    }, [animationDelay, isClosing]);
+
+    const isActive = (current: string): string => {
         return (current === location.pathname ? 'active' : '');
     }
+
     return (
         <li 
-            className={`navbar-item ${isActive(path)} ${isHovered && 'isHovered'}`}
+            className={`navbar-item ${isActive(path)} ${isHovered && 'isHovered'} ${isAnimated ? (isResponsive ? 'item-visible-responsive' : 'item-visible') : (isResponsive ? 'item-hidden-responsive' : 'item-hidden')}`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}>
-                <span>
-                    <FontAwesomeIcon icon={icon}/>
-                </span>
-                <Link to={path}>{displayText}</Link>
-            </li>
+            <span>
+                <FontAwesomeIcon icon={icon}/>
+            </span>
+            <Link to={path}>{displayText}</Link>
+        </li>
     );
 }
 
-const Navbar: React.FC = () =>{
+const Navbar: React.FC = () => {
     const [isVisible, setIsVisible] = useState<boolean>(false);
+    const [showTitle, setShowTitle] = useState<boolean>(false);
+    const [showButton, setShowButton] = useState<boolean>(false);
+    const [isResponsive, setIsResponsive] = useState<boolean>(false);
+    const [menuKey, setMenuKey] = useState<number>(0);
+    const [isClosing, setIsClosing] = useState<boolean>(false);
 
-    useEffect(()=>{
-        if(window.innerWidth <= 915){
-            setIsVisible(false)
-        }else{
-            setIsVisible(true)
-        }
-        const handleResize = ():void => {
-            if(window.innerWidth <= 915){
-                setIsVisible(false)
-            }else{
-                setIsVisible(true)
+    useEffect(() => {
+        // Show title first
+        const titleTimer = setTimeout(() => {
+            setShowTitle(true);
+        }, 50);
+
+        // Show button after all menu items
+        const buttonTimer = setTimeout(() => {
+            setShowButton(true);
+        }, 50 + (MenuItems.length * 150) + 200);
+
+        return () => {
+            clearTimeout(titleTimer);
+            clearTimeout(buttonTimer);
+        };
+    }, []);
+
+    useEffect(() => {
+        const checkResponsive = () => {
+            if (window.innerWidth <= 915) {
+                setIsVisible(false);
+                setIsResponsive(true);
+            } else {
+                setIsVisible(true);
+                setIsResponsive(false);
             }
+        };
+        
+        checkResponsive();
+        
+        const handleResize = (): void => {
+            checkResponsive();
         }
-        window.addEventListener('resize',  handleResize)
+        window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
-    }, [])
-    const handleShowMenu = (): void =>{
-        setIsVisible(prev => !prev);
+    }, []);
+
+    const handleShowMenu = (): void => {
+        if (isVisible && isResponsive) {
+            // If closing the menu
+            setIsClosing(true);
+            // Wait for animations to complete before hiding
+            setTimeout(() => {
+                setIsVisible(false);
+                setIsClosing(false);
+            }, MenuItems.length * 100 + 200);
+        } else {
+            // If opening the menu
+            setIsClosing(false);
+            setIsVisible(true);
+            setMenuKey(prev => prev + 1);
+        }
     }
+
     return (
         <nav className="navbar-container">
-            <h2 className="">Portofolio</h2>
+            <h2 className={`navbar-title ${showTitle ? 'title-visible' : 'title-hidden'}`}>
+                Portofolio
+            </h2>
             <ul className={`navbar-item_container ${isVisible ? 'show' : 'hide'}`}>
                 <div className="r-nav-header">
                     <h2>Portofolio</h2>
-                    <span className="close-r-menu">
-
-                    </span>
+                    <span className="close-r-menu"></span>
                 </div>
                 {
-                    MenuItems.map((el:MenuItemType, i: number) => {
-                        return <NavbarItem icon={el.icon} path={el.path} displayText={el.displayText} key={`${el.path+i}`}/>
+                    MenuItems.map((el: MenuItemType, i: number) => {
+                        // For closing, reverse the order of delays
+                        const delay = isClosing 
+                            ? (MenuItems.length - 1 - i) * 100 
+                            : (isResponsive ? i * 100 : 100 + (i + 1) * 150);
+                        
+                        return (
+                            <NavbarItem 
+                                icon={el.icon} 
+                                path={el.path} 
+                                displayText={el.displayText} 
+                                animationDelay={delay}
+                                isResponsive={isResponsive}
+                                isClosing={isClosing}
+                                key={`${el.path + i + menuKey}`}
+                            />
+                        );
                     })
                 }
-                <li className="action"> <Button type="default" valueText="Contact Me" textStyle="bold" style={{margin: '10px 0px'}}/></li>
+                <li className={`action ${showButton ? 'button-visible' : 'button-hidden'}`}>
+                    <Button 
+                        type="default" 
+                        valueText="Contact Me" 
+                        textStyle="bold" 
+                        style={{ margin: '10px 0px' }}
+                    />
+                </li>
             </ul>
             <div className="navbar-actions_container">
-                <Button type="default" valueText="Contact Me" textStyle="bold" id="contactMeNavbtn"/>
-                <Button type="default" valueIcon={isVisible ? fas.faTimes : fas.faBars} id="responsive-action" onClick={handleShowMenu} style={{zIndex: '999', position: 'relative'}}/>
+                <Button 
+                    type="default" 
+                    valueText="Contact Me" 
+                    textStyle="bold" 
+                    id="contactMeNavbtn"
+                />
+                <Button 
+                    type="default" 
+                    valueIcon={isVisible ? fas.faTimes : fas.faBars} 
+                    id="responsive-action" 
+                    onClick={handleShowMenu} 
+                    style={{ zIndex: '999', position: 'relative' }}
+                />
             </div>
         </nav>
     );
 }
+
 export default Navbar;

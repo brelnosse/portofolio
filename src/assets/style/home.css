@@ -8,60 +8,7 @@ section:nth-of-type(odd){
 section:nth-of-type(even){
     background-color: var(--bg-fade-color);
 }
-section.hero{
-    overflow: hidden;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    height: 75vh;
-}
-.heroDescription h4{
-    display: flex;
-    font-size: 1.6em;
-    align-items: center;
-}
-.heroDescription h4::before{
-    content: '';
-    width: 9.375rem;
-    height: 1px;
-    margin-right: 2px;
-    background-color: var(--border-color);
-}
-.heroDescription h3{
-    font-size: 2em;
-}
-.heroDescription h1{
-    font-size: 6.5em;
-}
-.heroDescription .actions{
-    padding: 1.25rem 0px;
-    display: flex;
-    align-items: center;
-    gap: 0.625rem;
-}
-.heroImg{
-    border-radius: 50%;
-    width: 18.125rem;
-    height: 18.125rem;
-    position: relative;
-    border: 0.25rem solid var(--border-color);
-}
-.heroImg .profil{
-    width: 100%;
-    border-radius: 50%;
-    height: 100%;
-    object-fit: cover;
-}
-.heroImg .s{
-    position: absolute;
-    bottom: -1.25rem;
-    left: 0px;
-}
-.heroImg .r{
-    position: absolute;
-    top: 0px;
-    right: -30px;
-}
+
 section.resume{
     display: flex;
     flex-direction: column;
@@ -146,30 +93,6 @@ section.education{
     }
 }
 @media  screen and (max-width: 940px) {
-    section.hero{
-        flex-direction: column;
-        align-items: center;
-        height: auto;
-        padding: 2.5rem;
-        padding-top: 5.625rem;
-    }
-    .heroDescription{
-       text-align: center;
-    }
-    .heroDescription h1{
-        font-size: 5em;
-        line-height: 5.625rem;
-        text-align: center;
-    }
-    .heroDescription .actions{
-        padding: 1.25rem 0px;
-        justify-content: center;
-    }
-    .heroImg{
-        width: 18.125rem;
-        height: 18.125rem;
-        margin: 2.5rem 0px;
-    }
     section.skills{
         padding: 2.5rem 40px;
     }
@@ -179,9 +102,6 @@ section.education{
     }
 }
 @media  screen and (max-width: 720px) {
-    .heroDescription h4::before{
-        width: 5rem;
-    }
     .scholar-career{
         max-width: 15.625rem;
         min-width: 15.625rem;
@@ -214,18 +134,5 @@ section.education{
     .career .scholar-career{
         flex-wrap: wrap;
         min-width: calc(100vw - 6.25rem);
-    }
-    .heroDescription h4{
-        flex-direction: column;
-        padding: 1.25rem 0px;
-        position: relative;
-    }
-    .heroDescription h4::before{
-        position: absolute;
-        margin: 0px;
-        width: 6.3125rem;
-        bottom: 0px;
-        left: 50%;
-        transform: translateX(-50%);
     }
 }

@@ -119,6 +119,68 @@
 #responsive-action{
     display: none;
 }
+.navbar-title {
+    transition: all 0.5s ease;
+}
+
+.navbar-title.title-hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.navbar-title.title-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.navbar-title {
+    transition: all 0.5s ease;
+}
+
+.navbar-title.title-hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.navbar-title.title-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Menu items animation - Desktop */
+.navbar-item.item-hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.navbar-item.item-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.4s ease;
+}
+
+/* Menu items animation - Responsive (slide from left) */
+.navbar-item.item-hidden-responsive {
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
+.navbar-item.item-visible-responsive {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.5s ease;
+}
+
+/* Button animation - slides from top */
+.action.button-hidden {
+    opacity: 0;
+    transform: translateY(-30px);
+}
+
+.action.button-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.5s ease;
+}
 @media screen and (max-width: 915px){
     .navbar-container{
         height: 3.75rem;
@@ -153,5 +215,15 @@
         flex-direction: column;
         background-color: var(--bg-fade-color);
         padding: 0px 1.25rem;
+    }
+    .action.button-hidden {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    
+    .action.button-visible {
+        opacity: 1;
+        transform: translateX(0);
+        transition: all 0.5s ease;
     }
 }
