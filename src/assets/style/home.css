@@ -9,28 +9,6 @@ section:nth-of-type(even){
     background-color: var(--bg-fade-color);
 }
 
-section.resume{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 5rem 1.875rem;
-}
-.skillsResume_container{
-    padding: 2.5rem 0px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1.25rem;
-    justify-content: center;
-}
-.skills_container{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
-    gap: 0.9375rem;
-    padding: 2.5rem 0px;
-}
 section.education{
     padding: 5rem 1.25rem;
 }
@@ -88,14 +66,8 @@ section.education{
     section.projects{
         padding: 3.75rem 1.25rem;
     }
-    .heroDescription h1{
-        font-size: 5.5em;
-    }
 }
 @media  screen and (max-width: 940px) {
-    section.skills{
-        padding: 2.5rem 40px;
-    }
     .scholar-career{
         max-width: 18.75rem;
         min-width: 18.75rem;

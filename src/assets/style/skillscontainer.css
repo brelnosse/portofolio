@@ -1,0 +1,13 @@
+.skills_container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 0.9375rem;
+    padding: 2.5rem 0px;
+}
+@media  screen and (max-width: 940px) {
+    section.skills{
+        padding: 2.5rem 40px;
+    }
+}

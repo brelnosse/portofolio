@@ -21,6 +21,9 @@
     font-family: 'playfair';
 }
 
+*:focus{
+    outline: none;
+}
 #root{
     max-width: 1600px;
     margin: auto;

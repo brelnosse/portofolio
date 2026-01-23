@@ -21,6 +21,8 @@ import { projects } from '../data/projects';
 import { ProjectProps } from '../types/project.type';
 import Project from '../components/Project';
 import Hero from '../components/Hero';
+import SkillResumeContainer from '../components/SkillResumeContainer';
+import SkillsContainer from '../components/SkillsContainer';
 const Home:React.FC = () =>{
     const scrollIndicator = useRef<HTMLSpanElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
@@ -72,33 +74,8 @@ const Home:React.FC = () =>{
         <div className="container">
             <Navbar />
             <Hero/>
-            <section className='resume'>
-                <Underlined text='What Do I Do ?'/>
-                <div className="skillsResume_container">
-                    {
-                        skillsResumeItems.map((el:SkillsResumeCardprops, i:number) => {
-                            return <SkillsResumeCard image={el.image} title={el.title} description={el.description} key={`${el.title+i}`}/>
-                        })
-                    }
-                </div>
-            </section>
-            <section className='skills'>
-                <Underlined text='Skills'/>
-                <div className="skills_container">
-                    {
-                        skillsData.map((el:SkillsCardProps, i:number) => {
-                            return  <SkillsCard 
-                                        icon={el.icon} 
-                                        text={el.text} 
-                                        key={`${el.text+i}`} 
-                                        tooltip={el.tooltip} 
-                                        skillsData={skillsData}
-                                        setSkillsData={setSkillsData}
-                                        active={el.active}/>
-                        })
-                    }
-                </div>
-            </section>
+            <SkillResumeContainer skillsResumeItems={skillsResumeItems}/>
+            <SkillsContainer skillsData={skillsData} setSkillsData={setSkillsData}/>
             <section className='education' ref={educationSectionRef}>
                 <Underlined text='Education'/>
                 <div className="scholar-career_container">
