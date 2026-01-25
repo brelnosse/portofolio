@@ -1,5 +1,5 @@
 .btn{
-    color: var(--border-color);
+    color: var(--white);
     background-color: var(--primary-color);
     padding: 0.5rem 0.8rem;
     border: 1px solid var(--border-color);
@@ -20,5 +20,6 @@
 }
 
 .btn.btn-light{
+    color: var(--black);
     background-color: var(--white);
 }

@@ -10,6 +10,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 //@ts-ignore
 import 'animate.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { COLORS } from "../utils/colors";
 
 const NavbarItem: React.FC<MenuItemType & { animationDelay: number; isResponsive: boolean; isClosing: boolean }> = ({ 
     icon, 
@@ -51,7 +52,7 @@ const NavbarItem: React.FC<MenuItemType & { animationDelay: number; isResponsive
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}>
             <span>
-                <FontAwesomeIcon icon={icon}/>
+                <FontAwesomeIcon icon={icon} color={COLORS.primaryColor}/>
             </span>
             <Link to={path}>{displayText}</Link>
         </li>
