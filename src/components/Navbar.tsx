@@ -13,35 +13,36 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { COLORS } from "../utils/colors";
 import { SectionContext } from "../context/SectionContext";
 
-const NavbarItem: React.FC<MenuItemType & { animationDelay: number; isResponsive: boolean; isClosing: boolean;     activeSection : string; 
-    setActiveSection : (b: string) => void;}> = ({ 
+const NavbarItem: React.FC<MenuItemType & { animationDelay: number; isResponsive: boolean; isClosing: boolean;activeSection : string; setActiveSection : (b: string) => void; setIsVisible: (v: boolean) => void; setIsClosing: (v: boolean) => void}> = ({ 
     icon, 
     displayText, 
     animationDelay,
     isResponsive,
     isClosing ,
     activeSection,
-    setActiveSection
+    setActiveSection,
+    setIsVisible,
+    setIsClosing
 }) => {
     const [isHovered, setIsHovered] = useState(false);
     const [isAnimated, setIsAnimated] = useState(false);
-    const liRef = useRef<HTMLLIElement>(null);
 
     const handleClick = () => {
         const sectionClassName = displayText.toLowerCase().trim() === 'home' ? 'hero' : displayText.toLowerCase().trim() ;
         const section = document.querySelector('.'+sectionClassName);
 
         if(section)
-        window.scrollTo({
-            behavior: 'smooth',
-            top: section?.getBoundingClientRect().y + window.scrollY
-        });
-
+            window.scrollTo({
+                behavior: 'smooth',
+                top: section?.getBoundingClientRect().y + window.scrollY
+            });
+        setIsClosing(true);
+        setTimeout(() => {
+            setIsVisible(false);
+            setIsClosing(false);
+        }, MenuItems.length * 100 + 200);
     }
-    useEffect(()=>{
-        if(!liRef.current) return;
-        // const liElem = liRef.current as HTMLElement;
-    })
+
     useEffect(() => {
         if (isClosing) {
             setIsAnimated(true);
@@ -64,7 +65,6 @@ const NavbarItem: React.FC<MenuItemType & { animationDelay: number; isResponsive
 
     return (
         <li 
-            ref={liRef}
             className={`navbar-item${isActive(displayText)} ${isHovered && 'isHovered'} ${isAnimated ? (isResponsive ? 'item-visible-responsive' : 'item-visible') : (isResponsive ? 'item-hidden-responsive' : 'item-hidden')}`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
@@ -125,15 +125,12 @@ const Navbar: React.FC = () => {
 
     const handleShowMenu = (): void => {
         if (isVisible && isResponsive) {
-            // If closing the menu
             setIsClosing(true);
-            // Wait for animations to complete before hiding
             setTimeout(() => {
                 setIsVisible(false);
                 setIsClosing(false);
             }, MenuItems.length * 100 + 200);
         } else {
-            // If opening the menu
             setIsClosing(false);
             setIsVisible(true);
             setMenuKey(prev => prev + 1);
@@ -167,6 +164,8 @@ const Navbar: React.FC = () => {
                                 isClosing={isClosing}
                                 activeSection={context.activeSection}
                                 setActiveSection={context.setActiveSection}
+                                setIsVisible={setIsVisible}
+                                setIsClosing={setIsClosing}
                                 key={`${el.path + i + menuKey}`}
                             />
                         );
