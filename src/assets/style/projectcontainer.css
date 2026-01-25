@@ -1,0 +1,9 @@
+
+.projects-container_header{
+    position: sticky;
+    top: 3.75rem;
+    background-color: var(--bg-fade-color);
+    z-index: 102;
+}
+.projects_container .my-projects{
+}

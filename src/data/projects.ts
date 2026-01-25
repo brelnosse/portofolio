@@ -8,7 +8,7 @@ export const projects:ProjectProps[] = [
         type: 'websites-or-web-apps',
         imgUrl: require('../assets/images/iucbibli.png'),
         url: 'h',
-        githubUrl: '',
+        githubUrl: 'h',
         skills: [
             {
                 icon: faPhp,
@@ -45,79 +45,19 @@ export const projects:ProjectProps[] = [
         type: 'websites-or-web-apps',
         imgUrl: require('../assets/images/d.webp'),
         url: 'h',
-        githubUrl: '',
-        skills: [
-            {
-                icon: faPhp,
-                text: 'Php'
-            }
-        ] 
-    },    {
-        title: 'Miam',
-        type: 'websites-or-web-apps',
-        imgUrl: require('../assets/images/d.webp'),
-        url: 'h',
-        githubUrl: '',
-        skills: [
-            {
-                icon: faPhp,
-                text: 'Php'
-            }
-        ] 
-    },    {
-        title: 'Miam',
-        type: 'websites-or-web-apps',
-        imgUrl: require('../assets/images/d.webp'),
-        url: 'h',
-        githubUrl: '',
-        skills: [
-            {
-                icon: faPhp,
-                text: 'Php'
-            }
-        ] 
-    },    {
-        title: 'Miam',
-        type: 'websites-or-web-apps',
-        imgUrl: require('../assets/images/d.webp'),
-        url: 'h',
-        githubUrl: '',
-        skills: [
-            {
-                icon: faPhp,
-                text: 'Php'
-            }
-        ] 
-    },    {
-        title: 'Miam',
-        type: 'websites-or-web-apps',
-        imgUrl: require('../assets/images/d.webp'),
-        url: 'h',
-        githubUrl: '',
-        skills: [
-            {
-                icon: faPhp,
-                text: 'Php'
-            }
-        ] 
-    },    {
-        title: 'Miam',
-        type: 'websites-or-web-apps',
-        imgUrl: require('../assets/images/d.webp'),
-        url: 'h',
-        githubUrl: '',
-        skills: [
-            {
-                icon: faPhp,
-                text: 'Php'
-            }
-        ] 
-    },    {
-        title: 'Miam',
-        type: 'websites-or-web-apps',
-        imgUrl: require('../assets/images/d.webp'),
-        url: 'h',
         githubUrl: 'h',
+        skills: [
+            {
+                icon: faPhp,
+                text: 'Php'
+            }
+        ] 
+    },    {
+        title: 'Thayipizza',
+        type: 'websites-or-web-apps',
+        imgUrl: require('../assets/images/d.webp'),
+        url: 'h',
+        githubUrl: '',
         skills: [
             {
                 icon: faPhp,

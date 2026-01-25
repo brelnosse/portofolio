@@ -12,7 +12,6 @@ const Experience: React.FC<ExperienceProps> = ({enterprise, period, postTitle, l
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     setIsVisible(true);
-                    // observer.unobserve(entry.target); 
                 }else{
                     setIsVisible(false);
                 }

@@ -1,138 +1,92 @@
-.project{
-    border-radius: 5px;
-    overflow: hidden;
+.project {
+    display: flex;
     position: relative;
-    border: 2px solid var(--black);
-    box-shadow: 5px 5px 0px 0px var(--black);
-    cursor: pointer;
-    transition: all 0.2s;
+    margin-top: 100px;
 }
-.project:hover{
-    box-shadow: 2px 2px 0px 0px var(--black);
-    transform: translateY(5px);
-}
-/* .project:not(.project.disabled):hover .project-header{
-    opacity: 0.8;
-} */
-.project.disabled::before{
-    content: '';
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.752);
-    width: 100%;
-    z-index: 10;
-}
-.project.disabled{
-    border-color: var(--border-secondary);
-    cursor: not-allowed;
-    box-shadow: 5px 5px 0px 0px var(--black-secondary);
-}
-.project-header{
-    background-color: rgba(255, 255, 255, 0.748);
-    position: absolute;
-    top: 0px;
-    left: 0px;
+
+.projectDescription {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
     align-items: center;
-    width: 100%;
-    opacity: 1;
-    height: fit-content;
-    padding: 8px 8px;
-    gap: 10px;
-    z-index: 99;
-    transition: all 0.4s;
+    justify-content: flex-start;
+    flex: 1;
+    flex-wrap: wrap;
 }
-.project img{
-    height: 100%;
-    object-fit: cover;
-    width: 100%;
-    object-position: top left;
-}
-.project:nth-of-type(1) {
-    grid-column-start: 1;
-    grid-column-end: 5;
-    grid-row-start: 1;
-    grid-row-end: 3;
-}
-
-.project:nth-of-type(2) {
-    grid-column-start: 5;
-    grid-column-end: 7;
-    grid-row-start: 1;
-    grid-row-end: 3;
-}
-
-.project:nth-of-type(3) {
-    grid-column-start: 3;
-    grid-column-end: 7;
-    grid-row-start: 3;
-    grid-row-end: 6;
-}
-
-.project:nth-of-type(4) {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 3;
-    grid-row-end: 6;
-}
-
-.project:nth-of-type(5) {
-    grid-column-start: 1;
-    grid-column-end: 7;
-    grid-row-start: 6;
-    grid-row-end: 7;
-}
-
-.project:nth-of-type(6) {
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 7;
-    grid-row-end: 9;
-}
-
-.project:nth-of-type(7) {
-    grid-column-start: 4;
-    grid-column-end: 7;
-    grid-row-start: 7;
-    grid-row-end: 8;
-}
-
-.project:nth-of-type(8) {
-    grid-column-start: 1;
-    grid-column-end: 7;
-    grid-row-start: 9;
-    grid-row-end: 11;
-}
-
-.project:nth-of-type(9) {
-    grid-column-start: 4;
-    grid-column-end: 7;
-    grid-row-start: 8;
-    grid-row-end: 9;
-}
-
-.project-footer{
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    width: 100%;
-    padding: 15px 10px;
+.projectDescription .p-title {
+    position: sticky;
+    height: 600px;
+    top: 160px;
+    gap: 15px;
+    background-color: transparent;
     display: flex;
-    gap: 5px;
-    border-top: 2px solid var(--black);
-    background-color: var(--bg-fade-color);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: none;
+    transform-origin: center center;
+    will-change: transform, opacity;
 }
-.project-footer .skills-card{
-    padding: 8px;
-    font-size: 0.8em;
+
+.projectDescription .p-title h3{
+    font-size: 4rem;
+
 }
-@media screen and (max-width: 615px) {
-    .project{
-        grid-column: 1 / -1 !important;
-        min-height: 300px;
-        grid-row: auto !important;
-    }
+.projectTextDescription {
+    background-color: white;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0.3125rem 0.3125rem 0px 0px var(--black);
+    padding: 40px;
+    min-width: 400px;
+    border-radius: 4px;
+    position: sticky;
+    z-index: 1;
+    margin-top: 500px;
 }
+
+.projectTextDescription:last-of-type {
+    margin-bottom: 200px;
+}
+.cube-container {
+    width: 500px;
+    height: 500px;
+    position: sticky;
+    top: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    perspective-origin: center; 
+}
+
+.cube {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    will-change: transform;
+    transform: rotateX(20deg) rotateY(30deg);
+}
+.cube:hover{
+    transform: rotateX(10deg) rotateY(45deg);
+}
+.side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* Un fond très léger et flouté pour le côté premium */
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.1); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #2A5B69; /* Votre bleu rassurant */
+}
+
+/* Exemple de faces harmonisées */
+.front  { transform: translateZ(150px); background: rgba(158, 199, 228, 0.8); }
+.back   { transform: translateZ(-150px); background: rgba(178, 215, 136, 0.8); }
+.left   { transform: rotateY(90deg) translateZ(150px); background: rgba(164, 148, 122, 0.8); }
+.right  { transform: rotateY(-90deg) translateZ(150px); background: rgba(243, 229, 245, 0.8); }
+.top    { transform: rotateX(90deg) translateZ(150px); background: rgba(142, 92, 67, 0.8); }
+.bottom { transform: rotateX(-90deg) translateZ(150px); background: rgba(224, 242, 241, 0.8); }
