@@ -9,42 +9,6 @@ section:nth-of-type(even){
     background-color: var(--bg-fade-color);
 }
 
-section.education{
-    padding: 5rem 1.25rem;
-}
-.scholar-career_container {
-    padding: 2.5rem 0.625rem;
-    position: relative;
-    display: flex;
-    justify-content: center;
-}
-.scholar-career_container .sliderLevel{
-    height: auto;
-    width: 0.3125rem;
-    border-radius: 0.625rem;
-    background-color: var(--primary-color);
-    border: 2px solid var(--black);
-    margin: auto;
-    /* padding: 60px 0px; */
-    position: relative;
-}
-.scholar-career_container .scrolling-indicator {
-    background-color: var(--primary-color);
-    border: 2px solid var(--black);
-    display: block;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%); 
-    transition: transform 0.1s ease-out;
-    width: 1.875rem;
-    height: 1.875rem;
-    border-radius: 50%;
-    z-index: 2;
-    will-change: transform; 
-}
-.experience_container{
-    padding: 3.75rem 0px;
-}
 .projects-container_header{
     position: sticky;
     top: 3.75rem;
@@ -60,36 +24,11 @@ section.education{
     width: 100%;
 }
 @media screen and (max-width: 1100px){
-    section.experiences{
-        padding: 60px;
-    }
     section.projects{
         padding: 3.75rem 1.25rem;
     }
 }
-@media  screen and (max-width: 940px) {
-    .scholar-career{
-        max-width: 18.75rem;
-        min-width: 18.75rem;
-    }
-}
-@media  screen and (max-width: 720px) {
-    .scholar-career{
-        max-width: 15.625rem;
-        min-width: 15.625rem;
-    } 
-    .scholar-career.card{
-        padding: 0.93675rem 0.625rem;
-        font-size: 1em;
-    }
-    .scholar-career .step{
-        font-size: 1.8em;
-        min-height: 2.5rem;
-        min-width: 2.5rem;
-        height: 2.5rem;
-        width: 2.5rem;
-    } 
-}
+
 @media screen and (max-width: 615px) {
     .projects_container .my-projects{
         grid-template-columns: 1fr;
@@ -97,14 +36,5 @@ section.education{
     }
     section.projects{
         padding: 3.75rem 0.625rem;
-    }
-}
-@media screen and (max-width: 597px) {
-    .scholar-career_container div.sliderLevel{
-        margin-left: 0px;
-    }
-    .career .scholar-career{
-        flex-wrap: wrap;
-        min-width: calc(100vw - 6.25rem);
     }
 }

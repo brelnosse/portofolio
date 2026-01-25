@@ -3,7 +3,7 @@ section.hero{
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    height: 75vh;
+    height: calc(90vh - 90px);
 }
 .heroDescription h4{
     display: flex;

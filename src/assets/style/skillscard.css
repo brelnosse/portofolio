@@ -16,12 +16,14 @@
 .skills-card:hover, .skills-card.active{
     background-color: var(--primary-color);
     transform: translateY(3px);
+    color: var(--white);
     box-shadow: 1px 1px 0px 0px var(--black);
 }
 .skills-card .tooltip.visible{
     transform: scale(1);
     top: -6rem;
     opacity: 1;
+    color: var(--black);
 }
 
 @media screen and (max-width: 300px) {

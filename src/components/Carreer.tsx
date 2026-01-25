@@ -24,7 +24,7 @@ const Career: React.FC<CareerProps> = ({step, postTitle, organization, period, s
       }else{
         career.classList.remove('visible');
       }
-    }, { threshold: 0.4 });
+    }, { threshold: 0.2 });
 
     observer.observe(career);
   }
@@ -42,7 +42,7 @@ const Career: React.FC<CareerProps> = ({step, postTitle, organization, period, s
             {...props}>
             <span className="indicator"></span>
             <div className="card scholar-career">
-                <span className='step'>{step}</span>
+                {/* <span className='step'>{step}</span> */}
                 <div className="scholar-career_text">
                     <h3>{postTitle}</h3>
                     <div className="timeline">
