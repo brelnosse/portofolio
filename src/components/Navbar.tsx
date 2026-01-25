@@ -34,7 +34,7 @@ const NavbarItem: React.FC<MenuItemType & { animationDelay: number; isResponsive
         if(section)
             window.scrollTo({
                 behavior: 'smooth',
-                top: section?.getBoundingClientRect().y + window.scrollY
+                top: section?.getBoundingClientRect().y + window.scrollY - 84
             });
         setIsClosing(true);
         setTimeout(() => {
