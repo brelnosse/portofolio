@@ -4,9 +4,13 @@ import Underlined from "./Underlined";
 import { experiences } from '../data/experiences';
 //@ts-ignore
 import '../assets/style/experienceContainer.css';
+import { useRef } from "react";
+import { useSection } from "../hooks/useSection";
 const ExperienceContainer: React.FC = () => {
+    const ExperienceContainerRef = useRef<HTMLElement>(null);
+    useSection(ExperienceContainerRef, 'experiences');
     return (
-            <section className="experiences">
+            <section className="experiences" ref={ExperienceContainerRef}>
                 <Underlined text='Experience'/>
                 <div className="experience_container">
                    {

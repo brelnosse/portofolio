@@ -1,47 +1,76 @@
-import { faHtml5, faJs, faPhp } from "@fortawesome/free-brands-svg-icons";
+import { faCss, faCss3, faHtml5, faJs, faNodeJs, faPhp, faReact } from "@fortawesome/free-brands-svg-icons";
 import { ProjectProps } from "../types/project.type";
-import { faChartArea } from "@fortawesome/free-solid-svg-icons";
+import { faChartArea, faChartLine, faDatabase, faFire, faMoneyBill1Wave } from "@fortawesome/free-solid-svg-icons";
+import { text } from "stream/consumers";
 
 export const projects:ProjectProps[] = [
     {
         title: 'Miam',
         type: 'websites-or-web-apps',
         imgUrl: require('../assets/images/iucbibli.png'),
-        url: 'h',
-        githubUrl: 'h',
+        url: 'https://miamcmr.netlify.app',
+        githubUrl: '',
         skills: [
             {
-                icon: faPhp,
-                text: 'Php'
+                icon: faJs,
+                text: 'Typescript'
             },
             {
-                icon: faHtml5,
-                text: 'HTML'
+                icon: faReact,
+                text: 'React.js'
+            },
+            {
+                icon: faNodeJs,
+                text: 'Node.js'
+            },
+            {
+                icon: faDatabase,
+                text: 'MongoDB'
+            },
+            {
+                icon: faCss3,
+                text: 'CSS3'
+            },
+            {
+                icon: faChartLine,
+                text: 'Chart.js'                
+            },
+        ] 
+    },
+    {
+        title: 'Thayipizza',
+        type: 'websites-or-web-apps',
+        imgUrl: require('../assets/images/d.webp'),
+        url: 'https://thayipizza.netlify.app',
+        githubUrl: '',
+        skills: [
+            {
+                icon: faReact,
+                text: 'React.js'
             },
             {
                 icon: faJs,
                 text: 'Javascript'
             },
             {
-                icon: faChartArea,
-                text: 'Chart.js'
-            }
-        ] 
-    },
-        {
-        title: 'Miam',
-        type: 'websites-or-web-apps',
-        imgUrl: require('../assets/images/d.webp'),
-        url: 'h',
-        githubUrl: '',
-        skills: [
+                icon: faFire,
+                text: 'firebase'
+            },
             {
-                icon: faPhp,
-                text: 'Php'
+                icon: faNodeJs,
+                text: 'Node.js'
+            },
+            {
+                icon: faCss3,
+                text: 'CSS'
+            },
+            {
+                icon: faMoneyBill1Wave,
+                text: 'Mesomb'
             }
         ] 
     },    {
-        title: 'Miam',
+        title: 'Cabinet dentaire d\'akwa',
         type: 'websites-or-web-apps',
         imgUrl: require('../assets/images/d.webp'),
         url: 'h',

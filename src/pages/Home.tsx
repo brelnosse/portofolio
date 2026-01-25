@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 //@ts-ignore
 import '../assets/style/home.css';
 import Navbar from '../components/Navbar';
@@ -16,6 +16,7 @@ import SkillsContainer from '../components/SkillsContainer';
 import CareerContainer from '../components/CareerContainer';
 import ExperienceContainer from '../components/ExperienceContainer';
 import ProjectContainer from '../components/ProjetContainer';
+import { SectionContext } from '../context/SectionContext';
 
 const Home:React.FC = () =>{
     const [skillsData, setSkillsData] = useState<SkillsCardProps[]>(Skills);

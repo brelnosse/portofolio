@@ -1,9 +1,10 @@
 import Button from "./Button";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 //@ts-ignore
 import '../assets/style/hero.css';
 //@ts-ignore
 import { MenuItems } from "../data/menuItems";
+import { useSection } from "../hooks/useSection";
 
 const Hero: React.FC = () => {
     const name = "Brel nosse";
@@ -15,6 +16,8 @@ const Hero: React.FC = () => {
     const [showButton1, setShowButton1] = useState<boolean>(false);
     const [showButton2, setShowButton2] = useState<boolean>(false);
     const [showImage, setShowImage] = useState<boolean>(false);
+    const heroRef = useRef<HTMLElement>(null);
+    useSection(heroRef, 'home');
 
     useEffect(() => {
         // Calculer le temps total de l'animation de la navbar
@@ -83,7 +86,7 @@ const Hero: React.FC = () => {
     }, []);
 
     return (
-        <section className="hero">
+        <section className="hero" ref={heroRef}>
             <div className="heroDescription">
                 <h3 className={`hero-h3 ${showH3 ? 'element-visible' : 'element-hidden'}`}>
                     Hi, There

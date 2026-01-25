@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { ProjectProps } from "../types/project.type";
 import Project from "./Project";
 import TabNavigation from "./TabNavigation";
@@ -6,12 +6,15 @@ import Underlined from "./Underlined";
 import { projects } from "../data/projects";
 //@ts-ignore
 import '../assets/style/projectcontainer.css';
+import { useSection } from "../hooks/useSection";
 
 const ProjectContainer: React.FC = () => {
     const [activeTab, setActiveTab] = useState<string>('all');
-
+    const projectsRef = useRef<HTMLElement>(null);
+    useSection(projectsRef, 'projects');
+    
     return (
-        <section className="projects">
+        <section className="projects" ref={projectsRef}>
             <Underlined text='Projects'/>
             <div className="projects_container">
                 <div className="projects-container_header">

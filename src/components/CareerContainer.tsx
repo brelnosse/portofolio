@@ -5,12 +5,13 @@ import Career from "./Carreer";
 import Underlined from "./Underlined";
 //@ts-ignore
 import '../assets/style/careerContainer.css';
+import { useSection } from "../hooks/useSection";
 
 const CareerContainer: React.FC = () =>{
     const educationSectionRef = useRef<HTMLElement>(null);
     const scrollIndicator = useRef<HTMLSpanElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
-
+    useSection(educationSectionRef, 'education');
     useEffect(() => {
         const indicator = scrollIndicator.current;
         const track = containerRef.current;

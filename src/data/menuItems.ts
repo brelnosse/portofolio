@@ -13,14 +13,19 @@ export const MenuItems:MenuItemType[] = [
         displayText: 'Skills'
     },
     {
+        icon: fas.faCodeBranch,
+        path: '/education',
+        displayText: 'Education'
+    },
+    {
         icon: fas.faBrain,
         path: '/experience',
-        displayText: 'Experience'
+        displayText: 'Experiences'
     },
     {
         icon: fas.faCogs,
         path: '/project',
-        displayText: 'Project'
+        displayText: 'Projects'
     }
     ,{
         icon: fas.faUser,

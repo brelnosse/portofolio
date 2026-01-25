@@ -2,25 +2,28 @@ import { Link, useLocation } from "react-router-dom";
 //@ts-ignore
 import '../assets/style/navbar.css';
 import Button from "./Button";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 //@ts-ignore
 import { MenuItems } from "../data/menuItems";
-import { MenuItemType } from "../types/navbar.types";
+import { MenuItemType, NavbarProps } from "../types/navbar.types";
 import { fas } from '@fortawesome/free-solid-svg-icons';
 //@ts-ignore
 import 'animate.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { COLORS } from "../utils/colors";
+import { SectionContext } from "../context/SectionContext";
 
-const NavbarItem: React.FC<MenuItemType & { animationDelay: number; isResponsive: boolean; isClosing: boolean }> = ({ 
+const NavbarItem: React.FC<MenuItemType & { animationDelay: number; isResponsive: boolean; isClosing: boolean;     activeSection : string; 
+    setActiveSection : (b: string) => void;}> = ({ 
     icon, 
     path, 
     displayText, 
     animationDelay,
     isResponsive,
-    isClosing 
+    isClosing ,
+    activeSection,
+    setActiveSection
 }) => {
-    const location = useLocation();
     const [isHovered, setIsHovered] = useState(false);
     const [isAnimated, setIsAnimated] = useState(false);
 
@@ -43,18 +46,18 @@ const NavbarItem: React.FC<MenuItemType & { animationDelay: number; isResponsive
     }, [animationDelay, isClosing]);
 
     const isActive = (current: string): string => {
-        return (current === location.pathname ? 'active' : '');
+        return (current.trim().toLocaleLowerCase() === activeSection.trim().toLocaleLowerCase() ? ' active' : '');
     }
 
     return (
         <li 
-            className={`navbar-item ${isActive(path)} ${isHovered && 'isHovered'} ${isAnimated ? (isResponsive ? 'item-visible-responsive' : 'item-visible') : (isResponsive ? 'item-hidden-responsive' : 'item-hidden')}`}
+            className={`navbar-item${isActive(displayText)} ${isHovered && 'isHovered'} ${isAnimated ? (isResponsive ? 'item-visible-responsive' : 'item-visible') : (isResponsive ? 'item-hidden-responsive' : 'item-hidden')}`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}>
             <span>
                 <FontAwesomeIcon icon={icon} color={COLORS.primaryColor}/>
             </span>
-            <Link to={path}>{displayText}</Link>
+            <b>{displayText}</b>
         </li>
     );
 }
@@ -66,6 +69,7 @@ const Navbar: React.FC = () => {
     const [isResponsive, setIsResponsive] = useState<boolean>(false);
     const [menuKey, setMenuKey] = useState<number>(0);
     const [isClosing, setIsClosing] = useState<boolean>(false);
+    const context = useContext(SectionContext);
 
     useEffect(() => {
         // Show title first
@@ -146,6 +150,8 @@ const Navbar: React.FC = () => {
                                 animationDelay={delay}
                                 isResponsive={isResponsive}
                                 isClosing={isClosing}
+                                activeSection={context.activeSection}
+                                setActiveSection={context.setActiveSection}
                                 key={`${el.path + i + menuKey}`}
                             />
                         );

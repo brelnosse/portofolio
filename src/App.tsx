@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-import About from "./pages/About";
 import PageLoader from "./components/PageLoader";
 import { useEffect, useState } from "react";
+import { SectionContextProvider } from "./context/SectionContext";
 
 const App: React.FC = () => {
     const [isLoading, setIsloading] = useState<boolean>(true);
@@ -25,12 +25,13 @@ const App: React.FC = () => {
         return <PageLoader />;
     }
     return (
-        <Router>
-            <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route path="/about-me" element={<About/>}/>
-            </Routes>
-        </Router>
+        <SectionContextProvider>
+            <Router>
+                <Routes>
+                    <Route path="/" element={<Home/>}/>
+                </Routes>
+            </Router>
+        </SectionContextProvider>
     );
 }
 export default App;

@@ -37,8 +37,10 @@
     box-shadow: 0.3125rem 0.3125rem 0px 0px var(--black);
     padding: 40px;
     min-width: 400px;
+    max-width: 100%;
     border-radius: 4px;
     position: sticky;
+    font-size: 1.1em;
     z-index: 1;
     margin-top: 500px;
 }
@@ -99,7 +101,7 @@
         height: 400px;
     }
     .projectTextDescription {
-        max-width: 300px;
+        max-width: 100%;
         width: 300px;
         padding: 20px;
         min-width: 300px;

@@ -4,9 +4,13 @@ import SkillsCard from "./SkillsCard";
 import Underlined from "./Underlined";
 //@ts-ignore
 import '../assets/style/skillscontainer.css';
+import { useRef } from "react";
+import { useSection } from "../hooks/useSection";
 const SkillsContainer:React.FC<SkillsContainerProps> = ({skillsData, setSkillsData}) =>{
+    const skillsContainerRef = useRef<HTMLElement>(null);
+    useSection(skillsContainerRef, 'skills');
     return (
-            <section className='skills'>
+            <section className='skills' ref={skillsContainerRef}>
                 <Underlined text='Skills'/>
                 <div className="skills_container">
                     {
