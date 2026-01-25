@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 //@ts-ignore
 import '../assets/style/navbar.css';
 import Button from "./Button";
-import { useContext, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useRef, useState } from "react";
 //@ts-ignore
 import { MenuItems } from "../data/menuItems";
 import { MenuItemType, NavbarProps } from "../types/navbar.types";
@@ -16,7 +16,6 @@ import { SectionContext } from "../context/SectionContext";
 const NavbarItem: React.FC<MenuItemType & { animationDelay: number; isResponsive: boolean; isClosing: boolean;     activeSection : string; 
     setActiveSection : (b: string) => void;}> = ({ 
     icon, 
-    path, 
     displayText, 
     animationDelay,
     isResponsive,
@@ -26,17 +25,31 @@ const NavbarItem: React.FC<MenuItemType & { animationDelay: number; isResponsive
 }) => {
     const [isHovered, setIsHovered] = useState(false);
     const [isAnimated, setIsAnimated] = useState(false);
+    const liRef = useRef<HTMLLIElement>(null);
 
+    const handleClick = () => {
+        const sectionClassName = displayText.toLowerCase().trim() === 'home' ? 'hero' : displayText.toLowerCase().trim() ;
+        const section = document.querySelector('.'+sectionClassName);
+
+        if(section)
+        window.scrollTo({
+            behavior: 'smooth',
+            top: section?.getBoundingClientRect().y + window.scrollY
+        });
+
+    }
+    useEffect(()=>{
+        if(!liRef.current) return;
+        // const liElem = liRef.current as HTMLElement;
+    })
     useEffect(() => {
         if (isClosing) {
-            // When closing, start visible then hide
             setIsAnimated(true);
             const timer = setTimeout(() => {
                 setIsAnimated(false);
             }, animationDelay);
             return () => clearTimeout(timer);
         } else {
-            // When opening, start hidden then show
             setIsAnimated(false);
             const timer = setTimeout(() => {
                 setIsAnimated(true);
@@ -45,15 +58,17 @@ const NavbarItem: React.FC<MenuItemType & { animationDelay: number; isResponsive
         }
     }, [animationDelay, isClosing]);
 
-    const isActive = (current: string): string => {
+    const isActive = useCallback((current: string): string => {
         return (current.trim().toLocaleLowerCase() === activeSection.trim().toLocaleLowerCase() ? ' active' : '');
-    }
+    }, [activeSection]);
 
     return (
         <li 
+            ref={liRef}
             className={`navbar-item${isActive(displayText)} ${isHovered && 'isHovered'} ${isAnimated ? (isResponsive ? 'item-visible-responsive' : 'item-visible') : (isResponsive ? 'item-hidden-responsive' : 'item-hidden')}`}
             onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}>
+            onMouseLeave={() => setIsHovered(false)}
+            onClick={handleClick}>
             <span>
                 <FontAwesomeIcon icon={icon} color={COLORS.primaryColor}/>
             </span>
