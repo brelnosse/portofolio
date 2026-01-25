@@ -36,11 +36,14 @@ const NavbarItem: React.FC<MenuItemType & { animationDelay: number; isResponsive
                 behavior: 'smooth',
                 top: section?.getBoundingClientRect().y + window.scrollY - 84
             });
-        setIsClosing(true);
-        setTimeout(() => {
-            setIsVisible(false);
-            setIsClosing(false);
-        }, MenuItems.length * 100 + 200);
+        
+        if(isResponsive){
+            setIsClosing(true);
+            setTimeout(() => {
+                setIsVisible(false);
+                setIsClosing(false);
+            }, MenuItems.length * 100 + 200);
+        }
     }
 
     useEffect(() => {
