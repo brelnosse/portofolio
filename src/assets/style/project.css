@@ -90,3 +90,49 @@
 .right  { transform: rotateY(-90deg) translateZ(150px); background: rgba(243, 229, 245, 0.8); }
 .top    { transform: rotateX(90deg) translateZ(150px); background: rgba(142, 92, 67, 0.8); }
 .bottom { transform: rotateX(-90deg) translateZ(150px); background: rgba(224, 242, 241, 0.8); }
+
+@media screen and (max-width: 1015px){
+    .projectTextDescription {
+        margin-top: 400px;
+    }
+    .projectDescription .p-title {
+        height: 400px;
+    }
+    .projectTextDescription {
+        max-width: 300px;
+        width: 300px;
+        padding: 20px;
+        min-width: 300px;
+    }
+    .cube-container {
+        width: 400px;
+        height: 400px;
+        perspective: 800px;
+    }
+    .cube {
+        width: 200px;
+        height: 200px;
+    }
+    /* Exemple de faces harmonisées */
+    .front  { transform: translateZ(100px); }
+    .back   { transform: translateZ(-100px);}
+    .left   { transform: rotateY(90deg) translateZ(100px); }
+    .right  { transform: rotateY(-90deg) translateZ(100px); }
+    .top    { transform: rotateX(90deg) translateZ(100px); }
+    .bottom { transform: rotateX(-90deg) translateZ(100px); }  
+}
+@media screen and (max-width: 774px) {
+    .projectDescription .p-title {
+        height: 300px;
+    }
+    .cube-container{
+        display: none;
+    }
+    .projectTextDescription {
+        margin-top: 300px;
+        height: 150px;
+    }
+    .projectTextDescription:last-of-type {
+        margin-bottom: 100px;
+    }
+}
