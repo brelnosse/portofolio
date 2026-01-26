@@ -111,10 +111,10 @@ const Hero: React.FC = () => {
                 </h4>
                 <div className="actions">
                     <div className={`button-wrapper ${showButton1 ? 'button-visible' : 'button-hidden'}`}>
-                        <Button type='default' valueText='Download cv'/>
+                        <Button type='default' valueText='Contact Me'/>
                     </div>
                     <div className={`button-wrapper ${showButton2 ? 'button-visible' : 'button-hidden'}`}>
-                        <Button type='light' valueText='Download portofolio'/>
+                        <Button type='light' valueText='Download Cv'/>
                     </div>
                 </div>
             </div>
