@@ -16,7 +16,7 @@ const Experience: React.FC<ExperienceProps> = ({enterprise, period, postTitle, l
                     setIsVisible(false);
                 }
             });
-        }, { threshold: 0.15 }); 
+        }, { threshold: 0.5 }); 
 
         if (domRef.current) observer.observe(domRef.current);
         
