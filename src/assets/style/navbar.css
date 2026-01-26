@@ -67,7 +67,7 @@
     border-color: none;
     border-radius: var(--border-radius);
     background-color: transparent;
-    padding-left: 1.4rem;
+    padding-left: 1.5rem;
     font-weight: 800;
 }
 .navbar-item.active span{
