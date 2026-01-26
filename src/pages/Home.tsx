@@ -26,11 +26,11 @@ const Home:React.FC = () =>{
             <Navbar />
             <Hero/>
             <SkillResumeContainer skillsResumeItems={skillsResumeItems}/>
+            <About />
             <SkillsContainer skillsData={skillsData} setSkillsData={setSkillsData}/>
             <CareerContainer />
             <ExperienceContainer/>
             <ProjectContainer />
-            <About />
         </div>
     );
 }

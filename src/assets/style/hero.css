@@ -45,6 +45,17 @@ section.hero{
     top: 0px;
     right: -30px;
 }
+/* Wrapper pour garder les mots ensemble */
+.word-wrapper {
+    display: inline-block;
+    white-space: nowrap; /* Empêche les lettres d'un mot de se séparer */
+}
+
+.word-space {
+    display: inline;
+}
+
+/* Letter animation - Plus douce et apaisante */
 .letter {
     display: inline-block;
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;

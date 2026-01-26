@@ -1,10 +1,9 @@
 import Button from "./Button";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 //@ts-ignore
 import '../assets/style/hero.css';
 //@ts-ignore
 import { MenuItems } from "../data/menuItems";
-import { useSection } from "../hooks/useSection";
 
 const Hero: React.FC = () => {
     const name = "Brel nosse";
@@ -16,8 +15,6 @@ const Hero: React.FC = () => {
     const [showButton1, setShowButton1] = useState<boolean>(false);
     const [showButton2, setShowButton2] = useState<boolean>(false);
     const [showImage, setShowImage] = useState<boolean>(false);
-    const heroRef = useRef<HTMLElement>(null);
-    useSection(heroRef, 'home');
 
     useEffect(() => {
         // Calculer le temps total de l'animation de la navbar
@@ -86,7 +83,7 @@ const Hero: React.FC = () => {
     }, []);
 
     return (
-        <section className="hero" ref={heroRef}>
+        <section className="hero">
             <div className="heroDescription">
                 <h3 className={`hero-h3 ${showH3 ? 'element-visible' : 'element-hidden'}`}>
                     Hi, There
@@ -114,10 +111,10 @@ const Hero: React.FC = () => {
                 </h4>
                 <div className="actions">
                     <div className={`button-wrapper ${showButton1 ? 'button-visible' : 'button-hidden'}`}>
-                        <Button type='default' valueText='Contact Me'/>
+                        <Button type='default' valueText='Download cv'/>
                     </div>
                     <div className={`button-wrapper ${showButton2 ? 'button-visible' : 'button-hidden'}`}>
-                        <Button type='light' valueText='Download Cv'/>
+                        <Button type='light' valueText='Download portofolio'/>
                     </div>
                 </div>
             </div>

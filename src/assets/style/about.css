@@ -8,6 +8,9 @@
     align-items: center;
     justify-content: center;
     gap: 150px;
+    background-color: transparent;
+    perspective: 800px;
+    perspective-origin: top center;
 }
 .profileCaption{
     background-color: var(--bg-color);
@@ -17,8 +20,11 @@
     max-width: 350px;
     display: flex;
     align-items: center;
-    border-radius: var(--border-radius);
+    border-radius: 16px;
     width: fit-content;
+    box-shadow: 4px 4px 0px 0px var(--primary-color);
+    border: 2px solid var(--primary-color);
+    transform: rotateY('40deg');
 }
 .profileCaption h3{
     font-size: 2em;
@@ -35,12 +41,12 @@
     margin-right: -125px;
     min-width: var(--width);
     width: var(--width);
-    border-radius: var(--border-radius);
-    background-image: url(../images//d.webp);
+    border-radius: 32px;
+    background-image: url(../images/pp.jpeg);
     background-size: cover;
+    border: 8px solid white;
 }
 .profileDescription{
-    font-weight: bold;
-    font-size: 1.1em;
-    max-width: 400px;
+    font-size: 1.3em;
+    max-width: 450px;
 }

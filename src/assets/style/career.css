@@ -57,7 +57,7 @@
     width: fit-content;
     background: white;
     margin: 3px 0px;
-    padding:  0.1875rem;
+    padding:  0.1875rem 10px;
     font-size: 0.8em;
     border: 1px solid var(--black);
     border-radius: 1.25rem;

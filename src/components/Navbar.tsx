@@ -160,7 +160,6 @@ const Navbar: React.FC = () => {
                         return (
                             <NavbarItem 
                                 icon={el.icon} 
-                                path={el.path} 
                                 displayText={el.displayText} 
                                 animationDelay={delay}
                                 isResponsive={isResponsive}
@@ -169,7 +168,7 @@ const Navbar: React.FC = () => {
                                 setActiveSection={context.setActiveSection}
                                 setIsVisible={setIsVisible}
                                 setIsClosing={setIsClosing}
-                                key={`${el.path + i + menuKey}`}
+                                key={`${el.displayText.split(' ').join('') + i + menuKey}`}
                             />
                         );
                     })
