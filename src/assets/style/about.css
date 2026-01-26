@@ -1,0 +1,46 @@
+:root{
+    --width: 250px;
+    --height: 250px;
+}
+.aboutContainer{
+    padding: 5rem 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 150px;
+}
+.profileCaption{
+    background-color: var(--bg-color);
+    padding: 20px 10px;
+    height: 300px;
+    width: 350px;
+    max-width: 350px;
+    display: flex;
+    align-items: center;
+    border-radius: var(--border-radius);
+    width: fit-content;
+}
+.profileCaption h3{
+    font-size: 2em;
+}
+.profileCaption h4{
+    font-size: 1.2em;
+}
+.profileCaption .pc-description{
+    padding: 20px 10px;
+}
+.pc-img{
+    width: var(--width);
+    height: var(--height);
+    margin-right: -125px;
+    min-width: var(--width);
+    width: var(--width);
+    border-radius: var(--border-radius);
+    background-image: url(../images//d.webp);
+    background-size: cover;
+}
+.profileDescription{
+    font-weight: bold;
+    font-size: 1.1em;
+    max-width: 400px;
+}

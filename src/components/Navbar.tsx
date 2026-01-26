@@ -28,7 +28,7 @@ const NavbarItem: React.FC<MenuItemType & { animationDelay: number; isResponsive
     const [isAnimated, setIsAnimated] = useState(false);
 
     const handleClick = () => {
-        const sectionClassName = displayText.toLowerCase().trim() === 'home' ? 'hero' : displayText.toLowerCase().trim() ;
+        const sectionClassName = displayText.toLowerCase().trim() === 'home' ? 'hero' : displayText.toLowerCase().trim().split(' ').join('');
         const section = document.querySelector('.'+sectionClassName);
 
         if(section)

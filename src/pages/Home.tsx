@@ -16,7 +16,7 @@ import SkillsContainer from '../components/SkillsContainer';
 import CareerContainer from '../components/CareerContainer';
 import ExperienceContainer from '../components/ExperienceContainer';
 import ProjectContainer from '../components/ProjetContainer';
-import { SectionContext } from '../context/SectionContext';
+import About from '../components/About';
 
 const Home:React.FC = () =>{
     const [skillsData, setSkillsData] = useState<SkillsCardProps[]>(Skills);
@@ -30,6 +30,7 @@ const Home:React.FC = () =>{
             <CareerContainer />
             <ExperienceContainer/>
             <ProjectContainer />
+            <About />
         </div>
     );
 }
