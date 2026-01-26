@@ -9,7 +9,7 @@ section:nth-of-type(even){
     background-color: var(--bg-fade-color);
 }
 @media screen and (max-width: 774px) {
-section{
-    padding: 2rem;
-}
+    section{
+        padding: 4rem;
+    }
 }

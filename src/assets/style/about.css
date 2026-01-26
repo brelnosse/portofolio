@@ -2,6 +2,9 @@
     --width: 250px;
     --height: 250px;
 }
+.aboutme{
+    padding: 5rem 0px;
+}
 .aboutContainer{
     padding: 5rem 0px;
     display: flex;
@@ -9,8 +12,6 @@
     justify-content: center;
     gap: 150px;
     background-color: transparent;
-    perspective: 800px;
-    perspective-origin: top center;
 }
 .profileCaption{
     background-color: var(--bg-color);
@@ -40,7 +41,6 @@
     height: var(--height);
     margin-right: -125px;
     min-width: var(--width);
-    width: var(--width);
     border-radius: 32px;
     background-image: url(../images/pp.jpeg);
     background-size: cover;
@@ -49,4 +49,63 @@
 .profileDescription{
     font-size: 1.3em;
     max-width: 450px;
+}
+@media screen and (max-width: 1110px) {
+    .aboutContainer{
+        gap: 100px;
+    }
+    .profileDescription{
+        font-size: 1.2em;
+        max-width: 350px;
+    }
+    .profileCaption .pc-description{
+        padding: 15px 5px;
+    }
+    .pc-img{
+        margin-right: -100px;
+    }
+}
+@media  screen and (max-width: 968px) {
+    .pc-img{
+        width: 220px;
+        height: 220px;
+        min-width: 220px;
+    }
+    .profileDescription{
+        font-size: 1.2em;
+        max-width: 320px;
+    }
+}
+@media  screen and (max-width: 888px) {
+    .aboutContainer{
+        gap: 50px;
+        flex-direction: column;
+    }
+    .profileCaption{
+        height: 250px;
+        width: 350px;
+        max-width: 350px;
+    }
+    .profileDescription{
+        text-align: center;
+        max-width: 100%;
+    }
+}
+@media screen and (max-width: 560px) {
+    .profileCaption{
+        transform: scale(0.90);
+        margin-left: -90px;
+        max-width: 300px;
+    }
+    .pc-img{
+        margin-right: -100px;
+    }    
+}
+@media screen and (max-width: 408px) {
+    .aboutContainer{
+        gap: 20px;
+    }
+    .profileCaption{
+        transform: scale(0.80);
+    } 
 }
