@@ -143,7 +143,7 @@ const Navbar: React.FC = () => {
     return (
         <nav className="navbar-container">
             <h2 className={`navbar-title ${showTitle ? 'title-visible' : 'title-hidden'}`}>
-                Portofolio
+                Portfolio
             </h2>
             <ul className={`navbar-item_container ${isVisible ? 'show' : 'hide'}`}>
                 <div className="r-nav-header">

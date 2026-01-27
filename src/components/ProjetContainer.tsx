@@ -29,6 +29,7 @@ const ProjectContainer: React.FC = () => {
                             return <Project 
                                 key={el.title+i}
                                 url={el.url} 
+                                color={el.color}
                                 title={el.title} 
                                 imgUrl={el.imgUrl} 
                                 disabled={false} 

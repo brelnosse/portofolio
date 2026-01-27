@@ -1,5 +1,9 @@
 .skills-card{
-    padding: 0.9rem 0.7rem;
+    padding: 0px 0.7rem;
+    display: inline-flex;
+    height:  3.5rem;
+    align-items: center;
+    justify-content: center;
     text-transform: capitalize;
     background-color: var(--white);
     border-radius: 2rem;
@@ -9,7 +13,6 @@
     box-shadow: 3px 3px 0px 0px var(--black);
     transition: all 0.2s;
     cursor: pointer;
-    display: inline;
     position: relative;
     user-select: none;
 }
