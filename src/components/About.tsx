@@ -6,10 +6,10 @@ import { useSection } from "../hooks/useSection";
 
 const About:React.FC = () => {
     const AboutRef = useRef<HTMLElement>(null);
-    useSection(AboutRef, 'about me');
+    useSection(AboutRef, 'a propos');
     return (
         <section className="aboutme" ref={AboutRef}>
-            <Underlined text='About me'/>
+            <Underlined text='A propos de moi'/>
             <div className="aboutContainer">
                 <div className="profileCaption">
                     <div className="pc-description">

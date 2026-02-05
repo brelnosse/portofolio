@@ -1,9 +1,8 @@
 section.hero{
     overflow: hidden;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-around;
-    height: calc(90vh - 90px);
 }
 .heroDescription h4{
     display: flex;
@@ -122,6 +121,7 @@ section.hero{
 
 /* I'm animation - fade in doux */
 .hero-im {
+    font-size: 0.8em;
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 

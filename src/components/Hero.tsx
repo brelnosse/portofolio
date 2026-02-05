@@ -86,11 +86,11 @@ const Hero: React.FC = () => {
         <section className="hero">
             <div className="heroDescription">
                 <h3 className={`hero-h3 ${showH3 ? 'element-visible' : 'element-hidden'}`}>
-                    Hi, There
+                    Salut,
                 </h3>
                 <h1>
                     <span className={`hero-im ${showIm ? 'element-visible' : 'element-hidden'}`}>
-                        I'm{' '}
+                        Je suis {' '}
                     </span>
                     <span className="primary">
                         {name.split('').map((letter, index) => (
@@ -106,15 +106,15 @@ const Hero: React.FC = () => {
                 <h4>
                     <span className={`hero-line ${showLine ? 'line-visible' : 'line-hidden'}`}></span>
                     <span className={`hero-h4-text ${showH4Text ? 'element-visible' : 'element-hidden'}`}>
-                        fullstack web & mobile app developer
+                        Étudiant Développeur Fullstack Web & Mobile
                     </span>
                 </h4>
                 <div className="actions">
                     <div className={`button-wrapper ${showButton1 ? 'button-visible' : 'button-hidden'}`}>
-                        <Button type='default' valueText='Contact Me'/>
+                        <Button type='default' valueText='Contactez-moi'/>
                     </div>
                     <div className={`button-wrapper ${showButton2 ? 'button-visible' : 'button-hidden'}`}>
-                        <Button type='light' valueText='Download Cv'/>
+                        <Button type='light' valueText='Télécharger mon CV'/>
                     </div>
                 </div>
             </div>

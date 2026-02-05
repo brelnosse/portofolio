@@ -4,26 +4,32 @@ import { MenuItemType } from "../types/navbar.types";
 export const MenuItems:MenuItemType[] = [
     {
         icon: fas.faHome,
-        displayText: 'Home'
+        displayText: 'Accueil',
+        sectionId: 'home'
     },
     {
         icon: fas.faUser,
-        displayText: 'About me'
+        displayText: 'A propos',
+        sectionId: 'aboutme'
     },
     {
         icon: fas.faCodeBranch,
-        displayText: 'Skills'
+        displayText: 'Compétences',
+        sectionId: 'skills'
     },
     {
         icon: fas.faGraduationCap,
-        displayText: 'Education'
+        displayText: 'Education',
+        sectionId: 'education'
     },
     {
         icon: fas.faBrain,
-        displayText: 'Experiences'
+        displayText: 'Expériences',
+        sectionId: 'experience'
     },
     {
         icon: fas.faCogs,
-        displayText: 'Projects'
+        displayText: 'Projets',
+        sectionId: 'projects'
     }
 ];

@@ -8,10 +8,10 @@ import { useRef } from "react";
 import { useSection } from "../hooks/useSection";
 const SkillsContainer:React.FC<SkillsContainerProps> = ({skillsData, setSkillsData}) =>{
     const skillsContainerRef = useRef<HTMLElement>(null);
-    useSection(skillsContainerRef, 'skills');
+    useSection(skillsContainerRef, 'compétences');
     return (
             <section className='skills' ref={skillsContainerRef}>
-                <Underlined text='Skills'/>
+                <Underlined text='Compétences'/>
                 <div className="skills_container">
                     {
                         skillsData.map((el:SkillsCardProps, i:number) => {

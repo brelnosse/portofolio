@@ -1,1 +1,1 @@
-export const tabs:string[] = ['All', 'UI Design', 'Websites or web Apps', 'Mobile Apps'];
+export const tabs:string[] = ['Tout', 'UI Design', 'web', 'Mobile'];

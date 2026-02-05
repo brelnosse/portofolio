@@ -1,3 +1,7 @@
+section.skills{
+    display: flex;
+    flex-direction: column;
+}
 .skills_container{
     display: flex;
     justify-content: center;

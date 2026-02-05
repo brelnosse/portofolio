@@ -11,11 +11,11 @@ import { useSection } from "../hooks/useSection";
 const ProjectContainer: React.FC = () => {
     const [activeTab, setActiveTab] = useState<string>('all');
     const projectsRef = useRef<HTMLElement>(null);
-    useSection(projectsRef, 'projects');
+    useSection(projectsRef, 'projets');
     
     return (
         <section className="projects" ref={projectsRef}>
-            <Underlined text='Projects'/>
+            <Underlined text='Projets'/>
             <div className="projects_container">
                 <div className="projects-container_header">
                     <TabNavigation activeTab={activeTab} setActiveTab={setActiveTab}/>
@@ -23,7 +23,7 @@ const ProjectContainer: React.FC = () => {
                 <div className="my-projects">
                     {
                         projects.map((el: ProjectProps, i: number)=>{
-                            if(activeTab !== 'all' && el.type.toLocaleLowerCase() !== activeTab){
+                            if(activeTab !== 'Tout' && el.type.toLocaleLowerCase() !== activeTab){
                                 return;
                             }
                             return <Project 

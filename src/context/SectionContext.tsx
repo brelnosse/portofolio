@@ -1,6 +1,5 @@
 import { ReactNode ,SetStateAction,createContext, useState } from "react";
 import { NavbarProps } from "../types/navbar.types";
-import { Dispatch } from "react";
 
 export const SectionContext = createContext<NavbarProps>({
     activeSection: '',
@@ -8,7 +7,7 @@ export const SectionContext = createContext<NavbarProps>({
 });
 
 export const SectionContextProvider = ({children}:{children: ReactNode}) => {
-    const [activeSection, setActiveSection] = useState<string>('home');
+    const [activeSection, setActiveSection] = useState<string>('accueil');
 
     return (
         <SectionContext.Provider value={{activeSection, setActiveSection}}>

@@ -1,5 +1,7 @@
 section{
     padding: 5rem;
+    min-height: calc(100vh - 90px);
+    justify-content: center;
 }
 section:nth-of-type(odd){
     background-color: var(--bg-color);

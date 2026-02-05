@@ -18,6 +18,7 @@ const NavbarItem: React.FC<MenuItemType & { animationDelay: number; isResponsive
     displayText, 
     animationDelay,
     isResponsive,
+    sectionId,
     isClosing ,
     activeSection,
     setActiveSection,
@@ -28,7 +29,7 @@ const NavbarItem: React.FC<MenuItemType & { animationDelay: number; isResponsive
     const [isAnimated, setIsAnimated] = useState(false);
 
     const handleClick = () => {
-        const sectionClassName = displayText.toLowerCase().trim() === 'home' ? 'hero' : displayText.toLowerCase().trim().split(' ').join('');
+        const sectionClassName = sectionId.toLowerCase().trim() === 'home' ? 'hero' : sectionId.toLowerCase().trim().split(' ').join('');
         const section = document.querySelector('.'+sectionClassName);
 
         if(section)
@@ -160,6 +161,7 @@ const Navbar: React.FC = () => {
                         return (
                             <NavbarItem 
                                 icon={el.icon} 
+                                sectionId={el.sectionId}
                                 displayText={el.displayText} 
                                 animationDelay={delay}
                                 isResponsive={isResponsive}
@@ -176,7 +178,7 @@ const Navbar: React.FC = () => {
                 <li className={`action ${showButton ? 'button-visible' : 'button-hidden'}`}>
                     <Button 
                         type="default" 
-                        valueText="Contact Me" 
+                        valueText="Contactez-moi" 
                         textStyle="bold" 
                         style={{ margin: '10px 0px' }}
                     />

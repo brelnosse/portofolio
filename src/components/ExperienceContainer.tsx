@@ -8,7 +8,7 @@ import { useRef } from "react";
 import { useSection } from "../hooks/useSection";
 const ExperienceContainer: React.FC = () => {
     const ExperienceContainerRef = useRef<HTMLElement>(null);
-    useSection(ExperienceContainerRef, 'experiences');
+    useSection(ExperienceContainerRef, 'expériences');
     return (
             <section className="experiences" ref={ExperienceContainerRef}>
                 <Underlined text='Experience'/>
