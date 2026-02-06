@@ -17,12 +17,14 @@ import CareerContainer from '../components/CareerContainer';
 import ExperienceContainer from '../components/ExperienceContainer';
 import ProjectContainer from '../components/ProjetContainer';
 import About from '../components/About';
+import ParticlesComponent from '../components/Particles';
 
 const Home:React.FC = () =>{
     const [skillsData, setSkillsData] = useState<SkillsCardProps[]>(Skills);
 
     return (
         <div className="container">
+            <ParticlesComponent/>
             <Navbar />
             <Hero/>
             <SkillResumeContainer skillsResumeItems={skillsResumeItems}/>
