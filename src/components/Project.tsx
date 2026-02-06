@@ -55,7 +55,7 @@ const Project: React.FC<ProjectProps> = ({ title, color, githubUrl, url, imgUrl,
                 </div>
             </div>
             
-            <div className="projectDescription">
+            <div className="projectDescription" style={{backgroundImage: 'url('+imgUrl[0]+')'}}>
                 <div 
                     className="p-title" 
                     style={{
@@ -68,12 +68,12 @@ const Project: React.FC<ProjectProps> = ({ title, color, githubUrl, url, imgUrl,
                         {url !== '' && 
                         <Button 
                             type='default' 
-                            valueText='Visit' 
+                            valueText='Visiter' 
                             onClick={() => {
                                 if (url) window.open(url, '_blank');
                             }} 
                             style={{backgroundColor: color, borderColor: color, color: 'white'}}
-                            valueIcon={fas.faUpRightFromSquare} title='Voir le projet en ligne'/>}
+                            valueIcon={fas.faUpRightFromSquare} title={url}/>}
                         {githubUrl !== '' && 
                             <Button 
                                 type='light' 
@@ -81,7 +81,7 @@ const Project: React.FC<ProjectProps> = ({ title, color, githubUrl, url, imgUrl,
                                 onClick={() => {
                                     if (githubUrl) window.open(githubUrl, '_blank');
                                 }}
-                                valueIcon={faGithub} title='Voir le projet sur github'/>}                        
+                                valueIcon={faGithub} title={githubUrl}/>}                        
                     </div>
                 </div>
                 
