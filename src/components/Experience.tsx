@@ -54,7 +54,7 @@ const Experience: React.FC<ExperienceProps> = ({enterprise, period, postTitle, l
             </ul>
 
             <div className="tools_container">
-                <b>Tools:</b>
+                <b>Outils :</b>
                 <div className="toools">
                     {tools && tools.map((tool: string, i: number) => (
                         <span 

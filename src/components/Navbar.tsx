@@ -187,7 +187,7 @@ const Navbar: React.FC = () => {
             <div className="navbar-actions_container">
                 <Button 
                     type="default" 
-                    valueText="Contact Me" 
+                    valueText="Contactez-moi" 
                     textStyle="bold" 
                     id="contactMeNavbtn"
                 />

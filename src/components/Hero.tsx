@@ -17,20 +17,12 @@ const Hero: React.FC = () => {
     const [showImage, setShowImage] = useState<boolean>(false);
 
     useEffect(() => {
-        // Calculer le temps total de l'animation de la navbar
         const navbarAnimationTime = 50 + (MenuItems.length * 150) + 200 + 300;
 
-        // 1. H3 "Hi, There" appears after navbar animation
-        const h3Timer = setTimeout(() => {
-            setShowH3(true);
-        }, navbarAnimationTime);
+        const h3Timer = setTimeout(() => setShowH3(true), navbarAnimationTime);
 
-        // 2. "I'm" appears
-        const imTimer = setTimeout(() => {
-            setShowIm(true);
-        }, navbarAnimationTime + 500);
+        const imTimer = setTimeout(() => setShowIm(true), navbarAnimationTime + 500);
 
-        // 3. H1 name letters appear one by one (plus lentement)
         const nameStartDelay = setTimeout(() => {
             const interval = setInterval(() => {
                 setVisibleLetters(prev => {
@@ -40,32 +32,26 @@ const Hero: React.FC = () => {
                     }
                     return prev + 1;
                 });
-            }, 120); // Ralenti de 100ms à 120ms
-
+            }, 120);
             return () => clearInterval(interval);
-        }, navbarAnimationTime + 900); // After "I'm" appears + 400ms
+        }, navbarAnimationTime + 900);
 
-        // 4. Line appears after name completes
         const lineDelay = setTimeout(() => {
             setShowLine(true);
         }, navbarAnimationTime + 900 + (name.length * 120) + 300);
 
-        // 5. H4 text appears after line
         const h4TextDelay = setTimeout(() => {
             setShowH4Text(true);
         }, navbarAnimationTime + 900 + (name.length * 120) + 300 + 900);
 
-        // 6. First button appears
         const button1Delay = setTimeout(() => {
             setShowButton1(true);
         }, navbarAnimationTime + 900 + (name.length * 120) + 300 + 900 + 500);
 
-        // 7. Second button appears
         const button2Delay = setTimeout(() => {
             setShowButton2(true);
         }, navbarAnimationTime + 900 + (name.length * 120) + 300 + 900 + 500 + 200);
 
-        // 8. Image appears last
         const imageDelay = setTimeout(() => {
             setShowImage(true);
         }, navbarAnimationTime + 900 + (name.length * 120) + 300 + 900 + 500 + 200 + 300);
@@ -82,6 +68,9 @@ const Hero: React.FC = () => {
         };
     }, []);
 
+    // Variable pour suivre l'index réel de chaque lettre à travers les mots
+    let currentLetterCount = 0;
+
     return (
         <section className="hero">
             <div className="heroDescription">
@@ -93,12 +82,28 @@ const Hero: React.FC = () => {
                         Je suis {' '}
                     </span>
                     <span className="primary">
-                        {name.split('').map((letter, index) => (
-                            <span
-                                key={index}
-                                className={`letter ${index < visibleLetters ? 'letter-visible' : 'letter-hidden'}`}
+                        {name.split(' ').map((word, wordIndex, wordsArray) => (
+                            <span 
+                                key={wordIndex} 
+                                style={{ display: 'inline-block', whiteSpace: 'nowrap' }}
                             >
-                                {letter === ' ' ? '\u00A0' : letter}
+                                {word.split('').map((letter) => {
+                                    const index = currentLetterCount++;
+                                    return (
+                                        <span
+                                            key={index}
+                                            className={`letter ${index < visibleLetters ? 'letter-visible' : 'letter-hidden'}`}
+                                        >
+                                            {letter}
+                                        </span>
+                                    );
+                                })}
+                                {/* Gérer l'espace après le mot pour l'animation */}
+                                {wordIndex < wordsArray.length - 1 && (
+                                    <span className={`letter ${currentLetterCount++ < visibleLetters ? 'letter-visible' : 'letter-hidden'}`}>
+                                        {'\u00A0'}
+                                    </span>
+                                )}
                             </span>
                         ))}
                     </span>

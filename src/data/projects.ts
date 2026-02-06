@@ -88,7 +88,7 @@ export const projects:ProjectProps[] = [
             require('../assets/images/iucbibliRight.png'), 
         ],
         url: 'https://sevux.alwaysdata.net',
-        githubUrl: '',
+        githubUrl: 'https://github.com/brelnosse/iucbibli',
         skills: [
             {
                 icon: faHtml5,
