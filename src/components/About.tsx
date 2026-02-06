@@ -20,7 +20,7 @@ const About:React.FC = () => {
                     </div>
                 </div>
                 <div className="profileDescription">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio quaerat omnis fugit nisi iste minima, at ab natus animi dolores illum sed esse nam doloremque nobis dolore voluptatibus cupiditate unde.
+                    Étudiant Ingénieur (3iL) – Développeur Fullstack En recherche d'alternance pour septembre 2026. Passionné par l'apprentissage continu et la veille technologique, je cultive une curiosité qui me pousse à explorer de nouvelles stacks et à automatiser mes projets (CI/CD, tests). Réactif et ouvert aux critiques, je transforme chaque défi en opportunité d'innover
                 </div>
             </div>
         </section>

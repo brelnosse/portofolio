@@ -9,7 +9,7 @@ import '../assets/style/projectcontainer.css';
 import { useSection } from "../hooks/useSection";
 
 const ProjectContainer: React.FC = () => {
-    const [activeTab, setActiveTab] = useState<string>('all');
+    const [activeTab, setActiveTab] = useState<string>('tout');
     const projectsRef = useRef<HTMLElement>(null);
     useSection(projectsRef, 'projets');
     
@@ -23,7 +23,7 @@ const ProjectContainer: React.FC = () => {
                 <div className="my-projects">
                     {
                         projects.map((el: ProjectProps, i: number)=>{
-                            if(activeTab !== 'Tout' && el.type.toLocaleLowerCase() !== activeTab){
+                            if(activeTab !== 'tout' && el.type.toLocaleLowerCase() !== activeTab){
                                 return;
                             }
                             return <Project 

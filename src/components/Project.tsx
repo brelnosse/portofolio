@@ -65,8 +65,23 @@ const Project: React.FC<ProjectProps> = ({ title, color, githubUrl, url, imgUrl,
 
                     <h3 style={{color: color}}>{title}</h3>
                     <div className="p-btns-container" style={{display: 'flex', gap: '10px'}}>
-                        {url !== '' && <Button type='default' valueText='Visit' valueIcon={fas.faUpRightFromSquare} title='Visit the project online'/>}
-                        {githubUrl !== '' && <Button type='light' valueText='Github' valueIcon={faGithub} title='View project on github'/>}                        
+                        {url !== '' && 
+                        <Button 
+                            type='default' 
+                            valueText='Visit' 
+                            onClick={() => {
+                                if (url) window.open(url, '_blank');
+                            }} 
+                            style={{backgroundColor: color, borderColor: color, color: 'white'}}
+                            valueIcon={fas.faUpRightFromSquare} title='Voir le projet en ligne'/>}
+                        {githubUrl !== '' && 
+                            <Button 
+                                type='light' 
+                                valueText='Github' 
+                                onClick={() => {
+                                    if (githubUrl) window.open(githubUrl, '_blank');
+                                }}
+                                valueIcon={faGithub} title='Voir le projet sur github'/>}                        
                     </div>
                 </div>
                 
@@ -82,7 +97,7 @@ const Project: React.FC<ProjectProps> = ({ title, color, githubUrl, url, imgUrl,
                 </div>
                 
                 <div className="projectTextDescription">
-                    <h4>Technologie</h4>
+                    <h4>Technologies</h4>
                     <p>Stack moderne : React, TypeScript et Node.js.</p>
                 </div>
 

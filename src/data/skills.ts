@@ -61,7 +61,7 @@ export const Skills:SkillsCardProps[] = [
     },
     {
         icon: faPhp,
-        text: 'PHP natif',
+        text: 'PHP',
         active: false,
     },
     {
@@ -110,11 +110,6 @@ export const Skills:SkillsCardProps[] = [
         active: false,
     },
     {
-        icon: faAws,
-        text: 'Amazon web service',
-        active: false,
-    },
-    {
         icon: fas.faFire,
         text: 'Firebase',
         active: false,
@@ -126,7 +121,7 @@ export const Skills:SkillsCardProps[] = [
     },
     {
         icon: faGithub,
-        text: 'Github / gitLab',
+        text: 'Github',
         active: false,
     }
 ]

@@ -109,7 +109,7 @@ const Navbar: React.FC = () => {
 
     useEffect(() => {
         const checkResponsive = () => {
-            if (window.innerWidth <= 915) {
+            if (window.innerWidth <= 1000) {
                 setIsVisible(false);
                 setIsResponsive(true);
             } else {

@@ -50,6 +50,7 @@
     font-size: 1.3em;
     max-width: 450px;
     padding: 0px 25px;
+    text-align: justify;
 }
 @media screen and (max-width: 1110px) {
     .aboutContainer{

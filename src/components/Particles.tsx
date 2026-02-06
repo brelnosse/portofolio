@@ -45,7 +45,7 @@ const ParticlesComponent = () => {
         events: {
           onClick: {
             enable: true,
-            mode: "push",
+            // mode: "push",
           },
           onHover: {
             enable: true,
