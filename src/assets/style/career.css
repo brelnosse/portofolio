@@ -4,7 +4,7 @@
     display: flex;
     gap: 0.3125rem;
     opacity: 1;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 .scholar-career .step{
     font-size: 2em;
@@ -49,6 +49,8 @@
 }
 .career h4{
     font-size: 0.8em;
+    font-family: 'Poppins';
+    font-weight: 400;
 }
 .career .badge{
     display: flex;
@@ -56,9 +58,9 @@
     justify-content: center;
     width: fit-content;
     background: white;
-    margin: 3px 0px;
-    padding:  0.1875rem 10px;
-    font-size: 0.8em;
+    margin: 5px 0px;
+    padding:  0.1625rem 8px;
+    font-size: 0.7em;
     border: 1px solid var(--black);
     border-radius: 1.25rem;
     position: relative;
@@ -66,6 +68,7 @@
     cursor: pointer;
     overflow: hidden;
     z-index: 10;
+    font-family: 'poppins';
 }
 .career .badge::before{
     content: '';
@@ -82,6 +85,22 @@
 .career .badge:hover::before{
     width: 100%;
 }
+.career .badge:hover{
+    color: white;
+}
+.career p span{
+    font-family: 'poppins';
+    border-radius: 4px;
+    font-size: 0.8em;
+    width: fit-content;
+    padding: 0px 5px;
+    margin-right:5px;
+    display: block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    margin-bottom: 5px;
+}
+
 .indicator{
     background-color: var(--white);
     display: inline-block;

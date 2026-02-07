@@ -50,7 +50,7 @@ const Career: React.FC<CareerProps> = ({step, postTitle, organization, period, s
                         <span className="badge">{period}</span>
                     </div>
                     <p>
-                        <span className="primary">Compétences acquises:</span>
+                        <span className="primary">Compétences acquises</span>
                         {skills}
                     </p>
                 </div>

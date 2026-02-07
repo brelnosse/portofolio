@@ -3,11 +3,6 @@ import { SkillsResumeCardprops } from "../types/skillsresumecard.type";
 export const skillsResumeItems: SkillsResumeCardprops[] = [
   {
     image: require('../assets/images/square.png'),
-    title: 'UI/UX Design',
-    description: 'Conception de maquettes interactives et intuitives avec Figma, centrées sur l’expérience utilisateur.',
-  },
-  {
-    image: require('../assets/images/square.png'),
     title: 'Développement Fullstack',
     description: 'Création d’applications web robustes avec React et Node.js, ou php pour le back-end.',
   },
@@ -24,6 +19,6 @@ export const skillsResumeItems: SkillsResumeCardprops[] = [
   {
     image: require('../assets/images/square.png'),
     title: 'Analyse & Gestion de Projet',
-    description: 'Analyse des besoins techniques et planification agile pour garantir la livraison de solutions viables.',
+    description: 'Analyse des besoins techniques et conception des différents diagrammes UML.',
   }
 ]

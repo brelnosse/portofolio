@@ -4,6 +4,9 @@
 }
 .aboutme{
     padding: 5rem 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .aboutContainer{
     padding: 5rem 0px;

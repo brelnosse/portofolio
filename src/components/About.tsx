@@ -9,18 +9,24 @@ const About:React.FC = () => {
     useSection(AboutRef, 'a propos');
     return (
         <section className="aboutme" ref={AboutRef}>
-            <Underlined text='A propos de moi'/>
+            <Underlined text='Qui suis-je ?'/>
             <div className="aboutContainer">
                 <div className="profileCaption">
                     <div className="pc-description">
                         <h3>Brel nosse</h3>
-                        <h4>UI/UX Designer - fullstack developer</h4>
+                        <h4>Etudiant développeur full-stack</h4>
                     </div>
                     <div className="pc-img">
                     </div>
                 </div>
                 <div className="profileDescription">
-                    Étudiant Ingénieur (3iL) – Développeur Fullstack En recherche d'alternance pour septembre 2026. Passionné par l'apprentissage continu et la veille technologique, je cultive une curiosité qui me pousse à explorer de nouvelles stacks et à automatiser mes projets (CI/CD, tests). Réactif et ouvert aux critiques, je transforme chaque défi en opportunité d'innover
+                    Étudiant Ingénieur (3iL) – Développeur 
+                    Fullstack En recherche d'alternance pour 
+                    septembre 2026. Doté d'une grande capacité 
+                    d'apprentissage rapide, je m'appuie sur une veille constante 
+                    pour explorer de nouvelles stacks et automatiser mes projets (intégration continue, tests unitaires). 
+                    Curieux, réactif et ouvert aux critiques, je transforme chaque défi
+                    technique en une opportunité d'innover et de progresser.
                 </div>
             </div>
         </section>
