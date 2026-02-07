@@ -4,6 +4,7 @@ export interface ProjectProps{
     title: string;
     color: string;
     type: string;
+    description: string;
     imgUrl: string[], 
     url ?: string, 
     githubUrl ?: string, 

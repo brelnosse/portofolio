@@ -8,7 +8,7 @@ import { ProjectProps } from "../types/project.type";
 import { SkillsCardProps } from "../types/skillscard.type";
 import SkillsCard from "./SkillsCard";
 
-const Project: React.FC<ProjectProps> = ({ title, color, githubUrl, url, imgUrl, skills, type }) => {
+const Project: React.FC<ProjectProps> = ({ title, color, githubUrl, url, imgUrl, description, skills, type }) => {
     const projectRef = useRef<HTMLDivElement>(null);
     const firstDescriptionRef = useRef<HTMLDivElement>(null);
     const [titleProgress, setTitleProgress] = useState<number>(0);
@@ -84,9 +84,16 @@ const Project: React.FC<ProjectProps> = ({ title, color, githubUrl, url, imgUrl,
                                 valueIcon={faGithub} title={githubUrl}/>}                        
                     </div>
                 </div>
-                
+
                 <div className="projectTextDescription" ref={firstDescriptionRef} style={{height: 'auto'}}>
-                    <h4>Stack</h4>
+                    <h4>Description</h4>
+                    <div className="description">
+                        {description}
+                    </div>
+                </div>
+
+                <div className="projectTextDescription" ref={firstDescriptionRef} style={{height: 'auto'}}>
+                    <h4>Compétences</h4>
                     <div className="stacks">
                         {
                             skills.map((el: SkillsCardProps, i: number) => {
@@ -94,16 +101,6 @@ const Project: React.FC<ProjectProps> = ({ title, color, githubUrl, url, imgUrl,
                             })
                         }
                     </div>
-                </div>
-                
-                <div className="projectTextDescription">
-                    <h4>Technologies</h4>
-                    <p>Stack moderne : React, TypeScript et Node.js.</p>
-                </div>
-
-                <div className="projectTextDescription">
-                    <h4>Technologie</h4>
-                    <p>Stack moderne : React, TypeScript et Node.js.</p>
                 </div>
             </div>
         </div>

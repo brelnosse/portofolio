@@ -20,7 +20,7 @@
     border-radius: 20px;
     transition: all 0.2s;
     background-position: top left;
-    background-color: #ffffffed;
+    background-color: #ffffffd2;
     background-blend-mode: overlay;
 }
 .projectDescription .p-title {
@@ -53,9 +53,11 @@
     font-size: 1.2em;
     z-index: 1;
     margin-top: 500px;
+    text-align: justify;
 }
 .projectTextDescription h4{
-    font-size: 1.4em;
+    font-family: 'poppins';
+    font-size: 1.1em;
     margin: 10px 0px;
 }
 

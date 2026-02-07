@@ -31,7 +31,8 @@ const ProjectContainer: React.FC = () => {
                                 url={el.url} 
                                 color={el.color}
                                 title={el.title} 
-                                imgUrl={el.imgUrl} 
+                                imgUrl={el.imgUrl}
+                                description={el.description} 
                                 disabled={false} 
                                 type={el.type} 
                                 githubUrl={el.githubUrl}
