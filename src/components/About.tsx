@@ -13,7 +13,7 @@ const About:React.FC = () => {
             <div className="aboutContainer">
                 <div className="profileCaption">
                     <div className="pc-description">
-                        <h3>Brel nosse</h3>
+                        <h3>Brel NOSSE</h3>
                         <h4>Etudiant développeur full-stack</h4>
                     </div>
                     <div className="pc-img">

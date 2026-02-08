@@ -6,7 +6,7 @@ import '../assets/style/hero.css';
 import { MenuItems } from "../data/menuItems";
 
 const Hero: React.FC = () => {
-    const name = "Brel nosse";
+    const name = "Brel NOSSE";
     const [showH3, setShowH3] = useState<boolean>(false);
     const [showIm, setShowIm] = useState<boolean>(false);
     const [visibleLetters, setVisibleLetters] = useState<number>(0);
@@ -125,7 +125,7 @@ const Hero: React.FC = () => {
             </div>
             <div className={`heroImg ${showImage ? 'image-visible' : 'image-hidden'}`}>
                 <img src={require('../assets/images/square.png')} alt="squares" style={{height: '80px', width: '100px'}} className='s'/>
-                <img src={require('../assets/images/pp.jpeg')} alt="brel nosse" className='profil'/>
+                <img src={require('../assets/images/pp.jpeg')} alt="brel NOSSE" className='profil'/>
                 <img src={require('../assets/images/star.png')} alt="star" style={{height: '120px', width: '120px'}} className='r'/>
             </div>
         </section>
