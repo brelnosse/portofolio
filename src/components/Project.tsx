@@ -92,7 +92,7 @@ const Project: React.FC<ProjectProps> = ({ title, color, githubUrl, url, imgUrl,
                     </div>
                 </div>
 
-                <div className="projectTextDescription" ref={firstDescriptionRef} style={{height: 'auto'}}>
+                <div className="projectTextDescription" style={{height: 'auto'}}>
                     <h4>Compétences</h4>
                     <div className="stacks">
                         {

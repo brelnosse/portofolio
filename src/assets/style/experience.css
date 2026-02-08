@@ -42,8 +42,14 @@
     padding-left: 12px;
     margin-bottom: 5px;
     opacity: 0; /* État initial */
+    width: fit-content;
+    padding: 5px 8px;
+    border-radius: 4px;
+    background-color: var(--primary-color);
 }
-
+.experience ul.skills_list li span{
+    color: white;
+}
 /* Déclenchement au scroll */
 .experience.visible ul.skills_list li {
     animation: fadeInUp 0.5s ease forwards;

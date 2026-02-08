@@ -37,7 +37,7 @@ const Experience: React.FC<ExperienceProps> = ({enterprise, period, postTitle, l
                 <span className="date">{period}</span>
             </div>
             
-            <div className="line">
+            <div className="line" style={{fontFamily: 'Poppins'}}>
                 <h3>{postTitle}</h3>
                 <span className='location'>{location}</span>
             </div>
@@ -48,7 +48,9 @@ const Experience: React.FC<ExperienceProps> = ({enterprise, period, postTitle, l
                         key={el + i} 
                         style={{ '--i': i } as React.CSSProperties}
                     >
-                        {el}
+                        <span>
+                            {el}
+                        </span>
                     </li>
                 ))}                
             </ul>

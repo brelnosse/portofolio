@@ -1,6 +1,6 @@
 import { faCss3, faHtml5, faJs, faNodeJs, faPhp, faReact } from "@fortawesome/free-brands-svg-icons";
 import { ProjectProps } from "../types/project.type";
-import { faChartLine, faDatabase } from "@fortawesome/free-solid-svg-icons";
+import { faChartLine, faDatabase, faFire } from "@fortawesome/free-solid-svg-icons";
 
 export const projects:ProjectProps[] = [
     {
@@ -50,13 +50,13 @@ export const projects:ProjectProps[] = [
             require('../assets/images/thayipizzaRight.png'), 
             require('../assets/images/thayipizzaBack.png'), 
         ],
-        description: "Thayi Pizza est une application web de commande en ligne conçue pour simplifier l'interaction entre une pizzeria et ses clients. Le projet met l'accent sur une expérience utilisateur (UX) fluide, permettant de parcourir le menu, de personnaliser sa commande et de faciliter la prise de contact pour la livraison" ,
+        description: "ThayiPizza est une application web de commande en ligne conçue pour simplifier l'interaction entre une pizzeria et ses clients. Le projet met l'accent sur une expérience utilisateur (UX) fluide, permettant de parcourir le menu, de personnaliser sa commande et de faciliter la prise de contact pour la livraison" ,
         url: 'https://thayipizza.netlify.app',
         githubUrl: '',
         skills: [
             {
                 icon: faJs,
-                text: 'Typescript'
+                text: 'Javascript'
             },
             {
                 icon: faReact,
@@ -77,6 +77,10 @@ export const projects:ProjectProps[] = [
             {
                 icon: faChartLine,
                 text: 'Chart.js'                
+            },
+            {
+                icon: faFire,
+                text: 'Firebase'                
             },
         ] 
     },

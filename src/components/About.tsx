@@ -19,15 +19,13 @@ const About:React.FC = () => {
                     <div className="pc-img">
                     </div>
                 </div>
-                <div className="profileDescription">
-                    Étudiant Ingénieur (3iL) – Développeur 
-                    Fullstack En recherche d'alternance pour 
-                    septembre 2026. Doté d'une grande capacité 
-                    d'apprentissage rapide, je m'appuie sur une veille constante 
-                    pour explorer de nouvelles stacks et automatiser mes projets (intégration continue, tests unitaires). 
-                    Curieux, réactif et ouvert aux critiques, je transforme chaque défi
-                    technique en une opportunité d'innover et de progresser.
-                </div>
+                <p className="profileDescription">
+                    Étudiant à<span>3iL Ingénieurs</span>, je cherche une<span>alternance</span>
+                    en <span>développement Fullstack</span>pour<span>septembre 2026</span>. Plutôt curieux, 
+                    j'aime tester de nouvelles stacks et automatiser mes projets. 
+                    Je sais que j'ai encore à apprendre, mais<span>j'apprends vite</span>et
+                    j'apprécie les<span>retours constructifs</span>qui me font progresser.
+                </p>
             </div>
         </section>
     );

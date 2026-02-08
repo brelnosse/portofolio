@@ -17,7 +17,7 @@
     background-color: transparent;
 }
 .profileCaption{
-    background-color: var(--bg-color);
+    background-color: var(--white);
     padding: 20px 10px;
     height: 300px;
     width: 350px;
@@ -39,6 +39,11 @@
 .profileCaption .pc-description{
     padding: 20px 10px;
 }
+.profileCaption .pc-description h4{
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 1em;
+}
 .pc-img{
     width: var(--width);
     height: var(--height);
@@ -51,9 +56,32 @@
 }
 .profileDescription{
     font-size: 1.3em;
-    max-width: 450px;
+    width: 450px;
     padding: 0px 25px;
-    text-align: justify;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 0px 16px 16px #00000006;
+    border-radius: 16px;
+    line-height: 30px;
+    hyphens: auto;
+}
+.profileDescription span{
+    font-family: 'poppins';
+    padding: 0px 3px;
+    font-size: 0.8em;
+    font-weight: 500;
+    position: relative;
+}
+.profileDescription span::before{
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    left: 50%;
+    bottom: 0px;
+    background-color: var(--primary-color);
+    transform: translateX(-50%);
+    border-radius: 8px;
 }
 @media screen and (max-width: 1110px) {
     .aboutContainer{
@@ -93,7 +121,7 @@
     }
     .profileDescription{
         text-align: center;
-        max-width: 100%;
+        max-width: 95%;
     }
 }
 @media screen and (max-width: 560px) {
