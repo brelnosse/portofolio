@@ -21,12 +21,13 @@ import ParticlesComponent from '../components/Particles';
 
 const Home:React.FC = () =>{
     const [skillsData, setSkillsData] = useState<SkillsCardProps[]>(Skills);
+    const [isFormVisible, setIsFormVisible] = useState<boolean>(false)
 
     return (
         <div className="container">
             <ParticlesComponent/>
-            <Navbar />
-            <Hero/>
+            <Navbar isFormVisible={isFormVisible} setIsFormVisible={setIsFormVisible}/>
+            <Hero isFormVisible={isFormVisible} setIsFormVisible={setIsFormVisible}/>
             <SkillResumeContainer skillsResumeItems={skillsResumeItems}/>
             <About />
             <SkillsContainer skillsData={skillsData} setSkillsData={setSkillsData}/>

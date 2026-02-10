@@ -82,14 +82,13 @@ const NavbarItem: React.FC<MenuItemType & { animationDelay: number; isResponsive
     );
 }
 
-const Navbar: React.FC = () => {
+const Navbar: React.FC<{isFormVisible: boolean; setIsFormVisible: (v: boolean) => void}> = ({isFormVisible, setIsFormVisible}) => {
     const [isVisible, setIsVisible] = useState<boolean>(false);
     const [showTitle, setShowTitle] = useState<boolean>(false);
     const [showButton, setShowButton] = useState<boolean>(false);
     const [isResponsive, setIsResponsive] = useState<boolean>(false);
     const [menuKey, setMenuKey] = useState<number>(0);
     const [isClosing, setIsClosing] = useState<boolean>(false);
-    const [isFormVisible, setIsFormVisible] = useState<boolean>(false)
     const context = useContext(SectionContext);
 
     useEffect(() => {
@@ -178,10 +177,10 @@ const Navbar: React.FC = () => {
                 <li className={`action ${showButton ? 'button-visible' : 'button-hidden'}`}>
                     <Button 
                         type="default" 
-                        valueText="Contactez" 
+                        valueText="Contactez-moi" 
                         textStyle="bold" 
                         onClick={()=>{
-                            setIsFormVisible(prev => !prev);
+                            setIsFormVisible(true);
                         }}
                         style={{ margin: '10px 0px' }}
                     />

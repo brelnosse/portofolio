@@ -5,7 +5,7 @@ import '../assets/style/hero.css';
 //@ts-ignore
 import { MenuItems } from "../data/menuItems";
 
-const Hero: React.FC = () => {
+const Hero: React.FC<{isFormVisible: boolean; setIsFormVisible: (v: boolean) => void;}> = ({isFormVisible, setIsFormVisible}) => {
     const name = "Brel NOSSE";
     const [showH3, setShowH3] = useState<boolean>(false);
     const [showIm, setShowIm] = useState<boolean>(false);
@@ -116,7 +116,9 @@ const Hero: React.FC = () => {
                 </h4>
                 <div className="actions">
                     <div className={`button-wrapper ${showButton1 ? 'button-visible' : 'button-hidden'}`}>
-                        <Button type='default' valueText='Contactez-moi'/>
+                        <Button type='default' valueText='Contactez-moi' onClick={()=>{
+                            setIsFormVisible(true)
+                        }}/>
                     </div>
                     <div className={`button-wrapper ${showButton2 ? 'button-visible' : 'button-hidden'}`}>
                         <Button type='light' valueText='Télécharger mon CV'/>
