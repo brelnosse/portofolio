@@ -18,7 +18,10 @@
     box-shadow: 1px 1px 0px 0px var(--border-color);
     transform: translateY(00.3125rem);
 }
-
+.btn svg{
+    font-size: 0.8em;
+    margin-right: 3px;
+}
 .btn.btn-light{
     color: var(--black);
     background-color: var(--white);

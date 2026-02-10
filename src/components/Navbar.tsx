@@ -12,6 +12,7 @@ import 'animate.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { COLORS } from "../utils/colors";
 import { SectionContext } from "../context/SectionContext";
+import ContactForm from "./ContactForm";
 
 const NavbarItem: React.FC<MenuItemType & { animationDelay: number; isResponsive: boolean; isClosing: boolean;activeSection : string; setActiveSection : (b: string) => void; setIsVisible: (v: boolean) => void; setIsClosing: (v: boolean) => void}> = ({ 
     icon, 
@@ -88,15 +89,14 @@ const Navbar: React.FC = () => {
     const [isResponsive, setIsResponsive] = useState<boolean>(false);
     const [menuKey, setMenuKey] = useState<number>(0);
     const [isClosing, setIsClosing] = useState<boolean>(false);
+    const [isFormVisible, setIsFormVisible] = useState<boolean>(false)
     const context = useContext(SectionContext);
 
     useEffect(() => {
-        // Show title first
         const titleTimer = setTimeout(() => {
             setShowTitle(true);
         }, 50);
 
-        // Show button after all menu items
         const buttonTimer = setTimeout(() => {
             setShowButton(true);
         }, 50 + (MenuItems.length * 150) + 200);
@@ -178,17 +178,24 @@ const Navbar: React.FC = () => {
                 <li className={`action ${showButton ? 'button-visible' : 'button-hidden'}`}>
                     <Button 
                         type="default" 
-                        valueText="Contactez-moi" 
+                        valueText="Contactez" 
                         textStyle="bold" 
+                        onClick={()=>{
+                            setIsFormVisible(prev => !prev);
+                        }}
                         style={{ margin: '10px 0px' }}
                     />
                 </li>
             </ul>
             <div className="navbar-actions_container">
                 <Button 
-                    type="default" 
+                    type={isFormVisible ? 'light' : 'default'} 
                     valueText="Contactez-moi" 
                     textStyle="bold" 
+                    valueIcon={isFormVisible ? fas.faTimes : fas.faAddressBook}
+                    onClick={()=>{
+                        setIsFormVisible(prev => !prev);
+                    }}
                     id="contactMeNavbtn"
                 />
                 <Button 
@@ -199,6 +206,7 @@ const Navbar: React.FC = () => {
                     style={{ zIndex: '999', position: 'relative' }}
                 />
             </div>
+            <ContactForm isVisible={isFormVisible}/>
         </nav>
     );
 }
