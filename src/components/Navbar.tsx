@@ -189,12 +189,12 @@ const Navbar: React.FC = () => {
             </ul>
             <div className="navbar-actions_container">
                 <Button 
-                    type={isFormVisible ? 'light' : 'default'} 
+                    type={'default'} 
                     valueText="Contactez-moi" 
                     textStyle="bold" 
-                    valueIcon={isFormVisible ? fas.faTimes : fas.faAddressBook}
+                    valueIcon={fas.faAddressBook}
                     onClick={()=>{
-                        setIsFormVisible(prev => !prev);
+                        setIsFormVisible(true);
                     }}
                     id="contactMeNavbtn"
                 />
@@ -206,7 +206,7 @@ const Navbar: React.FC = () => {
                     style={{ zIndex: '999', position: 'relative' }}
                 />
             </div>
-            <ContactForm isVisible={isFormVisible}/>
+            <ContactForm isVisible={isFormVisible} setIsVisible={setIsFormVisible}/>
         </nav>
     );
 }
