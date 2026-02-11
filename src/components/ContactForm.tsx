@@ -6,6 +6,8 @@ import Underlined from './Underlined';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Dispatch, FormEvent, SetStateAction, useRef, useState } from 'react';
 import { sendEmail } from '../lib/emailjs';
+import { faFacebook, faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-router-dom';
 
 const validateForm = (data:{name: string; email: string; message: string}) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -79,6 +81,20 @@ const ContactForm:React.FC<{isVisible: boolean; setIsVisible: (v: boolean) => vo
     return (
         <div className={`contactForm${isVisible ? ' visible': ' hide'}`}>
             <div className="form-header">
+                <div className="socialsContainer">
+                    <Link to={"https://github.com/brelnosse"} target='_blank'>
+                        <FontAwesomeIcon icon={faGithub}/>
+                    </Link>
+                    <Link to={"https://www.linkedin.com/in/brel-nosse-88a3a2377/"} target='_blank'>
+                        <FontAwesomeIcon icon={faLinkedin}/>
+                    </Link>
+                    <Link to={"https://x.com/BrelNosse"} target='_blank'>
+                        <FontAwesomeIcon icon={faTwitter}/>
+                    </Link>
+                    <Link to={"https://www.facebook.com/profile.php?id=61568437907463"} target='_blank'>
+                        <FontAwesomeIcon icon={faFacebook}/>
+                    </Link>
+                </div>
                 <span 
                     className="closeForm"
                     onClick={()=>{
