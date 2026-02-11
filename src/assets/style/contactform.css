@@ -100,10 +100,13 @@
     }
     .formContainer{
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 280px 1fr;
     }
     .contactForm_right{
         padding: 30px;
         margin-bottom: 10px;
+    }
+    .contactForm_left img{
+        height: 200px;
     }
 }
