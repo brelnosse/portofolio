@@ -1,0 +1,83 @@
+.alert{
+    background-color: var(--bg-fade-color);
+    width: fit-content;
+    box-shadow: -4px 4px 0px 0px var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 15px;
+    width: 350px;
+    border-radius: 8px;
+    position: fixed;
+    font-family: 'calibri';
+    left: 20px;
+    z-index: 99999;
+    transition: all 0.3s;
+}
+.alert.hide{
+    transform: scale(0);
+    bottom: -100%;
+}
+.alert.show{
+    transform: scale(1);
+    bottom: 20px;
+}
+.alert svg{
+    /* font-size: 20px; */
+    margin-right: 5px;
+}
+.alert.error{
+    box-shadow: -4px 4px 0px 0px var(--danger-dark-color);
+    border: 1px solid var(--danger-dark-color);
+}
+.alert.success{
+    box-shadow: -4px 4px 0px 0px var(--success-dark-color);
+    border: 1px solid var(--success-dark-color);
+}
+.alert.error h1{
+    color: var(--danger-color);
+}
+.alert.success h1{
+    color: var(--success-color)
+}
+.alert h1{
+    font-size: 1.2em;
+    margin: 5px 0px;
+}
+.alert p{
+    font-size: 1em;
+    margin: 10px 0px;
+    padding-left: 30px;
+}
+.act-btns-container{
+    padding: 0px 0px;
+    padding-bottom: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 4px;
+}
+.act-btns-container button{
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.error .act-btns-container button{
+    background-color: var(--danger-color);
+    color: white;
+}
+.success .act-btns-container button{
+    background-color: var(--success-color);
+    color: white;
+}
+.error .act-btns-container button:hover{
+    background-color: var(--danger-dark-color);
+    color: white;
+}
+.success .act-btns-container button:hover{
+    background-color: var(--success-dark-color);
+    color: white;
+}
+.act-btns-container button:hover{
+    background-color: #e2e2e2;
+}

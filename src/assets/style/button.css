@@ -9,7 +9,6 @@
     transition: all 0.1s;
     font-size: 1.1em;
 }
-
 .btn.bold{
     font-weight: bold;
 }
@@ -25,4 +24,8 @@
 .btn.btn-light{
     color: var(--black);
     background-color: var(--white);
+}
+.btn.loading{
+    cursor: not-allowed;
+    color: var(--text-secondary);
 }

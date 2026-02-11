@@ -18,15 +18,22 @@ import ExperienceContainer from '../components/ExperienceContainer';
 import ProjectContainer from '../components/ProjetContainer';
 import About from '../components/About';
 import ParticlesComponent from '../components/Particles';
+import Alert from '../components/Alert';
 
 const Home:React.FC = () =>{
     const [skillsData, setSkillsData] = useState<SkillsCardProps[]>(Skills);
-    const [isFormVisible, setIsFormVisible] = useState<boolean>(false)
+    const [isFormVisible, setIsFormVisible] = useState<boolean>(false);
+    const [isAlertVisible, setIsAlertVisible] = useState<boolean>(false);
+    const [alertDatas, setAlertDatas] = useState<{type: string; title: string; description: string}>({
+        type: '',
+        title: '',
+        description:''
+    });
 
     return (
         <div className="container">
             <ParticlesComponent/>
-            <Navbar isFormVisible={isFormVisible} setIsFormVisible={setIsFormVisible}/>
+            <Navbar isFormVisible={isFormVisible} setIsFormVisible={setIsFormVisible} setIsAlertVisible={setIsAlertVisible} setAlertDatas={setAlertDatas}/>
             <Hero isFormVisible={isFormVisible} setIsFormVisible={setIsFormVisible}/>
             <SkillResumeContainer skillsResumeItems={skillsResumeItems}/>
             <About />
@@ -34,6 +41,12 @@ const Home:React.FC = () =>{
             <CareerContainer />
             <ExperienceContainer/>
             <ProjectContainer />
+            <Alert 
+                type={alertDatas.type}
+                title={alertDatas.title} 
+                description={alertDatas.description}
+                isAlertVisible={isAlertVisible}
+                setIsAlertVisible={setIsAlertVisible}/>
         </div>
     );
 }

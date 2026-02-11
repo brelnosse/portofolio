@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 //@ts-ignore
 import '../assets/style/navbar.css';
 import Button from "./Button";
-import { useCallback, useContext, useEffect, useRef, useState } from "react";
+import { Dispatch, SetStateAction, useCallback, useContext, useEffect, useRef, useState } from "react";
 //@ts-ignore
 import { MenuItems } from "../data/menuItems";
 import { MenuItemType, NavbarProps } from "../types/navbar.types";
@@ -82,7 +82,7 @@ const NavbarItem: React.FC<MenuItemType & { animationDelay: number; isResponsive
     );
 }
 
-const Navbar: React.FC<{isFormVisible: boolean; setIsFormVisible: (v: boolean) => void}> = ({isFormVisible, setIsFormVisible}) => {
+const Navbar: React.FC<{isFormVisible: boolean; setIsFormVisible: (v: boolean) => void;  setIsAlertVisible: (v: boolean)=> void; setAlertDatas: Dispatch<SetStateAction<{ type: string; title: string; description: string; }>>}> = ({isFormVisible, setIsFormVisible,  setIsAlertVisible, setAlertDatas}) => {
     const [isVisible, setIsVisible] = useState<boolean>(false);
     const [showTitle, setShowTitle] = useState<boolean>(false);
     const [showButton, setShowButton] = useState<boolean>(false);
@@ -205,7 +205,7 @@ const Navbar: React.FC<{isFormVisible: boolean; setIsFormVisible: (v: boolean) =
                     style={{ zIndex: '999', position: 'relative' }}
                 />
             </div>
-            <ContactForm isVisible={isFormVisible} setIsVisible={setIsFormVisible}/>
+            <ContactForm isVisible={isFormVisible} setIsVisible={setIsFormVisible} setIsAlertVisible={setIsAlertVisible} setAlertDatas={setAlertDatas}/>
         </nav>
     );
 }

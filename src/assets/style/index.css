@@ -9,6 +9,10 @@
     --white: rgb(255, 255, 255);
     --bg-color:#e8f3ef;
     --bg-fade-color: #FFFFFF;
+    --danger-color: rgb(213, 5, 40);
+    --danger-dark-color: rgb(169, 0, 28);
+    --success-color: rgb(2, 134, 57);
+    --success-dark-color: rgb(2, 106, 45);
     --text-secondary: #535C5E;
     --default: #8E9799;
     --border-radius: 4px;

@@ -4,7 +4,7 @@ import '../assets/style/contactform.css';
 import Button from './Button';
 import Underlined from './Underlined';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { FormEvent, useRef, useState } from 'react';
+import { Dispatch, FormEvent, SetStateAction, useRef, useState } from 'react';
 import { sendEmail } from '../lib/emailjs';
 
 const validateForm = (data:{name: string; email: string; message: string}) => {
@@ -17,8 +17,9 @@ const validateForm = (data:{name: string; email: string; message: string}) => {
   return null;
 };
 
-const ContactForm:React.FC<{isVisible: boolean; setIsVisible: (v: boolean) => void;}> = ({isVisible, setIsVisible}) => {
+const ContactForm:React.FC<{isVisible: boolean; setIsVisible: (v: boolean) => void; setIsAlertVisible: (v: boolean) => void, setAlertDatas: Dispatch<SetStateAction<{ type: string; title: string; description: string; }>>}> = ({isVisible, setIsVisible, setIsAlertVisible, setAlertDatas}) => {
     const form = useRef<HTMLFormElement>(null);
+    const [isLoading, setIsloading] = useState<boolean>(false);
     const [formData, setFormData] = useState<{name: string; email: string; message: string}>({
         name: '',
         email: '',
@@ -35,20 +36,44 @@ const ContactForm:React.FC<{isVisible: boolean; setIsVisible: (v: boolean) => vo
         
         if(validateForm(formData) == null){
             if(form.current){
+                setIsloading(true);
+                try{
                 if(await sendEmail(
                     form, 
                     process.env.REACT_APP_EMAILJS_SERVICE || 'YOUR EMAIJS SERVICE KEY', 
                     process.env.REACT_APP_EMAILJS_TEMPLATE || 'YOUR EMAIJS TEMPLATE KEY',
                     process.env.REACT_APP_EMAILJS_PUBLIC_KEY || 'YOUR EMAIJS PUBLIC KEY'))
                     {
-                        alert('envoyé')
+                        setIsAlertVisible(true);
+                        setAlertDatas({
+                            type: 'success',
+                            title: 'Message envoyé !',
+                            description: 'Votre message a bien été envoyé.'
+                        })
+                        setIsAlertVisible(true);
+                        (form.current as HTMLFormElement).reset()
                     }else{
-                        alert('Une erreur est survenu lors de l\'envoi du message')
-                    }
+                        setIsAlertVisible(true);
+                        setAlertDatas({
+                            type: 'error',
+                            title: 'Erreur lors de l\'envoi du message',
+                            description: 'Une erreur inattendu est survenue lors de l\'envoi du message'
+                        })
+                        setIsAlertVisible(true);
+                    }  
+                }catch(error: unknown){
+                    console.log(error)
+                }finally{
+                    setIsloading(false);
+                }
             }
         }else{
-            alert(validateForm(formData))
-            console.log(formData)
+            setIsAlertVisible(true);
+            setAlertDatas({
+                type: 'error',
+                title: validateForm(formData) || '',
+                description: 'Certaines données ont été mal renseignée.'
+            })
         }
     }
     return (
@@ -88,7 +113,7 @@ const ContactForm:React.FC<{isVisible: boolean; setIsVisible: (v: boolean) => vo
                             handleChange('message', e.target.value)
                         }} required></textarea>
                     </div>
-                    <Button type='light' valueIcon={fas.faPaperPlane}valueText='Envoyer le message'/>
+                    <Button type='light' valueIcon={fas.faPaperPlane}valueText='Envoyer le message' loading={isLoading}/>
                 </form>
             </div>
         </div>
