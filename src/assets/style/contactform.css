@@ -123,6 +123,7 @@
     }
     .formContainer{
         grid-template-columns: 1fr;
+        padding: 0px;
         grid-template-rows: 280px 1fr;
     }
     .contactForm_right{

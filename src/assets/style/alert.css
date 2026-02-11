@@ -81,3 +81,8 @@
 .act-btns-container button:hover{
     background-color: #e2e2e2;
 }
+@media screen and (max-width: 390px) {
+    .alert{
+        width: calc(100vw - 40px)
+    }
+}
