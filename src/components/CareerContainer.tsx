@@ -63,6 +63,7 @@ const CareerContainer: React.FC = () =>{
                                 return <Career 
                                         step={el.step} 
                                         postTitle={el.postTitle} 
+                                        orgUrl={el.orgUrl}
                                         organization={el.organization}
                                         period={el.period} 
                                         skills={el.skills} 

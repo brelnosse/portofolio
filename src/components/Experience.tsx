@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { ExperienceProps } from "../types/experience.type";
 //@ts-ignore
 import '../assets/style/experience.css';
+import MagicLink from './MagicLink';
 
 const Experience: React.FC<ExperienceProps> = ({enterprise, period, postTitle, location, skills, tools, ...props}) => {
     const [isVisible, setIsVisible] = useState(false);
@@ -33,7 +34,7 @@ const Experience: React.FC<ExperienceProps> = ({enterprise, period, postTitle, l
             {...props}
         > 
             <div className="line">
-                <h3>{enterprise}</h3>
+                <h3><MagicLink path='https://www.ovnicode.com/' text={enterprise}/></h3>
                 <span className="date">{period}</span>
             </div>
             

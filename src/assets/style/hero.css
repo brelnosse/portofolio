@@ -7,12 +7,15 @@ section.hero{
 .heroDescription h4{
     display: flex;
     font-size: 1.6em;
+    user-select: none;
     align-items: center;
 }
 .heroDescription h3{
     font-size: 2em;
+    user-select: none;
 }
 .heroDescription h1{
+    user-select: none;
     font-size: 6.5em;
 }
 .heroDescription .actions{

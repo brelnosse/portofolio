@@ -13,6 +13,7 @@
     cursor: pointer;
     transition: all 0.2s;
     position: relative;
+    font-family: 'Poppins';
     padding: 10px 0px;
     color: var(--text-secondary);
     font-size: 1.1em;
@@ -23,7 +24,7 @@
     bottom: 0px;
     left: 50%;
     transform: translateX(-50%);
-    height: 2px;
+    height: 4px;
     width: 0px;
     border-radius: 5px;
     background-color: var(--primary-color);
@@ -35,7 +36,7 @@
 }
 .tab-navigation span.active{
     font-weight: bold;
-    color: var(--black);
+    color: var(--primary-color);
 }
 .tab-navigation span.active::before{
     width: 100%;

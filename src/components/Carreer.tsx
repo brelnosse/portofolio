@@ -2,7 +2,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { CareerProps } from "../types/career.type";
 //@ts-ignore
 import '../assets/style/career.css';
-const Career: React.FC<CareerProps> = ({step, postTitle, organization, period, skills, ...props}) =>{
+import MagicLink from "./MagicLink";
+const Career: React.FC<CareerProps> = ({step, postTitle, orgUrl, organization, period, skills, ...props}) =>{
     const [windowSize, setWindowSize] = useState<number>(window.innerWidth);
     const careerRef = useRef<HTMLDivElement>(null);
 
@@ -42,11 +43,10 @@ const Career: React.FC<CareerProps> = ({step, postTitle, organization, period, s
             {...props}>
             <span className="indicator"></span>
             <div className="card scholar-career">
-                {/* <span className='step'>{step}</span> */}
                 <div className="scholar-career_text">
                     <h3>{postTitle}</h3>
                     <div className="timeline">
-                        <h4>{organization}</h4>
+                        <h4 style={{fontSize: '0.8em'}}><MagicLink path={orgUrl} text={organization}/></h4>
                         <span className="badge">{period}</span>
                     </div>
                     <p>
