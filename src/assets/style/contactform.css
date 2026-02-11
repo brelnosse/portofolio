@@ -126,6 +126,9 @@
         padding: 0px;
         grid-template-rows: 280px 1fr;
     }
+    .socialsContainer{
+        justify-content: flex-start;
+    }
     .contactForm_right{
         padding: 30px;
         margin-bottom: 10px;
