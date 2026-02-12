@@ -12,6 +12,7 @@ const Project: React.FC<ProjectProps> = ({ title, color, githubUrl, url, imgUrl,
     const projectRef = useRef<HTMLDivElement>(null);
     const cubeRef = useRef<HTMLDivElement>(null);
     const firstDescriptionRef = useRef<HTMLDivElement>(null);
+    const secondDescriptionRef = useRef<HTMLDivElement>(null);
     
     const [titleProgress, setTitleProgress] = useState<number>(0);
     const [cubeRotation, setCubeRotation] = useState<number>(0);
@@ -27,7 +28,42 @@ const Project: React.FC<ProjectProps> = ({ title, color, githubUrl, url, imgUrl,
                 isVisible = entry.isIntersecting;
             });
         }); 
-
+        const firstDescriptionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const ratio = entry.intersectionRatio;
+                if(ratio <= 0.3){
+                    (entry.target as HTMLElement).style.transform = 'scale(0.6)'
+                }else if(ratio >= 1){
+                    (entry.target as HTMLElement).style.transform = 'scale(1)'
+                }else{
+                    const progress = (ratio - 0.3) / 0.7;
+                    const newScale = 0.6 + (progress * 0.2);
+                    (entry.target as HTMLElement).style.transform = 'scale('+newScale+')'
+                }
+            });
+        },{
+            threshold: Array.from({length: 21}, (_, i) => i / 20)
+        });
+        const secondDescriptionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const ratio = entry.intersectionRatio;
+                if(ratio <= 0.3){
+                    (entry.target as HTMLElement).style.transform = 'scale(0.6)'
+                }else if(ratio >= 1){
+                    (entry.target as HTMLElement).style.transform = 'scale(1)'
+                }else{
+                    const progress = (ratio - 0.3) / 0.7;
+                    const newScale = 0.6 + (progress * 0.2);
+                    (entry.target as HTMLElement).style.transform = 'scale('+newScale+')'
+                }
+            });
+        },{
+            threshold: Array.from({length: 21}, (_, i) => i / 20)
+        });
+        if(firstDescriptionRef.current && secondDescriptionRef.current){
+            firstDescriptionObserver.observe(firstDescriptionRef.current);
+            secondDescriptionObserver.observe(secondDescriptionRef.current);
+        }
         const handleScroll = () => {
             if (!ticking) {
                 ticking = true;
@@ -70,6 +106,8 @@ const Project: React.FC<ProjectProps> = ({ title, color, githubUrl, url, imgUrl,
 
         return () => {
             observer.disconnect();
+            firstDescriptionObserver.disconnect();
+            secondDescriptionObserver.disconnect();
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
@@ -135,7 +173,7 @@ const Project: React.FC<ProjectProps> = ({ title, color, githubUrl, url, imgUrl,
                     </div>
                 </div>
 
-                <div className="projectTextDescription">
+                <div className="projectTextDescription" ref={secondDescriptionRef}>
                     <h4>Compétences</h4>
                     <div className="stacks">
                         {skills.map((el: SkillsCardProps, i: number) => (

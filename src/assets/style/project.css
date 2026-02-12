@@ -50,6 +50,7 @@
     border-radius: 4px;
     height: auto;
     font-size: 1.2em;
+    transition: all 0.2s linear;
     z-index: 1;
     margin-top: 500px;
     text-align: justify;
