@@ -27,6 +27,8 @@ section.hero{
 .heroImg{
     border-radius: 50%;
     width: 18.125rem;
+    min-width: 18.125rem;
+    min-height: 18.125rem;
     height: 18.125rem;
     position: relative;
     border: 0.25rem solid var(--border-color);
@@ -47,17 +49,14 @@ section.hero{
     top: 0px;
     right: -30px;
 }
-/* Wrapper pour garder les mots ensemble */
 .word-wrapper {
     display: inline-block;
-    white-space: nowrap; /* Empêche les lettres d'un mot de se séparer */
+    white-space: nowrap; 
 }
-
 .word-space {
     display: inline;
 }
 
-/* Letter animation - Plus douce et apaisante */
 .letter {
     display: inline-block;
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
@@ -74,23 +73,18 @@ section.hero{
     animation: letterFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Animation douce et apaisante pour les lettres */
 @keyframes letterFadeIn {
     0% {
         opacity: 0;
-        transform: translateY(15px) scale(0.95);
     }
     60% {
         opacity: 0.8;
-        transform: translateY(-3px) scale(1.02);
     }
     100% {
         opacity: 1;
-        transform: translateY(0) scale(1);
     }
 }
 
-/* Line animation for h4 */
 .hero-line {
     display: inline-block;
     height: 1px;
@@ -122,7 +116,6 @@ section.hero{
     transform: translateX(0);
 }
 
-/* I'm animation - fade in doux */
 .hero-im {
     font-size: 0.8em;
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
@@ -138,7 +131,6 @@ section.hero{
     transform: translateY(0);
 }
 
-/* H4 text animation - fades in */
 .hero-h4-text {
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
@@ -153,7 +145,6 @@ section.hero{
     transform: translateY(0);
 }
 
-/* Container des boutons */
 .actions {
     display: flex;
     align-items: center;
@@ -161,7 +152,6 @@ section.hero{
     padding: 1.25rem 0px;
 }
 
-/* Wrapper pour chaque bouton */
 .button-wrapper {
     transition: opacity 0.5s ease-out, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
@@ -176,7 +166,6 @@ section.hero{
     transform: translateY(0) scale(1);
 }
 
-/* Image animation - slide from right with fade */
 .heroImg {
     transition: opacity 0.9s ease-out, transform 0.9s ease-out;
 }
@@ -190,6 +179,11 @@ section.hero{
     opacity: 1;
     transform: translateX(0);
 }
+section.hero .socialsContainer{
+    justify-content: flex-start;
+    padding-top: 30px;
+    gap: 20px;
+}
 @media screen and (max-width: 1100px){
     .heroDescription h1{
         font-size: 5.5em;
@@ -202,6 +196,9 @@ section.hero{
         height: auto;
         padding: 2.5rem;
         padding-top: 5.625rem;
+    }
+    section.hero div.socialsContainer{
+        justify-content: center;
     }
     .heroDescription{
        text-align: center;

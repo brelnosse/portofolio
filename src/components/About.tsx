@@ -14,7 +14,7 @@ const About:React.FC = () => {
                 <div className="profileCaption">
                     <div className="pc-description">
                         <h3>Brel NOSSE</h3>
-                        <h4>Etudiant développeur full-stack</h4>
+                        <h4>Etudiant développeur Full-stack</h4>
                     </div>
                     <div className="pc-img">
                     </div>

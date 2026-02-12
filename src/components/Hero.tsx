@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import '../assets/style/hero.css';
 //@ts-ignore
 import { MenuItems } from "../data/menuItems";
+import SocialMedia from "./SocialMedia";
 
 const Hero: React.FC<{isFormVisible: boolean; setIsFormVisible: (v: boolean) => void;}> = ({isFormVisible, setIsFormVisible}) => {
     const name = "Brel NOSSE";
@@ -111,7 +112,7 @@ const Hero: React.FC<{isFormVisible: boolean; setIsFormVisible: (v: boolean) => 
                 <h4>
                     <span className={`hero-line ${showLine ? 'line-visible' : 'line-hidden'}`}></span>
                     <span className={`hero-h4-text ${showH4Text ? 'element-visible' : 'element-hidden'}`}>
-                        Étudiant Développeur Fullstack Web & Mobile
+                        Étudiant Développeur Full-stack
                     </span>
                 </h4>
                 <div className="actions">
@@ -124,6 +125,7 @@ const Hero: React.FC<{isFormVisible: boolean; setIsFormVisible: (v: boolean) => 
                         <Button type='light' valueText='Télécharger mon CV'/>
                     </div>
                 </div>
+                <SocialMedia/>
             </div>
             <div className={`heroImg ${showImage ? 'image-visible' : 'image-hidden'}`}>
                 <img src={require('../assets/images/square.png')} alt="squares" style={{height: '80px', width: '100px'}} className='s'/>
