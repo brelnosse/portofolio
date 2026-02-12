@@ -29,7 +29,7 @@ export const MenuItems:MenuItemType[] = [
     },
     {
         icon: fas.faCogs,
-        displayText: 'Projets',
+        displayText: 'projects',
         sectionId: 'projects'
     }
 ];

@@ -1,15 +1,10 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 //@ts-ignore
 import '../assets/style/home.css';
 import Navbar from '../components/Navbar';
-import Underlined from '../components/Underlined';
 import { Skills } from '../data/skills';
 import { skillsResumeItems } from '../data/skillsresumeItems';
 import { SkillsCardProps } from '../types/skillscard.type';
-import TabNavigation from '../components/TabNavigation';
-import { projects } from '../data/projects';
-import { ProjectProps } from '../types/project.type';
-import Project from '../components/Project';
 import Hero from '../components/Hero';
 import SkillResumeContainer from '../components/SkillResumeContainer';
 import SkillsContainer from '../components/SkillsContainer';

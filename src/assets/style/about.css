@@ -50,7 +50,7 @@
     margin-right: -125px;
     min-width: var(--width);
     border-radius: 32px;
-    background-image: url(../images/pp.jpeg);
+    background-image: url(../images/pp.webp);
     background-size: cover;
     border: 8px solid white;
 }

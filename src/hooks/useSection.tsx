@@ -1,9 +1,8 @@
 import { RefObject, useContext, useEffect } from "react";
 import { SectionContext } from "../context/SectionContext";
 
-// Hook typé avec useSectionContext
 export const useSection = (ref: RefObject<HTMLElement | null>, section: string) => {
-    const context = useContext(SectionContext); // Hook custom type-safe
+    const context = useContext(SectionContext);
 
     useEffect(() => {
         if (!ref.current) return;
@@ -24,5 +23,5 @@ export const useSection = (ref: RefObject<HTMLElement | null>, section: string) 
 
         observer.observe(projectsElem);
         return () => observer.disconnect();
-    }, [ref, section, context.setActiveSection]); // Dépendance précise
+    }, [ref, section, context.setActiveSection, context]);
 };

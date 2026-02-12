@@ -127,7 +127,7 @@ const Hero: React.FC<{isFormVisible: boolean; setIsFormVisible: (v: boolean) => 
             </div>
             <div className={`heroImg ${showImage ? 'image-visible' : 'image-hidden'}`}>
                 <img src={require('../assets/images/square.png')} alt="squares" style={{height: '80px', width: '100px'}} className='s'/>
-                <img src={require('../assets/images/pp.jpeg')} alt="brel NOSSE" className='profil'/>
+                <img src={require('../assets/images/pp.webp')} alt="brel NOSSE" className='profil'/>
                 <img src={require('../assets/images/star.png')} alt="star" style={{height: '120px', width: '120px'}} className='r'/>
             </div>
         </section>
