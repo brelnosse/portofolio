@@ -30,36 +30,49 @@ const Project: React.FC<ProjectProps> = ({ title, color, githubUrl, url, imgUrl,
         }); 
         const firstDescriptionObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
+                const target = entry.target as HTMLElement;
                 const ratio = entry.intersectionRatio;
-                if(ratio <= 0.3){
-                    (entry.target as HTMLElement).style.transform = 'scale(0.6)'
-                }else if(ratio >= 1){
-                    (entry.target as HTMLElement).style.transform = 'scale(1)'
-                }else{
-                    const progress = (ratio - 0.3) / 0.7;
-                    const newScale = 0.6 + (progress * 0.2);
-                    (entry.target as HTMLElement).style.transform = 'scale('+newScale+')'
+
+                const minScale = 0.9;
+                const maxScale = 1;
+                
+                if (entry.isIntersecting) {
+                    const progress = Math.min(1, Math.max(0, (ratio - 0.2) / 0.7));
+                    const currentScale = minScale + (progress * (maxScale - minScale));
+                    
+                    target.style.transform = `scale(${currentScale})`;
+                } else {
+                    target.style.transform = `scale(${minScale})`;
                 }
             });
-        },{
-            threshold: Array.from({length: 21}, (_, i) => i / 20)
+        }, {
+            threshold: Array.from({ length: 51 }, (_, i) => i / 50),
+            rootMargin: "-50px 0px" 
         });
         const secondDescriptionObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
+                const target = entry.target as HTMLElement;
                 const ratio = entry.intersectionRatio;
-                if(ratio <= 0.3){
-                    (entry.target as HTMLElement).style.transform = 'scale(0.6)'
-                }else if(ratio >= 1){
-                    (entry.target as HTMLElement).style.transform = 'scale(1)'
-                }else{
-                    const progress = (ratio - 0.3) / 0.7;
-                    const newScale = 0.6 + (progress * 0.2);
-                    (entry.target as HTMLElement).style.transform = 'scale('+newScale+')'
+
+                const minScale = 0.9;
+                const maxScale = 1;
+                
+                if (entry.isIntersecting) {
+                    const progress = Math.min(1, Math.max(0, (ratio - 0.2) / 0.7));
+                    const currentScale = minScale + (progress * (maxScale - minScale));
+                    
+                    target.style.transform = `scale(${currentScale})`;
+                    target.style.opacity = `${0.5 + (progress * 0.5)}`;
+                } else {
+                    target.style.transform = `scale(${minScale})`;
+                    target.style.opacity = '0.5';
                 }
             });
-        },{
-            threshold: Array.from({length: 21}, (_, i) => i / 20)
+        }, {
+            threshold: Array.from({ length: 51 }, (_, i) => i / 50),
+            rootMargin: "-50px 0px" 
         });
+
         if(firstDescriptionRef.current && secondDescriptionRef.current){
             firstDescriptionObserver.observe(firstDescriptionRef.current);
             secondDescriptionObserver.observe(secondDescriptionRef.current);
@@ -166,21 +179,24 @@ const Project: React.FC<ProjectProps> = ({ title, color, githubUrl, url, imgUrl,
                     </div>
                 </div>
 
-                <div className="projectTextDescription" ref={firstDescriptionRef}>
-                    <h4>Description</h4>
-                    <div className="description">
-                        {description}
+                <>
+                    <div className="projectTextDescription" ref={firstDescriptionRef}>
+                        <h4>Description</h4>
+                        <div className="description">
+                            {description}
+                        </div>
                     </div>
-                </div>
-
-                <div className="projectTextDescription" ref={secondDescriptionRef}>
-                    <h4>Compétences</h4>
-                    <div className="stacks">
-                        {skills.map((el: SkillsCardProps, i: number) => (
-                            <SkillsCard key={`${el.text}-${i}`} icon={el.icon} text={el.text}/>
-                        ))}
+                </>
+                <>
+                    <div className="projectTextDescription" ref={secondDescriptionRef}>
+                        <h4>Compétences</h4>
+                        <div className="stacks">
+                            {skills.map((el: SkillsCardProps, i: number) => (
+                                <SkillsCard key={`${el.text}-${i}`} icon={el.icon} text={el.text}/>
+                            ))}
+                        </div>
                     </div>
-                </div>
+                </>
             </div>
         </div>
     );
