@@ -20,11 +20,12 @@ const SkillsResumeCard: React.FC<SkillsResumeCardprops & { index: number }> = ({
             const entry = entries[0];
             if (entry.isIntersecting) {
                 card.classList.add('visible');
-            } else {
+            }else{
                 card.classList.remove('visible');
             }
         }, {
-            threshold: 0.5,
+            threshold: 0.15, 
+            rootMargin: '0px 0px -50px 0px' 
         });
 
         observer.observe(card);

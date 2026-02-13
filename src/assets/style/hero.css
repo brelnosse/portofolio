@@ -4,19 +4,20 @@ section.hero{
     align-items: center;
     justify-content: space-around;
 }
-.heroDescription h4{
-    display: flex;
-    font-size: 1.6em;
-    user-select: none;
-    align-items: center;
-}
 .heroDescription h3{
     font-size: 2em;
     user-select: none;
 }
 .heroDescription h1{
-    user-select: none;
     font-size: 6.5em;
+}
+.heroDescription h4{
+    display: flex;
+    font-size: 1.6em;
+    user-select: none;
+    font-weight: 300;
+    align-items: center;
+    font-family: poppins;
 }
 .heroDescription .actions{
     padding: 1.25rem 0px;
@@ -86,7 +87,7 @@ section.hero{
 }
 
 .hero-line {
-    display: inline-block;
+    display: inline-flex;
     height: 1px;
     background-color: var(--border-color);
     margin-right: 2px;
@@ -98,7 +99,7 @@ section.hero{
 }
 
 .hero-line.line-visible {
-    width: 9.375rem;
+    width: 6.375rem;
 }
 
 /* H3 animation - slides from left */
@@ -220,7 +221,7 @@ section.hero .socialsContainer{
 }
 @media  screen and (max-width: 720px) {
     .hero-line.line-visible {
-        width: 5rem;
+        width: 2rem;
     }
     .heroDescription h4::before{
         width: 5rem;

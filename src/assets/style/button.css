@@ -6,7 +6,7 @@
     box-shadow: 0.125rem 0.25rem 0px 0px var(--border-color);
     border-radius: var(--border-radius);
     cursor: pointer;
-    transition: all 0.1s;
+    transition: all 0.2s;
     font-size: 1.1em;
 }
 .btn.bold{

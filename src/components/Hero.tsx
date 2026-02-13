@@ -5,6 +5,7 @@ import '../assets/style/hero.css';
 //@ts-ignore
 import { MenuItems } from "../data/menuItems";
 import SocialMedia from "./SocialMedia";
+import MainStack from "./MainStack";
 
 const Hero: React.FC<{isFormVisible: boolean; setIsFormVisible: (v: boolean) => void;}> = ({isFormVisible, setIsFormVisible}) => {
     const name = "Brel NOSSE";
@@ -99,7 +100,6 @@ const Hero: React.FC<{isFormVisible: boolean; setIsFormVisible: (v: boolean) => 
                                         </span>
                                     );
                                 })}
-                                {/* Gérer l'espace après le mot pour l'animation */}
                                 {wordIndex < wordsArray.length - 1 && (
                                     <span className={`letter ${currentLetterCount++ < visibleLetters ? 'letter-visible' : 'letter-hidden'}`}>
                                         {'\u00A0'}
@@ -112,7 +112,7 @@ const Hero: React.FC<{isFormVisible: boolean; setIsFormVisible: (v: boolean) => 
                 <h4>
                     <span className={`hero-line ${showLine ? 'line-visible' : 'line-hidden'}`}></span>
                     <span className={`hero-h4-text ${showH4Text ? 'element-visible' : 'element-hidden'}`}>
-                        Étudiant Développeur Full-stack
+                        Élève ingénieur en recherche d'alternance de 24 mois en dev full-stack, devOps & IoT pour septembre 2026
                     </span>
                 </h4>
                 <div className="actions">
@@ -125,7 +125,7 @@ const Hero: React.FC<{isFormVisible: boolean; setIsFormVisible: (v: boolean) => 
                         <Button type='light' valueText='Télécharger mon CV'/>
                     </div>
                 </div>
-                <SocialMedia/>
+                <MainStack />
             </div>
             <div className={`heroImg ${showImage ? 'image-visible' : 'image-hidden'}`}>
                 <img src={require('../assets/images/square.png')} alt="squares" style={{height: '80px', width: '100px'}} className='s'/>

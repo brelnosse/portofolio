@@ -4,21 +4,21 @@ export const skillsResumeItems: SkillsResumeCardprops[] = [
   {
     image: require('../assets/images/square.png'),
     title: 'Développement Fullstack',
-    description: 'Création d’applications web robustes avec React et Node.js, ou php pour le back-end.',
+    description: 'Conception d’interfaces avec React et mise en place de logiques back-end via Node.js ou PHP.',
   },
   {
     image: require('../assets/images/square.png'),
-    title: 'Développement Mobile',
-    description: 'Développement d’applications mobiles cross-platform (Flutter) pour iOS et Android.',
+    title: 'Mobile & Desktop',
+    description: 'Création d’applications multi-plateformes avec Flutter et développement d’outils Java (JavaFX, Swing).',
   },
   {
     image: require('../assets/images/square.png'),
-    title: 'Data & Backend',
-    description: 'Gestion de bases de données SQL/NoSQL et mise en place d’API REST sécurisées.',
+    title: 'Systèmes & Données',
+    description: 'Gestion de bases de données PostgreSQL et initiation aux langages de bas niveau (C, Assembleur).',
   },
   {
     image: require('../assets/images/square.png'),
-    title: 'Analyse & Gestion de Projet',
-    description: 'Analyse des besoins techniques et conception des différents diagrammes UML.',
+    title: 'Analyse de Besoins',
+    description: 'Traduction technique des besoins utilisateurs via la modélisation UML pour structurer les projets.',
   }
 ]

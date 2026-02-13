@@ -23,12 +23,16 @@
     width: 350px;
     max-width: 350px;
     display: flex;
+    transform: perspective(1000px) rotateY(10deg);
+    transition: all 0.8s ease-out;
     align-items: center;
     border-radius: 16px;
     width: fit-content;
     box-shadow: 4px 4px 0px 0px var(--primary-color);
     border: 2px solid var(--primary-color);
-    transform: rotateY('40deg');
+}
+.aboutme.active .profileCaption {
+    transform: perspective(1000px) rotateY(0deg); 
 }
 .profileCaption h3{
     font-size: 2em;
@@ -82,6 +86,26 @@
     background-color: var(--primary-color);
     transform: translateX(-50%);
     border-radius: 8px;
+}
+.reveal-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* État quand la section est visible */
+.aboutme.active .reveal-item {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Gestion de la séquence (stagger) avec des délais */
+.aboutme.active .profileCaption {
+    transition-delay: 0.2s;
+}
+
+.aboutme.active .profileDescription {
+    transition-delay: 0.5s;
 }
 @media screen and (max-width: 1110px) {
     .aboutContainer{
