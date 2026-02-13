@@ -1,25 +1,39 @@
 import { Link } from "react-router-dom";
 //@ts-ignore
 import '../assets/style/mainstack.css';
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faJava, faFlutter, faNodeJs, faReact } from "@fortawesome/free-brands-svg-icons";
-const MainStack: React.FC = () =>{
+
+interface MainStackProps {
+    isVisible: boolean;
+}
+
+const MainStack: React.FC<MainStackProps> = ({ isVisible }) => {
+    const stackItems = [
+        { icon: faJava, link: "https://github.com/brelnosse" },
+        { icon: faFlutter, link: "https://www.linkedin.com/in/brel-nosse-88a3a2377/" },
+        { icon: faNodeJs, link: "https://x.com/BrelNosse" },
+        { icon: faReact, link: "https://www.facebook.com/profile.php?id=61568437907463" }
+    ];
+
     return (
-        <div className='mainstack'>
-            <Link to={"https://github.com/brelnosse"} target='_blank'>
-                <FontAwesomeIcon icon={faJava}/>
-            </Link>
-            <Link to={"https://www.linkedin.com/in/brel-nosse-88a3a2377/"} target='_blank'>
-                <FontAwesomeIcon icon={faFlutter}/>
-            </Link>
-            <Link to={"https://x.com/BrelNosse"} target='_blank'>
-                <FontAwesomeIcon icon={faNodeJs}/>
-            </Link>
-            <Link to={"https://www.facebook.com/profile.php?id=61568437907463"} target='_blank'>
-                <FontAwesomeIcon icon={faReact}/>
-            </Link>   
+        <div className={`mainstack ${isVisible ? 'element-visible' : 'element-hidden'}`}>
+            {stackItems.map((item, index) => (
+                <Link 
+                    key={index} 
+                    to={item.link} 
+                    target='_blank'
+                    style={{ 
+                        transitionDelay: `${index * 150}ms`,
+                        display: 'inline-block' 
+                    }}
+                    className="stack-link"
+                >
+                    <FontAwesomeIcon icon={item.icon} />
+                </Link>
+            ))}
         </div>
     );
 }
+
 export default MainStack;

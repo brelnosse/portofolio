@@ -38,6 +38,7 @@
     font-size: 2em;
 }
 .profileCaption h4{
+    background-color: var(--primary-color);
     font-size: 1.2em;
 }
 .profileCaption .pc-description{
@@ -46,6 +47,8 @@
 .profileCaption .pc-description h4{
     font-family: 'Poppins';
     font-weight: 400;
+    padding: 0px 5px;
+    color: var(--white);
     font-size: 1em;
 }
 .pc-img{
@@ -93,13 +96,11 @@
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-/* État quand la section est visible */
 .aboutme.active .reveal-item {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Gestion de la séquence (stagger) avec des délais */
 .aboutme.active .profileCaption {
     transition-delay: 0.2s;
 }
@@ -158,11 +159,11 @@
         margin-right: -100px;
     }    
 }
-@media screen and (max-width: 408px) {
+@media screen and (max-width: 430px) {
     .aboutContainer{
         gap: 20px;
     }
-    .profileCaption{
+    .aboutme.active .profileCaption{
         transform: scale(0.80);
     } 
 }

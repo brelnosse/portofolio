@@ -17,7 +17,7 @@ const Hero: React.FC<{isFormVisible: boolean; setIsFormVisible: (v: boolean) => 
     const [showButton1, setShowButton1] = useState<boolean>(false);
     const [showButton2, setShowButton2] = useState<boolean>(false);
     const [showImage, setShowImage] = useState<boolean>(false);
-
+    const [showMainStack, setShowMainStack] = useState<boolean>(false);
     useEffect(() => {
         const navbarAnimationTime = 50 + (MenuItems.length * 150) + 200 + 300;
 
@@ -57,10 +57,13 @@ const Hero: React.FC<{isFormVisible: boolean; setIsFormVisible: (v: boolean) => 
         const imageDelay = setTimeout(() => {
             setShowImage(true);
         }, navbarAnimationTime + 900 + (name.length * 120) + 300 + 900 + 500 + 200 + 300);
-
+        const mainStackDelay = setTimeout(() => {
+                setShowMainStack(true);
+        }, navbarAnimationTime + 900 + (name.length * 120) + 300 + 900 + 500 + 200 + 200);
         return () => {
             clearTimeout(h3Timer);
             clearTimeout(imTimer);
+            clearTimeout(mainStackDelay);
             clearTimeout(nameStartDelay);
             clearTimeout(lineDelay);
             clearTimeout(h4TextDelay);
@@ -125,7 +128,7 @@ const Hero: React.FC<{isFormVisible: boolean; setIsFormVisible: (v: boolean) => 
                         <Button type='light' valueText='Télécharger mon CV'/>
                     </div>
                 </div>
-                <MainStack />
+                <MainStack isVisible={showMainStack}/>
             </div>
             <div className={`heroImg ${showImage ? 'image-visible' : 'image-hidden'}`}>
                 <img src={require('../assets/images/square.png')} alt="squares" style={{height: '80px', width: '100px'}} className='s'/>
