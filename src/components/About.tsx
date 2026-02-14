@@ -41,14 +41,14 @@ const About: React.FC = () => {
                 <div className="profileCaption reveal-item">
                     <div className="pc-description">
                         <h3>Brel NOSSE</h3>
-                        <h4>Etudiant développeur Full-stack</h4>
+                        <h4>Etudiant ingénieur en informatique</h4>
                     </div>
                     <div className="pc-img"></div>
                 </div>
 
                 <p className="profileDescription reveal-item">
                     Étudiant à <span>3iL Ingénieurs</span>, je cherche une <span>alternance</span>
-                    en <span>développement Fullstack</span> pour <span>septembre 2026</span>. Plutôt curieux, 
+                    en <span>développement Full-stack | DevOps | IoT</span> pour <span>septembre 2026</span>. Plutôt curieux, 
                     j'aime tester de nouvelles stacks et automatiser mes projets. 
                     Je sais que j'ai encore à apprendre, mais <span>j'apprends vite</span> et
                     j'apprécie les <span>retours constructifs</span> qui me font progresser.

@@ -7,8 +7,6 @@ import { Dispatch, SetStateAction, useCallback, useContext, useEffect, useRef, u
 import { MenuItems } from "../data/menuItems";
 import { MenuItemType, NavbarProps } from "../types/navbar.types";
 import { fas } from '@fortawesome/free-solid-svg-icons';
-//@ts-ignore
-import 'animate.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { COLORS } from "../utils/colors";
 import { SectionContext } from "../context/SectionContext";
@@ -152,7 +150,6 @@ const Navbar: React.FC<{isFormVisible: boolean; setIsFormVisible: (v: boolean) =
                 </div>
                 {
                     MenuItems.map((el: MenuItemType, i: number) => {
-                        // For closing, reverse the order of delays
                         const delay = isClosing 
                             ? (MenuItems.length - 1 - i) * 100 
                             : (isResponsive ? i * 100 : 100 + (i + 1) * 150);
