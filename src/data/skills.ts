@@ -1,4 +1,4 @@
-import { faBullhorn, faCode, faDatabase, faExchangeAlt, faGears, fas, faServer, faSitemap, faTable } from "@fortawesome/free-solid-svg-icons";
+import { faBullhorn, faCode, faDatabase, faExchangeAlt, faGears, fas, faServer, faSitemap, faTable, faVial } from "@fortawesome/free-solid-svg-icons";
 import { SkillsCardProps } from "../types/skillscard.type";
 import { faAws, faCss, faCss3, faFigma, faFlutter, faGithub, faHtml5, faJava, faJs, faNodeJs, faPhp, faReact } from "@fortawesome/free-brands-svg-icons";
 
@@ -11,6 +11,11 @@ export const Skills:SkillsCardProps[] = [
     {
         icon: faGears,
         text: 'CI/CD',
+        active: false,
+    },
+    {
+        icon: faVial,
+        text: 'tests unitaires',
         active: false,
     },
     {

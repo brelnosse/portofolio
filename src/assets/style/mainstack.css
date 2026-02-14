@@ -23,7 +23,7 @@
 
 .stack-link:hover {
     transform: scale(1.2);
-    color: var(--secondary-color);
+    cursor: pointer;
 }
 .mainstack svg{
     font-size: 1.2em;
