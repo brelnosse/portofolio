@@ -72,7 +72,10 @@ const Hero: React.FC<{isFormVisible: boolean; setIsFormVisible: (v: boolean) => 
         };
     }, []);
 
-    // Variable pour suivre l'index réel de chaque lettre à travers les mots
+    const handleDownload = () => {
+        window.open(require('../assets/pdf/CV_2026-02-14_Brel_NOSSE.pdf'), '_blank');
+    };
+
     let currentLetterCount = 0;
 
     return (
@@ -124,7 +127,10 @@ const Hero: React.FC<{isFormVisible: boolean; setIsFormVisible: (v: boolean) => 
                         }}/>
                     </div>
                     <div className={`button-wrapper ${showButton2 ? 'button-visible' : 'button-hidden'}`}>
-                        <Button type='light' valueText='Télécharger mon CV'/>
+                        <Button 
+                            type='light' 
+                            onClick={handleDownload}
+                            valueText='Télécharger mon CV'/>
                     </div>
                 </div>
                 <MainStack isVisible={showMainStack}/>
