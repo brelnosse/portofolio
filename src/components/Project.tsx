@@ -8,11 +8,12 @@ import { ProjectProps } from "../types/project.type";
 import { SkillsCardProps } from "../types/skillscard.type";
 import SkillsCard from "./SkillsCard";
 
-const Project: React.FC<ProjectProps> = ({ title, color, githubUrl, type, url, imgUrl, description, skills }) => {
+const Project: React.FC<ProjectProps> = ({ title, color, githubUrl, type, url, imgUrl, description, features, skills }) => {
     const projectRef = useRef<HTMLDivElement>(null);
     const cubeRef = useRef<HTMLDivElement>(null);
     const firstDescriptionRef = useRef<HTMLDivElement>(null);
     const secondDescriptionRef = useRef<HTMLDivElement>(null);
+    const thirdDescriptionRef = useRef<HTMLDivElement>(null);
     
     const [titleProgress, setTitleProgress] = useState<number>(0);
     const [cubeRotation, setCubeRotation] = useState<number>(0);
@@ -28,28 +29,8 @@ const Project: React.FC<ProjectProps> = ({ title, color, githubUrl, type, url, i
                 isVisible = entry.isIntersecting;
             });
         }); 
-        const firstDescriptionObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                const target = entry.target as HTMLElement;
-                const ratio = entry.intersectionRatio;
 
-                const minScale = 0.9;
-                const maxScale = 1;
-                
-                if (entry.isIntersecting) {
-                    const progress = Math.min(1, Math.max(0, (ratio - 0.2) / 0.7));
-                    const currentScale = minScale + (progress * (maxScale - minScale));
-                    
-                    target.style.transform = `scale(${currentScale})`;
-                } else {
-                    target.style.transform = `scale(${minScale})`;
-                }
-            });
-        }, {
-            threshold: Array.from({ length: 51 }, (_, i) => i / 50),
-            rootMargin: "-50px 0px" 
-        });
-        const secondDescriptionObserver = new IntersectionObserver((entries) => {
+        const descriptionObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 const target = entry.target as HTMLElement;
                 const ratio = entry.intersectionRatio;
@@ -73,9 +54,10 @@ const Project: React.FC<ProjectProps> = ({ title, color, githubUrl, type, url, i
             rootMargin: "-50px 0px" 
         });
 
-        if(firstDescriptionRef.current && secondDescriptionRef.current){
-            firstDescriptionObserver.observe(firstDescriptionRef.current);
-            secondDescriptionObserver.observe(secondDescriptionRef.current);
+        if(firstDescriptionRef.current && secondDescriptionRef.current && thirdDescriptionRef.current){
+            descriptionObserver.observe(firstDescriptionRef.current);
+            descriptionObserver.observe(secondDescriptionRef.current);
+            descriptionObserver.observe(thirdDescriptionRef.current);
         }
         const handleScroll = () => {
             if (!ticking) {
@@ -119,8 +101,7 @@ const Project: React.FC<ProjectProps> = ({ title, color, githubUrl, type, url, i
 
         return () => {
             observer.disconnect();
-            firstDescriptionObserver.disconnect();
-            secondDescriptionObserver.disconnect();
+            descriptionObserver.disconnect();
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
@@ -189,6 +170,18 @@ const Project: React.FC<ProjectProps> = ({ title, color, githubUrl, type, url, i
                 </>
                 <>
                     <div className="projectTextDescription" ref={secondDescriptionRef}>
+                        <h4>Fonctionnalités clés</h4>
+                        <ul>
+                            {
+                                features.map((el: string, i: number) => {
+                                    return <li key={el.split(' ').join('-')+'-'+i}><span>{el}</span></li>;
+                                })
+                            }
+                        </ul>
+                    </div>
+                </>
+                <>
+                    <div className="projectTextDescription" ref={thirdDescriptionRef}>
                         <h4>Compétences</h4>
                         <div className="stacks">
                             {skills.map((el: SkillsCardProps, i: number) => (

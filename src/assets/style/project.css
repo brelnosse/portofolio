@@ -67,6 +67,21 @@
     padding: 2px;
     display: inline;
 }
+.projectDescription ul{
+    padding: 5px;
+    list-style-type: '→';
+}
+.projectDescription ul li{
+    margin-top: 5px;
+}
+.projectDescription ul span{
+    margin-left: 5px;
+    background-color: var(--primary-color);
+    border-radius: 4px;
+    padding: 0px 5px;
+    font-size: 0.9em;
+    color: white;
+}
 .projectTextDescription:last-of-type {
     margin-bottom: 200px;
 }

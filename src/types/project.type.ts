@@ -5,9 +5,10 @@ export interface ProjectProps{
     color: string;
     type: string;
     description: string;
-    imgUrl: string[], 
-    url ?: string, 
-    githubUrl ?: string, 
+    features: string[];
+    imgUrl: string[];
+    url ?: string; 
+    githubUrl ?: string;
     skills: SkillsCardProps[];
-    disabled ?: boolean
+    disabled ?: boolean;
 }
