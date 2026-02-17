@@ -1,7 +1,6 @@
 //@ts-ignore
 import '../assets/style/notfound.css';
-import { Link, useNavigate } from "react-router-dom";
-import Underlined from '../components/Underlined';
+import { useNavigate } from "react-router-dom";
 import Button from '../components/Button';
 import { faArrowLeft, faGamepad } from '@fortawesome/free-solid-svg-icons';
 const NotFound:React.FC = () => {
@@ -10,7 +9,7 @@ const NotFound:React.FC = () => {
     return (
         <div className="not-found-container">
             <div className="not-found">
-                <img src={require('../assets/images/notfound.png')} alt='404 not found'/>
+                <img src={require('../assets/images/notfound.webp')} alt='404 not found'/>
                 <span>404</span>
                 <h1>Page inexistante</h1>
                 <p>Désolé, la page que vous recherchez n'existe pas.</p>
@@ -18,7 +17,7 @@ const NotFound:React.FC = () => {
                     <Button 
                         type='light' 
                         valueIcon={faArrowLeft} 
-                        valueText='Revenir en arrière'
+                        valueText='Page précédente'
                         onClick={()=>{
                             navigate('/');
                         }} />

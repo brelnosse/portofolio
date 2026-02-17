@@ -8,10 +8,10 @@ export const projects:ProjectProps[] = [
         color: '#2a5b69',
         type: 'web',
         imgUrl: [
-            require('../assets/images/portfolioFront.png'), 
-            require('../assets/images/portfolioBack.png'), 
-            require('../assets/images/portfolioLeft.png'), 
-            require('../assets/images/portfolioRight.png'), 
+            require('../assets/images/portfolioFront.webp'), 
+            require('../assets/images/portfolioBack.webp'), 
+            require('../assets/images/portfolioLeft.webp'), 
+            require('../assets/images/portfolioRight.webp'), 
         ],
         description: "Découvrez mon expérience et mes projets informatiques : applications web, mobile (Flutter) et systèmes. Étudiant ingénieur à la recherche d'une alternance Full-stack | DevOps | IoT.",
         features: [
@@ -139,10 +139,10 @@ export const projects:ProjectProps[] = [
         color: '#e82a33',
         type: 'web',
         imgUrl: [
-            require('../assets/images/iucbibliFront.png'), 
-            require('../assets/images/iucbibliBack.png'), 
+            require('../assets/images/iucbibliFront.webp'), 
+            require('../assets/images/iucbibliBack.webp'), 
             require('../assets/images/iucbibliRight.webp'), 
-            require('../assets/images/iucbibliLeft.png'), 
+            require('../assets/images/iucbibliLeft.webp'), 
         ],
         description: "Iucbibli est un système de gestion de bibliothèque interactif conçu pour automatiser le suivi des ouvrages et des emprunts. Le projet se concentre sur l'intégrité des données et la simplicité d'utilisation, offrant une interface d'administration robuste pour la gestion d'un catalogue en temps réel.",
         features: [
@@ -185,10 +185,10 @@ export const projects:ProjectProps[] = [
         color: '#2fcc70',
         type: 'ui-design',
         imgUrl: [
-            require('../assets/images/printspotFront.png'), 
-            require('../assets/images/printspotBack.png'), 
-            require('../assets/images/printspotRight.png'), 
-            require('../assets/images/printspotLeft.png'), 
+            require('../assets/images/printspotFront.webp'), 
+            require('../assets/images/printspotBack.webp'), 
+            require('../assets/images/printspotRight.webp'), 
+            require('../assets/images/printspotLeft.webp'), 
         ],
         description: "8 écrans pour une application mobile permettant de faire des commandes d'impressions/photocopies de documents.",
         url: 'https://www.figma.com/proto/FdzJT32K4Mwxf3r4iJxVnD/PrintSpot?t=ouJJCyMjiUytkPkZ-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&node-id=18-60',
@@ -209,10 +209,10 @@ export const projects:ProjectProps[] = [
         color: '#ff0051',
         type: 'ui-design',
         imgUrl: [
-            require('../assets/images/thayiUiFront.png'), 
-            require('../assets/images/thayiUiBack.png'), 
-            require('../assets/images/thayiUiRight.png'), 
-            require('../assets/images/thayiUiLeft.png'), 
+            require('../assets/images/thayiUiFront.webp'), 
+            require('../assets/images/thayiUiBack.webp'), 
+            require('../assets/images/thayiUiRight.webp'), 
+            require('../assets/images/thayiUiLeft.webp'), 
         ],
         description: "10 écrans pour une application web de commande de pizzas",
         features: [
@@ -234,10 +234,10 @@ export const projects:ProjectProps[] = [
         color: '#ff0051',
         type: 'desktop',
         imgUrl: [
-            require('../assets/images/archiveXFront.png'), 
-            require('../assets/images/archiveXBack.png'), 
-            require('../assets/images/archiveXRight.png'), 
-            require('../assets/images/archiveXLeft.png'), 
+            require('../assets/images/archiveXFront.webp'), 
+            require('../assets/images/archiveXBack.webp'), 
+            require('../assets/images/archiveXRight.webp'), 
+            require('../assets/images/archiveXLeft.webp'), 
         ],
         description: "Application java d'archivage de documents académiques (Rapport de stage, rapport de projet, mémoire...)",
         features: [
