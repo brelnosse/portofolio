@@ -231,7 +231,7 @@ export const projects:ProjectProps[] = [
     },
     {
         title: 'noteApp',
-        color: '#ff0051',
+        color: '#02bf8d',
         type: 'mobile',
         imgUrl: [
             require('../assets/images/noteAppFront.webp'), 
@@ -239,18 +239,23 @@ export const projects:ProjectProps[] = [
             require('../assets/images/noteAppRight.webp'), 
             require('../assets/images/noteAppLeft.webp'), 
         ],
-        description: "10 écrans pour une application web de commande de pizzas",
+        description: "Application de prise de note simple réalisé avec react native dans le but de consolider mes compétences.",
         features: [
-            'Optimisation du parcours de commande (UX)',
-            'Mise en valeur visuelle des produits',
-            'Design de l\'interface du panier', 
+            'Ajout d\'une note',
+            'Suppression d\'une note',
+            'Modification d\'une note',
+            'Changement de thème' 
         ],
         url: 'https://expo.dev/accounts/brel/projects/noteApp/builds/aceb2bbc-31d6-4b33-b532-9fb6309631cb',
         githubUrl: 'https://github.com/brelnosse/noteApp',
         skills: [
             {
-                icon: faFigma,
-                text: 'Figma'
+                icon: faReact,
+                text: 'React native'
+            },
+            {
+                icon: faCss,
+                text: 'Css'
             }
         ] 
     },
