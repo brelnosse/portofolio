@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import PageLoader from "./components/PageLoader";
 import { useEffect, useState } from "react";
 import { SectionContextProvider } from "./context/SectionContext";
+import NotFound from "./pages/NotFound";
 
 const App: React.FC = () => {
     const [isLoading, setIsloading] = useState<boolean>(true);
@@ -29,6 +30,8 @@ const App: React.FC = () => {
             <Router>
                 <Routes>
                     <Route path="/" element={<Home/>}/>
+                    <Route path="/home" element={<Home/>}/>
+                    <Route path="*" element={<NotFound/>}/>
                 </Routes>
             </Router>
         </SectionContextProvider>
