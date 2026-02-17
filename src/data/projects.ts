@@ -4,6 +4,38 @@ import { faChartLine, faCode, faDatabase, faFire, faPanorama } from "@fortawesom
 
 export const projects:ProjectProps[] = [
     {
+        title: 'Mon portfolio',
+        color: '#2a5b69',
+        type: 'web',
+        imgUrl: [
+            require('../assets/images/portfolioFront.png'), 
+            require('../assets/images/portfolioBack.png'), 
+            require('../assets/images/portfolioLeft.png'), 
+            require('../assets/images/portfolioRight.png'), 
+        ],
+        description: "Découvrez mon expérience et mes projets informatiques : applications web, mobile (Flutter) et systèmes. Étudiant ingénieur à la recherche d'une alternance Full-stack | DevOps | IoT.",
+        url: 'https://brelnosse.com',
+        githubUrl: '',
+        skills: [
+            {
+                icon: faJs,
+                text: 'Typescript'
+            },
+            {
+                icon: faReact,
+                text: 'React.js'
+            },
+            {
+                icon: faNodeJs,
+                text: 'Node.js'
+            },
+            {
+                icon: faCss3,
+                text: 'CSS3'
+            },
+        ] 
+    },
+    {
         title: 'Miam',
         color: '#f5700a',
         type: 'web',
@@ -42,7 +74,8 @@ export const projects:ProjectProps[] = [
                 text: 'Chart.js'                
             },
         ] 
-    },    {
+    },    
+    {
         title: 'Thayipizza',
         color: '#e82a33',
         type: 'web',
