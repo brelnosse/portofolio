@@ -61,7 +61,12 @@
     font-size: 1.1em;
     margin: 10px 0px;
 }
-
+.projectDescription .description{
+    line-height: 30px;
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.09);
+    padding: 2px;
+    display: inline;
+}
 .projectTextDescription:last-of-type {
     margin-bottom: 200px;
 }

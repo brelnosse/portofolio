@@ -114,7 +114,7 @@ const Project: React.FC<ProjectProps> = ({ title, color, githubUrl, type, url, i
         observer.observe(cubeRef.current);
         window.addEventListener('scroll', handleScroll, { passive: true });
         
-        // Initialisation immédiate
+
         handleScroll();
 
         return () => {
@@ -182,9 +182,9 @@ const Project: React.FC<ProjectProps> = ({ title, color, githubUrl, type, url, i
                 <>
                     <div className="projectTextDescription" ref={firstDescriptionRef}>
                         <h4>Description</h4>
-                        <div className="description">
+                        <p className="description">
                             {description}
-                        </div>
+                        </p>
                     </div>
                 </>
                 <>
