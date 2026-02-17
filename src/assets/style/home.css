@@ -1,6 +1,6 @@
 section{
     padding: 5rem;
-    min-height: calc(100vh - 90px);
+    min-height: calc(100vh - 86px);
     justify-content: center;
 }
 section:nth-of-type(odd){

@@ -31,10 +31,6 @@ export const projects:ProjectProps[] = [
                 text: 'React.js'
             },
             {
-                icon: faNodeJs,
-                text: 'Node.js'
-            },
-            {
                 icon: faCss3,
                 text: 'CSS3'
             },
