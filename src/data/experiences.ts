@@ -7,6 +7,6 @@ export const experiences: ExperienceProps[] = [
         postTitle: 'Développeur web front-end - Stagiaire',
         location: 'Yaoundé, cameroun',
         skills: ['J\'ai utilisé Figma pour concevoir 5 écrans pour site web.', 'La maquette a été intégré avec React.js', 'Authentification moderne avec JWT', 'Gestion du tableau de bord'] ,
-        tools: ['Figma', 'Mongo Atlas', 'Jira', 'Confluence', 'Git', 'Github', 'Slack', 'Google meet', 'VSCode'],
+        tools: ['Figma', 'Mongo Atlas', 'Git', 'Github', 'Slack', 'Google meet', 'VSCode'],
     },
 ]

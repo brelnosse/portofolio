@@ -1,6 +1,6 @@
-import { faCss3, faHtml5, faJs, faNodeJs, faPhp, faReact } from "@fortawesome/free-brands-svg-icons";
+import { faCss, faCss3, faFigma, faHtml5, faJava, faJs, faNodeJs, faPhp, faReact } from "@fortawesome/free-brands-svg-icons";
 import { ProjectProps } from "../types/project.type";
-import { faChartLine, faDatabase, faFire } from "@fortawesome/free-solid-svg-icons";
+import { faChartLine, faCode, faDatabase, faFire, faPanorama } from "@fortawesome/free-solid-svg-icons";
 
 export const projects:ProjectProps[] = [
     {
@@ -120,6 +120,82 @@ export const projects:ProjectProps[] = [
                 icon: faChartLine,
                 text: 'Chart.js'                
             },
+        ] 
+    },
+    {
+        title: 'PrintSpot (UI)',
+        color: '#2fcc70',
+        type: 'ui-design',
+        imgUrl: [
+            require('../assets/images/printspotFront.png'), 
+            require('../assets/images/printspotBack.png'), 
+            require('../assets/images/printspotRight.png'), 
+            require('../assets/images/printspotLeft.png'), 
+        ],
+        description: "8 écrans pour une application mobile permettant de faire des commandes d'impressions/photocopies de documents.",
+        url: 'https://www.figma.com/proto/FdzJT32K4Mwxf3r4iJxVnD/PrintSpot?t=ouJJCyMjiUytkPkZ-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&node-id=18-60',
+        githubUrl: '',
+        skills: [
+            {
+                icon: faFigma,
+                text: 'Figma'
+            }
+        ] 
+    },
+    {
+        title: 'ThayiPizza (UI)',
+        color: '#ff0051',
+        type: 'ui-design',
+        imgUrl: [
+            require('../assets/images/thayiUiFront.png'), 
+            require('../assets/images/thayiUiBack.png'), 
+            require('../assets/images/thayiUiRight.png'), 
+            require('../assets/images/thayiUiLeft.png'), 
+        ],
+        description: "10 écrans pour une application web de commande de pizzas",
+        url: 'https://www.figma.com/proto/FqGTHgUcCOO69SLgEVCZuy/ThayiPizza?node-id=1-222&p=f&t=o200wAMsFllFJhUn-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1',
+        githubUrl: '',
+        skills: [
+            {
+                icon: faFigma,
+                text: 'Figma'
+            }
+        ] 
+    },
+    {
+        title: 'ArchiveX',
+        color: '#ff0051',
+        type: 'desktop',
+        imgUrl: [
+            require('../assets/images/archiveXFront.png'), 
+            require('../assets/images/archiveXBack.png'), 
+            require('../assets/images/archiveXRight.png'), 
+            require('../assets/images/archiveXLeft.png'), 
+        ],
+        description: "Application java d'archivage de documents académique (Rapport de stage, rapport de projet, mémoire...)",
+        url: '',
+        githubUrl: 'https://github.com/brelnosse/archiveX',
+        skills: [
+            {
+                icon: faJava,
+                text: 'Java'
+            },
+            {
+                icon: faJava,
+                text: 'JavaFx'
+            },
+            {
+                icon: faDatabase,
+                text: 'MySQL'
+            },
+            {
+                icon: faCss,
+                text: 'CSS'
+            },
+            {
+                icon: faCode,
+                text: 'XML'
+            }
         ] 
     }
 ]

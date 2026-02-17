@@ -30,8 +30,8 @@ const Home:React.FC = () =>{
             <ParticlesComponent/>
             <Navbar isFormVisible={isFormVisible} setIsFormVisible={setIsFormVisible} setIsAlertVisible={setIsAlertVisible} setAlertDatas={setAlertDatas}/>
             <Hero isFormVisible={isFormVisible} setIsFormVisible={setIsFormVisible}/>
-            <SkillResumeContainer skillsResumeItems={skillsResumeItems}/>
             <About />
+            <SkillResumeContainer skillsResumeItems={skillsResumeItems}/>
             <SkillsContainer skillsData={skillsData} setSkillsData={setSkillsData}/>
             <CareerContainer />
             <ExperienceContainer/>

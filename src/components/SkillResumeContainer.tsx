@@ -9,10 +9,10 @@ import { useSection } from "../hooks/useSection";
 
 const SkillResumeContainer: React.FC<SkillResumeContainerProps> = ({ skillsResumeItems }) => {
     const skillResumeRef = useRef<HTMLElement>(null);
-    useSection(skillResumeRef, 'accueil');
+    useSection(skillResumeRef, 'compétences');
     return (
         <section className='resume' ref={skillResumeRef}>
-            <Underlined text="Qu'est-ce que je fait ?" />
+            <Underlined text="Qu'est-ce que je fais ?" />
             
             <div className="skillsResume_container">
                 {

@@ -8,7 +8,7 @@ import { ProjectProps } from "../types/project.type";
 import { SkillsCardProps } from "../types/skillscard.type";
 import SkillsCard from "./SkillsCard";
 
-const Project: React.FC<ProjectProps> = ({ title, color, githubUrl, url, imgUrl, description, skills }) => {
+const Project: React.FC<ProjectProps> = ({ title, color, githubUrl, type, url, imgUrl, description, skills }) => {
     const projectRef = useRef<HTMLDivElement>(null);
     const cubeRef = useRef<HTMLDivElement>(null);
     const firstDescriptionRef = useRef<HTMLDivElement>(null);

@@ -1,1 +1,1 @@
-export const tabs:string[] = ['Tout', 'UI Design', 'web', 'Mobile'];
+export const tabs:string[] = ['Tout', 'UI Design', 'web', 'Mobile','desktop'];
