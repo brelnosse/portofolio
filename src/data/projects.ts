@@ -230,6 +230,31 @@ export const projects:ProjectProps[] = [
         ] 
     },
     {
+        title: 'noteApp',
+        color: '#ff0051',
+        type: 'mobile',
+        imgUrl: [
+            require('../assets/images/noteAppFront.webp'), 
+            require('../assets/images/noteAppBack.webp'), 
+            require('../assets/images/noteAppRight.webp'), 
+            require('../assets/images/noteAppLeft.webp'), 
+        ],
+        description: "10 écrans pour une application web de commande de pizzas",
+        features: [
+            'Optimisation du parcours de commande (UX)',
+            'Mise en valeur visuelle des produits',
+            'Design de l\'interface du panier', 
+        ],
+        url: 'https://expo.dev/accounts/brel/projects/noteApp/builds/aceb2bbc-31d6-4b33-b532-9fb6309631cb',
+        githubUrl: 'https://github.com/brelnosse/noteApp',
+        skills: [
+            {
+                icon: faFigma,
+                text: 'Figma'
+            }
+        ] 
+    },
+    {
         title: 'ArchiveX',
         color: '#ff0051',
         type: 'desktop',
