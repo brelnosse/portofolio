@@ -4,7 +4,7 @@
     position: absolute;
     left: 0px;
     top: 0px;
-    min-width: 9.37rem;
+    min-width: 12.37rem;
     border-radius: var(--border-radius);
     border: 2px solid var(--border-color);
     box-shadow: 3px 3px 0px 0px var(--black);
