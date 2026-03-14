@@ -27,7 +27,6 @@ const Home:React.FC = () =>{
 
     return (
         <div className="container">
-            <ParticlesComponent/>
             <Navbar isFormVisible={isFormVisible} setIsFormVisible={setIsFormVisible} setIsAlertVisible={setIsAlertVisible} setAlertDatas={setAlertDatas}/>
             <Hero isFormVisible={isFormVisible} setIsFormVisible={setIsFormVisible}/>
             <About />

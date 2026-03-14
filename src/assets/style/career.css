@@ -82,12 +82,6 @@
     width: 0px;
     background-color: var(--primary-color);
 }
-.career .badge:hover::before{
-    width: 100%;
-}
-.career .badge:hover{
-    color: white;
-}
 .career p span{
     font-family: 'poppins';
     border-radius: 4px;

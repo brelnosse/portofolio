@@ -4,6 +4,7 @@ import PageLoader from "./components/PageLoader";
 import { useEffect, useState } from "react";
 import { SectionContextProvider } from "./context/SectionContext";
 import NotFound from "./pages/NotFound";
+import ParticlesComponent from "./components/Particles";
 
 const App: React.FC = () => {
     const [isLoading, setIsloading] = useState<boolean>(true);
@@ -27,6 +28,7 @@ const App: React.FC = () => {
     }
     return (
         <SectionContextProvider>
+            <ParticlesComponent/>
             <Router>
                 <Routes>
                     <Route path="/" element={<Home/>}/>
