@@ -40,7 +40,6 @@ const SocialMedia: React.FC<HTMLAttributes<HTMLDivElement>> = ({ ...props }) => 
                     to={link.to} 
                     target='_blank' 
                     className="social-link"
-                    style={{ transitionDelay: `${index * 100}ms` }}
                 >
                     <FontAwesomeIcon icon={link.icon}/>
                 </Link>

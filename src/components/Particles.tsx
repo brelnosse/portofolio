@@ -70,7 +70,7 @@ const ParticlesComponent = () => {
           color: "#2A5B69",
           distance: 150,
           enable: true,
-          opacity: 0.5,
+          opacity: 0.3,
           width: 1,
         },
         move: {
@@ -90,13 +90,13 @@ const ParticlesComponent = () => {
           value: 80,
         },
         opacity: {
-          value: 0.5,
+          value: 0.3,
         },
         shape: {
           type: "circle",
         },
         size: {
-          value: { min: 1, max: 5 },
+          value: { min: 2, max: 7 },
         },
       },
       detectRetina: true,
