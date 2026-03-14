@@ -24,7 +24,7 @@
 }
 .skills-card .tooltip.visible{
     transform: scale(1);
-    top: -6rem;
+    top: -6.4rem;
     opacity: 1;
     color: var(--black);
 }

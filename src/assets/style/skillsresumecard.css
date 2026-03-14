@@ -3,14 +3,10 @@
     height: 180px;
     cursor: pointer;
     opacity: 0;
-    transform: translateX(-20px); 
-    transition: opacity 0.8s linear, 
-                transform 0.8s linear;
     backface-visibility: hidden;
 }
 
 .skills-resume_card.visible {
-    transform: translateX(0);
     opacity: 1;
 }
 

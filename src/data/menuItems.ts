@@ -5,7 +5,7 @@ export const MenuItems:MenuItemType[] = [
     {
         icon: fas.faHome,
         displayText: 'Accueil',
-        sectionId: 'home'
+        sectionId: 'hero'
     },
     {
         icon: fas.faUser,

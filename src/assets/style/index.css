@@ -40,13 +40,13 @@ body.no-scroll{
     border: 2px solid var(--black);
     border-radius: var(--border-radius);
     padding: 0.9375rem 1.25rem;
-    box-shadow: 0.3125rem 0.3125rem 0px 0px var(--black);
     transition: all 0.2s;
+    cursor: default;
 }
-.card:hover{
+/* .card:hover{
     box-shadow: 2px 2px 0px 0px var(--black);
-    transform: translateY(0.3125rem);
-}
+    transform: scale(1.03);
+} */
 .primary{
     color: var(--primary-color);
 }

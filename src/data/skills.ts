@@ -25,7 +25,7 @@ export const Skills:SkillsCardProps[] = [
             },
             description: 'Exp. 2 ans',
         },
-        active: true,
+        active: false,
     },
     {
         icon: faGears,
@@ -78,7 +78,7 @@ export const Skills:SkillsCardProps[] = [
     {
         icon: faReact,
         text: 'React.js',
-        active: true,
+        active: false,
         tooltip: {
             title: {
                 icon: faReact,
@@ -210,7 +210,7 @@ export const Skills:SkillsCardProps[] = [
     {
         icon: faFlutter,
         text: 'Flutter',
-        active: true,
+        active: false,
         tooltip: {
             title: {
                 icon: faFlutter,

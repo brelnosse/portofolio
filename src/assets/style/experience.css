@@ -78,7 +78,7 @@
     height: 32px;
     width: fit-content;
     border-radius: 20px;
-    border: 1px solid var(--black); 
+    border: 2px solid var(--black); 
     padding: 0 14px;
     align-items: center;
     justify-content: center;
@@ -95,7 +95,6 @@
 
 .tools_pill:hover {
     transform: translateY(-4px);
-    box-shadow: 3px 3px 0px var(--black);
     cursor: default;
 }
 

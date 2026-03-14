@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 //@ts-ignore
 import '../assets/style/home.css';
 import Navbar from '../components/Navbar';
@@ -12,11 +12,12 @@ import CareerContainer from '../components/CareerContainer';
 import ExperienceContainer from '../components/ExperienceContainer';
 import ProjectContainer from '../components/ProjetContainer';
 import About from '../components/About';
-import ParticlesComponent from '../components/Particles';
 import Alert from '../components/Alert';
+import { SectionContext } from '../context/SectionContext';
 
 const Home:React.FC = () =>{
     const [skillsData, setSkillsData] = useState<SkillsCardProps[]>(Skills);
+    const context = useContext(SectionContext)
     const [isFormVisible, setIsFormVisible] = useState<boolean>(false);
     const [isAlertVisible, setIsAlertVisible] = useState<boolean>(false);
     const [alertDatas, setAlertDatas] = useState<{type: string; title: string; description: string}>({
@@ -24,7 +25,7 @@ const Home:React.FC = () =>{
         title: '',
         description:''
     });
-
+    console.log(context.activeSection)
     return (
         <div className="container">
             <Navbar isFormVisible={isFormVisible} setIsFormVisible={setIsFormVisible} setIsAlertVisible={setIsAlertVisible} setAlertDatas={setAlertDatas}/>

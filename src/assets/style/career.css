@@ -65,22 +65,10 @@
     border-radius: 1.25rem;
     position: relative;
     align-self: flex-end;
-    cursor: pointer;
+    cursor: default;
     overflow: hidden;
     z-index: 10;
     font-family: 'poppins';
-}
-.career .badge::before{
-    content: '';
-    position: absolute;
-    border-radius: 1.25rem;
-    left: 0px;
-    top: 0px;
-    z-index: -1;
-    transition: all 0.2s;
-    height: 100%;
-    width: 0px;
-    background-color: var(--primary-color);
 }
 .career p span{
     font-family: 'poppins';

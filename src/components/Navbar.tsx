@@ -68,7 +68,7 @@ const NavbarItem: React.FC<MenuItemType & { animationDelay: number; isResponsive
 
     return (
         <li 
-            className={`navbar-item${isActive(displayText)} ${isHovered && 'isHovered'} ${isAnimated ? (isResponsive ? 'item-visible-responsive' : 'item-visible') : (isResponsive ? 'item-hidden-responsive' : 'item-hidden')}`}
+            className={`navbar-item${isActive(displayText.toLocaleLowerCase() === 'accueil' ? 'hero' : displayText)} ${isHovered && 'isHovered'} ${isAnimated ? (isResponsive ? 'item-visible-responsive' : 'item-visible') : (isResponsive ? 'item-hidden-responsive' : 'item-hidden')}`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             onClick={handleClick}>

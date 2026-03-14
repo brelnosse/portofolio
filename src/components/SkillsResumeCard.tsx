@@ -24,8 +24,7 @@ const SkillsResumeCard: React.FC<SkillsResumeCardprops & { index: number }> = ({
                 card.classList.remove('visible');
             }
         }, {
-            threshold: 0.15, 
-            rootMargin: '0px 0px -50px 0px' 
+            threshold: 0.8, 
         });
 
         observer.observe(card);

@@ -1,10 +1,11 @@
 import Button from "./Button";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 //@ts-ignore
 import '../assets/style/hero.css';
 //@ts-ignore
 import { MenuItems } from "../data/menuItems";
 import MainStack from "./MainStack";
+import { useSection } from "../hooks/useSection";
 
 const Hero: React.FC<{isFormVisible: boolean; setIsFormVisible: (v: boolean) => void;}> = ({isFormVisible, setIsFormVisible}) => {
     const name = "Brel NOSSE";
@@ -17,6 +18,9 @@ const Hero: React.FC<{isFormVisible: boolean; setIsFormVisible: (v: boolean) => 
     const [showButton2, setShowButton2] = useState<boolean>(false);
     const [showImage, setShowImage] = useState<boolean>(false);
     const [showMainStack, setShowMainStack] = useState<boolean>(false);
+    const heroRef = useRef<HTMLDivElement | null>(null);
+    useSection(heroRef, 'hero')
+    
     useEffect(() => {
         const navbarAnimationTime = 50 + (MenuItems.length * 150) + 200 + 300;
 
@@ -79,7 +83,7 @@ const Hero: React.FC<{isFormVisible: boolean; setIsFormVisible: (v: boolean) => 
     let currentLetterCount = 0;
 
     return (
-        <section className="hero">
+        <section className="hero" ref={heroRef}>
             <div className="heroDescription">
                 <h3 className={`hero-h3 ${showH3 ? 'element-visible' : 'element-hidden'}`}>
                     Salut,

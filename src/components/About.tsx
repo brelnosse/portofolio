@@ -47,11 +47,11 @@ const About: React.FC = () => {
                 </div>
 
                 <p className="profileDescription reveal-item">
-                    Étudiant à <span>3iL Ingénieurs</span>, je cherche une <span>alternance</span>
-                    en <span>développement Full-stack | DevOps | IoT</span> pour <span>septembre 2026</span>. Plutôt curieux, 
-                    j'aime tester de nouvelles stacks et automatiser mes projets. 
-                    Je sais que j'ai encore à apprendre, mais <span>j'apprends vite</span> et
-                    j'apprécie les <span>retours constructifs</span> qui me font progresser.
+                    Étudiant à <span>3iL Ingénieurs</span>, je prépare une <span>alternance</span> 
+                    en <span>Full-stack | DevOps | IoT</span> pour <span>septembre 2026</span>. 
+                    Passionné par l'innovation, j'aime explorer de nouvelles stacks et automatiser mes projets. 
+                    Grâce à mon <span>agilité</span>, je transforme chaque défi en opportunité pour 
+                    <span>monter en compétences</span> et apporter une réelle valeur ajoutée.
                 </p>
             </div>
         </section>
