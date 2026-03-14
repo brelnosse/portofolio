@@ -190,7 +190,7 @@ section.hero .socialsContainer{
         font-size: 5.5em;
     }
 }
-@media  screen and (max-width: 940px) {
+@media  screen and (max-width: 976px) {
     section.hero{
         flex-direction: column;
         align-items: center;

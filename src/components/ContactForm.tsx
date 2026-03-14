@@ -4,7 +4,7 @@ import '../assets/style/contactform.css';
 import Button from './Button';
 import Underlined from './Underlined';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Dispatch, FormEvent, SetStateAction, useRef, useState } from 'react';
+import { Dispatch, FormEvent, SetStateAction, useEffect, useRef, useState } from 'react';
 import { sendEmail } from '../lib/emailjs';
 import SocialMedia from './SocialMedia';
 
@@ -77,10 +77,22 @@ const ContactForm:React.FC<{isVisible: boolean; setIsVisible: (v: boolean) => vo
             })
         }
     }
+    useEffect(()=> {
+        if(isVisible){
+            document.querySelector('body')?.classList.add('no-scroll');
+        }else{
+            document.querySelector('body')?.classList.remove('no-scroll');
+        }
+        return () => {
+            document.querySelector('body')?.classList.remove('no-scroll');
+        }
+    }, [isVisible]);
     return (
         <div className={`contactForm${isVisible ? ' visible': ' hide'}`}>
             <div className="form-header">
-                <SocialMedia />
+                <div className="s-c-r">
+                    <SocialMedia />
+                </div>
                 <span 
                     className="closeForm"
                     onClick={()=>{

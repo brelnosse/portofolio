@@ -28,7 +28,7 @@
 .mainstack svg{
     font-size: 1.2em;
 }
-@media screen and (max-width: 940px) {
+@media screen and (max-width: 976px) {
     .mainstack{
         justify-content: center;
     }

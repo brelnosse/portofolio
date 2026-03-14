@@ -28,7 +28,9 @@
 *:focus{
     outline: none;
 }
-
+body.no-scroll{
+    overflow: hidden;
+}
 #root{
     max-width: 1800px;
     margin: auto;

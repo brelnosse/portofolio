@@ -1,14 +1,19 @@
 .contactForm{
-    background-color: var(--bg-fade-color);
+    background-color: transparent;
+    backdrop-filter: blur(10px);
     position: fixed;
     top: 0px;
     height: 100%;
     width: 100vw;
     padding: 60px;
+    left: 0px;
     z-index: 5550;
     padding-top: 0px;
     transition: all 0.6s ease-out;
     overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 .formContainer{
     display: grid;
@@ -16,29 +21,39 @@
     padding: 20px;
     grid-template-columns: 600px 1fr;
     height: auto;
+    border-radius: 20px;
+    background-color: var(--bg-fade-color);
+}
+.s-c-r{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    justify-content: center;
 }
 .form-header{
     padding: 30px 0px;
     display: flex;
     position: sticky;
     top: 0px;
-    background-color: var(--white);
+    background-color: transparent;
     align-items: center;
     justify-content: flex-end;
 }
 .form-header span{
     font-size: 1.8em;
-    padding: 0px 20px;
+    padding: 10px;
+    border-radius: 50%;
     cursor: pointer;
+    background-color: var(--white);
     color: var(--primary-color)
 }
 .contactForm.hide{
-    left: -100vw;
-    transform: scale(0);
+    top: 50%;
+    transform: translateY(-50%) scale(0);
 }
 .contactForm.visible{
-    left: 0px;
-    transform: scale(1);
+    top: 0px;
+    transform: translateY(0) scale(1);
 }
 .contactForm_left{
     display: flex;
@@ -100,14 +115,28 @@
     }
     .formContainer{
         grid-template-columns: 1fr;
-        padding: 0px;
+        padding: 5px;
         grid-template-rows: 280px 1fr;
     }
     .contactForm_right{
         padding: 30px;
         margin-bottom: 10px;
     }
+    .contactForm_left{
+        margin-top: 20px;
+    }
     .contactForm_left img{
         height: 200px;
+    }
+}
+
+@media screen and (max-width: 930px) {
+    .socialsContainer {
+        justify-content: flex-start;
+    }
+}
+@media screen and (max-width: 930px) {
+    .s-c-r {
+        justify-content: flex-start;
     }
 }

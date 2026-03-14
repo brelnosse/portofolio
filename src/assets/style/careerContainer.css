@@ -31,7 +31,7 @@ section.education{
     z-index: 2;
     will-change: transform; 
 }
-@media  screen and (max-width: 940px) {
+@media  screen and (max-width: 976px) {
     .scholar-career{
         max-width: 18.75rem;
         min-width: 18.75rem;
