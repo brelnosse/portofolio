@@ -47,10 +47,10 @@ const ParticlesComponent = () => {
             enable: true,
             // mode: "push",
           },
-          onHover: {
-            enable: true,
-            mode: "repulse",
-          },
+          // onHover: {
+          //   enable: true,
+          //   mode: "repulse",
+          // },
         },
         modes: {
           push: {
