@@ -59,7 +59,7 @@
     border-radius: 32px;
     background-image: url(../images/pp.webp);
     background-size: cover;
-    border: 8px solid white;
+    border: 2px solid white;
 }
 .profileDescription{
     font-size: 1.3em;
