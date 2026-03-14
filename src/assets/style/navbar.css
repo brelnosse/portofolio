@@ -186,7 +186,7 @@
     transform: translateY(0);
     transition: all 0.5s ease;
 }
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1058px){
     .navbar-container li.action{
         display: block;
     }
@@ -194,7 +194,7 @@
         position: absolute;
         top: 0px;
         left: 0px;
-        display: flex;
+        display: none;
         flex-direction: row;
         border-bottom: 0.25rem solid var(--black);
         justify-content: space-between;

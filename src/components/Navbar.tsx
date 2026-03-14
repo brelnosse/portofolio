@@ -106,7 +106,7 @@ const Navbar: React.FC<{isFormVisible: boolean; setIsFormVisible: (v: boolean) =
 
     useEffect(() => {
         const checkResponsive = () => {
-            if (window.innerWidth <= 1000) {
+            if (window.innerWidth <= 1058) {
                 setIsVisible(false);
                 setIsResponsive(true);
             } else {
