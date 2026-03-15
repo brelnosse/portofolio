@@ -7,7 +7,7 @@ export const useSection = (ref: RefObject<HTMLElement | null>, section: string) 
     useEffect(() => {
         if (!ref.current) return;
         
-        const projectsElem = ref.current as HTMLElement;
+        const projetsElem = ref.current as HTMLElement;
         
         const observer = new IntersectionObserver(
             (entries) => {
@@ -16,12 +16,12 @@ export const useSection = (ref: RefObject<HTMLElement | null>, section: string) 
                 }
             },
             {
-                threshold: section === 'projects' ? 0 : 0.3,
-                rootMargin: section === 'projects' ? '0px' : '-20% 0px -40% 0px'
+                threshold: section === 'projets' ? 0 : 0.3,
+                rootMargin: section === 'projets' ? '0px' : '-20% 0px -40% 0px'
             }
         );
 
-        observer.observe(projectsElem);
+        observer.observe(projetsElem);
         return () => observer.disconnect();
     }, [ref, section, context.setActiveSection, context]);
 };

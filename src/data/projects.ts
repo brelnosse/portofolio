@@ -2,7 +2,7 @@ import { faCss, faCss3, faFigma, faHtml5, faJava, faJs, faNodeJs, faPhp, faReact
 import { ProjectProps } from "../types/project.type";
 import { faChartLine, faCode, faDatabase, faFire, faPanorama } from "@fortawesome/free-solid-svg-icons";
 
-export const projects:ProjectProps[] = [
+export const projets:ProjectProps[] = [
     {
         title: 'Mon portfolio',
         color: '#2a5b69',
@@ -19,7 +19,7 @@ export const projects:ProjectProps[] = [
             'Animation moderne',
             'Easter egg'
         ],
-        url: 'https://brelnosse.com',
+        url: '',
         githubUrl: '',
         skills: [
             {
@@ -246,7 +246,7 @@ export const projects:ProjectProps[] = [
             'Modification d\'une note',
             'Changement de thème' 
         ],
-        url: 'https://expo.dev/accounts/brel/projects/noteApp/builds/aceb2bbc-31d6-4b33-b532-9fb6309631cb',
+        url: 'https://github.com/brelnosse/noteApp/blob/main/builds/',
         githubUrl: 'https://github.com/brelnosse/noteApp',
         skills: [
             {

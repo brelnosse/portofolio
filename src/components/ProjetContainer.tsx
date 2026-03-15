@@ -3,26 +3,26 @@ import { ProjectProps } from "../types/project.type";
 import Project from "./Project";
 import TabNavigation from "./TabNavigation";
 import Underlined from "./Underlined";
-import { projects } from "../data/projects";
+import { projets } from "../data/projects";
 //@ts-ignore
 import '../assets/style/projectcontainer.css';
 import { useSection } from "../hooks/useSection";
 
 const ProjectContainer: React.FC = () => {
     const [activeTab, setActiveTab] = useState<string>('tout');
-    const projectsRef = useRef<HTMLElement>(null);
-    useSection(projectsRef, 'projects');
+    const projetsRef = useRef<HTMLElement>(null);
+    useSection(projetsRef, 'projets');
     
     return (
-        <section className="projects" ref={projectsRef}>
-            <Underlined text='projects'/>
-            <div className="projects_container">
-                <div className="projects-container_header">
+        <section className="projets" ref={projetsRef}>
+            <Underlined text='projets'/>
+            <div className="projets_container">
+                <div className="projets-container_header">
                     <TabNavigation activeTab={activeTab} setActiveTab={setActiveTab}/>
                 </div>
-                <div className="my-projects">
+                <div className="my-projets">
                     {
-                        projects.map((el: ProjectProps, i: number)=>{
+                        projets.map((el: ProjectProps, i: number)=>{
                             if(activeTab !== 'tout' && el.type.toLocaleLowerCase() !== activeTab){
                                 return;
                             }

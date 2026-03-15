@@ -174,7 +174,7 @@ const Project: React.FC<ProjectProps> = ({ title, color, githubUrl, type, url, i
                         <ul>
                             {
                                 features.map((el: string, i: number) => {
-                                    return <li key={el.split(' ').join('-')+'-'+i}><span>{el}</span></li>;
+                                    return <li key={el.split(' ').join('-')+'-'+i}><span style={{backgroundColor: color}}>{el}</span></li>;
                                 })
                             }
                         </ul>
@@ -185,7 +185,12 @@ const Project: React.FC<ProjectProps> = ({ title, color, githubUrl, type, url, i
                         <h4>Compétences</h4>
                         <div className="stacks">
                             {skills.map((el: SkillsCardProps, i: number) => (
-                                <SkillsCard key={`${el.text}-${i}`} icon={el.icon} text={el.text}/>
+                                <SkillsCard 
+                                    key={`${el.text}-${i}`} 
+                                    icon={el.icon} 
+                                    text={el.text}
+                                    bgColor={color}
+                                />
                             ))}
                         </div>
                     </div>

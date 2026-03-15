@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ToolTip from "./ToolTip";
 import { useEffect, useRef, useState } from "react";
 
-const SkillsCard:React.FC<SkillsCardProps> = ({icon, text, active, tooltip, skillsData, setSkillsData, ...props}) => {
+const SkillsCard:React.FC<SkillsCardProps> = ({icon, text, active, bgColor, tooltip, skillsData, setSkillsData, ...props}) => {
     const [isHovered, setIsHovered] = useState<boolean>(false);
     const skillsRef = useRef<HTMLDivElement>(null);
     useEffect(()=>{
@@ -43,13 +43,22 @@ const SkillsCard:React.FC<SkillsCardProps> = ({icon, text, active, tooltip, skil
         <div 
             ref={skillsRef}
             className={`skills-card${active ? ' active' : ''}`} 
-            onMouseEnter={()=> {
-                if(!active)
-                setIsHovered(true)
+            onMouseEnter={(e)=> {
+                e.stopPropagation()
+                if(!active){
+                    setIsHovered(true)
+                }
+                if(bgColor){
+                    (e.currentTarget as HTMLElement).style.backgroundColor = bgColor;
+                }
             }}
-            onMouseLeave={()=> {
+            onMouseLeave={(e)=> {
+                e.stopPropagation()
                 if(!active)
                 setIsHovered(false)
+                if(bgColor){
+                    (e.currentTarget as HTMLElement).style.backgroundColor = "var(--white)";
+                }
             }}
             {...props}>
             {

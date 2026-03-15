@@ -7,6 +7,7 @@ export interface SkillsCardProps {
     text: string;
     active ?: boolean;
     tooltip ?: ToolTipProps;
+    bgColor ?: string;
     skillsData ?: SkillsCardProps[];
     setSkillsData ?: Dispatch<SetStateAction<SkillsCardProps[]>>;
 }
