@@ -2,7 +2,9 @@ section.education{
     padding: 5rem 1.25rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    background-color: blue;
+
 }
 .scholar-career_container {
     padding: 2.5rem 0.625rem;
