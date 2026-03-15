@@ -15,6 +15,6 @@ export const schoolCareer:CareerProps[] = [
         orgUrl: 'https://myiuc.com/',
         organization: 'Institut universitaire de la côte',
         period: 'Oct. 2023 - Mai 2025', 
-        skills: 'Collaboration, science de l\'ingénieur, science humaine, Méthode UML, git & github',        
+        skills: 'Collaboration, science de l\'ingénieur (Mécanique, Electronique), science humaine, Méthode UML, git & github',        
     }
 ]
