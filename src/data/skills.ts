@@ -25,7 +25,7 @@ export const Skills:SkillsCardProps[] = [
             },
             description: 'Exp. 2 ans',
         },
-        active: false,
+        active: true,
     },
     {
         icon: faGears,
@@ -76,6 +76,30 @@ export const Skills:SkillsCardProps[] = [
         }
     },
     {
+        icon: faJs,
+        text: 'TypeScript',
+        active: false,
+        tooltip: {
+            title: {
+                icon: faJs,
+                text: 'Typescript'
+            },
+            description: 'Exp. Moins d\'1 ans'
+        }
+    },
+        {
+        icon: faJs,
+        text: 'Javascript',
+        active: true,
+        tooltip: {
+            title: {
+                icon: faJs,
+                text: 'javascript'
+            },
+            description: 'Exp. Moins 4 ans'
+        }
+    },
+    {
         icon: faReact,
         text: 'React.js',
         active: false,
@@ -100,37 +124,13 @@ export const Skills:SkillsCardProps[] = [
         }
     },
     {
-        icon: faJs,
-        text: 'TypeScript',
-        active: false,
-        tooltip: {
-            title: {
-                icon: faJs,
-                text: 'Typescript'
-            },
-            description: 'Exp. Moins d\'1 ans'
-        }
-    },
-    {
         icon: faCss3,
         text: 'CSS3',
-        active: false,
+        active: true,
         tooltip: {
             title: {
                 icon: faCss3,
                 text: 'CSS3'
-            },
-            description: 'Exp. 4 ans'
-        }
-    },
-    {
-        icon: faHtml5,
-        text: 'HTML5',
-        active: false,
-        tooltip: {
-            title: {
-                icon: faHtml5,
-                text: 'HTML'
             },
             description: 'Exp. 4 ans'
         }
@@ -160,6 +160,18 @@ export const Skills:SkillsCardProps[] = [
         }
     },
     {
+        icon: faHtml5,
+        text: 'HTML5',
+        active: true,
+        tooltip: {
+            title: {
+                icon: faHtml5,
+                text: 'HTML'
+            },
+            description: 'Exp. 4 ans'
+        }
+    },
+    {
         icon: faDatabase,
         text: 'MongoDB',
         active: false,
@@ -186,7 +198,7 @@ export const Skills:SkillsCardProps[] = [
     {
         icon: faPhp,
         text: 'PHP',
-        active: false,
+        active: true,
         tooltip: {
             title: {
                 icon: faPhp,

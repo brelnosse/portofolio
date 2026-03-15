@@ -70,7 +70,10 @@ const ToolTip:React.FC<ToolTipProps> = ({isHovered, setIsHovered, title, active,
                             handleCloseActiveSkills(title.text);  
                         setIsHovered?.(false);
                     }}>
-                    <FontAwesomeIcon icon={fas.faTimes}/>
+                        {
+                        active && 
+                        <FontAwesomeIcon icon={fas.faTimes}/>                        
+                        }
                 </span>
             </div>
             <p className="tooltip-description">{description}</p>

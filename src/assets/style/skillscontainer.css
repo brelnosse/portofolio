@@ -8,7 +8,8 @@ section.skills{
     align-content: center;
     flex-wrap: wrap;
     gap: 0.9375rem;
-    padding: 2.5rem 0px;
+    row-gap: 120px;
+    padding: 7rem 0px;
 }
 @media  screen and (max-width: 976px) {
     section.skills{
