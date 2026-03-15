@@ -9,9 +9,49 @@
     }
 }
 .experience {
-    font-size: 0.9em;
-    margin-top: 1.5rem;
-    transition: opacity 0.3s ease;
+    /* Centrage du bloc principal */
+    max-width: 700px; 
+    margin: 1.5rem auto 0 auto; 
+    text-align: center; /* Centre le texte par défaut */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre les éléments enfants */
+}
+
+.experience .line {
+    display: flex;
+    flex-direction: column; /* Superpose titre et date pour un meilleur centrage */
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+/* On enlève le justify-content: space-between qui forçait les bords */
+.experience .line:nth-of-type(1) {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.experience ul.skills_list {
+    margin-left: 0; /* On retire la marge de gauche */
+    padding-left: 0;
+    list-style-type: none; /* On retire la puce '→' qui décale le centrage */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.experience ul.skills_list li {
+    /* Pour garder l'aspect "badge" mais centré */
+    margin: 0 auto 5px auto;
+    width: fit-content;
+    text-align: center;
+}
+
+.experience .toools {
+    justify-content: center; /* Centre les badges d'outils */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .experience .line {
