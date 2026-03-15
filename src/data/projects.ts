@@ -13,11 +13,11 @@ export const projets:ProjectProps[] = [
             require('../assets/images/portfolioLeft.webp'), 
             require('../assets/images/portfolioRight.webp'), 
         ],
-        description: "Découvrez mon expérience et mes projets informatiques : applications web, mobile (Flutter) et systèmes. Étudiant ingénieur à la recherche d'une alternance Full-stack | DevOps | IoT.",
+        description: "Premier projet vitrine pour centraliser mes travaux académiques et personnels. Conçu pour explorer l'écosystème React et Typescript tout en soignant l'expérience utilisateur.",
         features: [
-            'Envoi de mails',
-            'Animation moderne',
-            'Easter egg'
+            'Interactivité et animations',
+            'Formulaire de contact dynamique',
+            'Architecture responsive'
         ],
         url: '',
         githubUrl: '',
@@ -46,14 +46,12 @@ export const projets:ProjectProps[] = [
             require('../assets/images/miamBack.webp'), 
             require('../assets/images/miamLeft.webp'), 
         ],
-        description: "Miam est une plateforme immersive dédiée à la gastronomie camerounaise. L'application permet de découvrir et de partager des recettes traditionnelles à travers une interface fluide et moderne, connectée à une API publique permettant d'exporter les données culinaires vers d'autres services",
+        description: "Projet d'apprentissage full-stack autour de la gastronomie camerounaise. L'objectif était de pratiquer l'intégration d'une base de données et de comprendre les flux d'authentification sécurisés.",
         features: [
-            'Recherche des marchés à proximité',
-            'Visualisation des recettes',
-            'Authentification moderne avec JWT',
-            'Vérification de compte par e-mail',
-            'Intégration du concept security by design',
-            'Gestion de l\'API et des utilisateurs'
+            'Consultation de recettes interactives',
+            'Initiation au stockage NoSQL (MongoDB)',
+            'Mise en œuvre d\'une connexion utilisateur (JWT)',
+            'Recherche de marchés locaux'
         ],
         url: 'https://miamcmr.netlify.app',
         githubUrl: '',
@@ -94,12 +92,12 @@ export const projets:ProjectProps[] = [
             require('../assets/images/thayipizzaBack.webp'), 
             require('../assets/images/thayipizzaLeft.webp'), 
         ],
-        description: "ThayiPizza est une application web de commande en ligne conçue pour simplifier l'interaction entre une pizzeria et ses clients. Le projet met l'accent sur une expérience utilisateur (UX) fluide, permettant de parcourir le menu, de personnaliser sa commande et de faciliter la prise de contact pour la livraison" ,
+        description: "Une exploration des services Cloud et temps réel à travers une application de commande. Ce projet m'a permis de me familiariser avec Firebase et la gestion d'un panier d'achat dynamique.",
         features: [
-            'Authentification moderne avec JWT et firebase Auth',
-            'Gestion des commandes',
-            'Paiement sécurisés',
-            'Gestion des utilisateurs et des pizzas'
+            'Interface de commande intuitive',
+            'Authentification multi-canaux (Firebase/JWT)',
+            'Gestion dynamique du menu',
+            'Suivi simplifié des commandes'
         ],
         url: 'https://thayipizza.netlify.app',
         githubUrl: '',
@@ -144,12 +142,12 @@ export const projets:ProjectProps[] = [
             require('../assets/images/iucbibliRight.webp'), 
             require('../assets/images/iucbibliLeft.webp'), 
         ],
-        description: "Iucbibli est un système de gestion de bibliothèque interactif conçu pour automatiser le suivi des ouvrages et des emprunts. Le projet se concentre sur l'intégrité des données et la simplicité d'utilisation, offrant une interface d'administration robuste pour la gestion d'un catalogue en temps réel.",
+        description: "Projet de gestion de bibliothèque développé pour renforcer mes bases en PHP et en manipulation de bases de données relationnelles (MySQL).",
         features: [
-            'Gestion sécurisée des accès utilisateurs',
-            'Administration complète du catalogue (CRUD)',
-            'Suivi automatisé des emprunts et retours',
-            'Moteur de recherche multicritère d\'ouvrages'
+            'Catalogue d\'ouvrages administrable',
+            'Gestion des flux d\'emprunts',
+            'Moteur de recherche par critères',
+            'Statistiques d\'utilisation (Chart.js)'
         ],
         url: 'https://sevux.alwaysdata.net',
         githubUrl: 'https://github.com/brelnosse/iucbibli',
@@ -190,12 +188,14 @@ export const projets:ProjectProps[] = [
             require('../assets/images/printspotRight.webp'), 
             require('../assets/images/printspotLeft.webp'), 
         ],
-        description: "8 écrans pour une application mobile permettant de faire des commandes d'impressions/photocopies de documents.",
-        url: 'https://www.figma.com/proto/FdzJT32K4Mwxf3r4iJxVnD/PrintSpot?t=ouJJCyMjiUytkPkZ-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&node-id=18-60',
+        description: "Une incursion dans le développement mobile avec React Native pour comprendre les spécificités des interfaces tactiles et du stockage local.",
         features: [
-            'Design minimaliste et moderne',
-            'Optimisation du parcours utilisateur (UX)'
+            'Prise de notes simplifiée',
+            'Stockage persistant sur mobile',
+            'Gestion de thèmes (Sombre/Clair)',
+            'Optimisation des performances'
         ],
+        url: 'https://www.figma.com/proto/FdzJT32K4Mwxf3r4iJxVnD/PrintSpot?t=ouJJCyMjiUytkPkZ-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&node-id=18-60',
         githubUrl: '',
         skills: [
             {
@@ -269,12 +269,12 @@ export const projets:ProjectProps[] = [
             require('../assets/images/archiveXRight.webp'), 
             require('../assets/images/archiveXLeft.webp'), 
         ],
-        description: "Application java d'archivage de documents académiques (Rapport de stage, rapport de projet, mémoire...)",
+        description: "Logiciel de gestion de documents académiques réalisé en Java. Un exercice pratique sur les architectures logicielles Desktop et les interfaces graphiques structurées.",
         features: [
-            'Gestion complète des archives (CRUD)',
-            'Recherche et filtrage multicritères',
-            'Interface graphique stylisée avec CSS et XML',
-            'Connexion sécurisée à la base de données MySQL'
+            'Archivage sécurisé de fichiers',
+            'Interface utilisateur JavaFX',
+            'Structuration des données XML/MySQL',
+            'Filtrage avancé des documents'
         ],
         url: '',
         githubUrl: 'https://github.com/brelnosse/archiveX',

@@ -4,9 +4,22 @@ export const experiences: ExperienceProps[] = [
     {
         enterprise: 'Ovnicode Sarl',
         period: 'Juin 2025 - Août 2025',
-        postTitle: 'Développeur web front-end - Stagiaire',
-        location: 'Yaoundé, cameroun',
-        skills: ['J\'ai utilisé Figma pour concevoir 5 écrans pour site web.', 'La maquette a été intégré avec React.js', 'Authentification moderne avec JWT', 'Gestion du tableau de bord'] ,
-        tools: ['Figma', 'Mongo Atlas', 'Git', 'Github', 'Slack', 'Google meet', 'VSCode'],
+        postTitle: 'Développeur Web Front-end (Stagiaire)',
+        location: 'Yaoundé, Cameroun',
+        skills: [
+            'Conception d\'interfaces UI/UX adaptatives',
+            'Intégration de maquettes complexes avec React.js',
+            'Mise en œuvre d\'une authentification sécurisée (JWT)',
+            'Développement de tableaux de bord interactifs'
+        ],
+        tools: [
+            'React.js', 
+            'Figma', 
+            'JWT', 
+            'Mongo Atlas', 
+            'Git/GitHub', 
+            'Slack', 
+            'VSCode'
+        ],
     },
 ]
