@@ -14,7 +14,6 @@ const MainStack: React.FC<MainStackProps> = ({ isVisible }) => {
                 <span 
                     key={index} 
                     style={{ 
-                        // transitionDelay: `${index * 150}ms`,
                         display: 'inline-block' 
                     }}
                     className="stack-link"
