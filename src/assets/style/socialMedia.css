@@ -16,7 +16,7 @@
 .socialsContainer a {
     opacity: 0;
     transform: translateY(20px) scale(1);
-    transition: opacity 0.3s ease-out, transform 0.3s ease-out; 
+    transition: opacity 0.15s ease-out, transform 0.15s ease-out; 
     display: inline-block;
 }
 
@@ -27,7 +27,7 @@
 
 .socialsContainer a:hover {
     transform: scale(1.2) !important;
-    transition: transform 0.2s ease;
+    transition: transform 0.15s ease;
 }
 
 .socialsContainer svg {
