@@ -43,7 +43,7 @@ const Home:React.FC = () =>{
                 description={alertDatas.description}
                 isAlertVisible={isAlertVisible}
                 setIsAlertVisible={setIsAlertVisible}/>
-            <EasterEgg/>
+            <EasterEgg setIsAlertVisible={setIsAlertVisible} setAlertDatas={setAlertDatas}/>
         </div>
     );
 }
