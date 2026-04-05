@@ -19,6 +19,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    background-color: red;
 }
 .navbar-item_container.show{
     display: flex;
@@ -200,6 +201,17 @@
         justify-content: space-between;
         width: 100%;
         padding: 1.29rem 2.5rem;
+    }
+    .navbar-item_container .ball{
+        position: absolute;
+        height: 300px;
+        width: 300px;
+        left: 300px;
+        border-radius: 50%;
+        background-color: var(--primary-fade-color);
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -200px;
     }
     #responsive-action{
         display: block;

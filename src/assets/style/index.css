@@ -1,5 +1,6 @@
 :root{
     --primary-color: #2A5B69; 
+    --primary-fade-color: #2a5b699f; 
     --primary-dark-color: #1E434D;
     --underline-color: #2A5B69;
     --border-color: #2C2C2C;

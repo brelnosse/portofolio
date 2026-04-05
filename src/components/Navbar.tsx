@@ -144,6 +144,7 @@ const Navbar: React.FC<{isFormVisible: boolean; setIsFormVisible: (v: boolean) =
                 Portfolio
             </h2>
             <ul className={`navbar-item_container ${isVisible ? 'show' : 'hide'}`}>
+                <div className="ball"></div>
                 <div className="r-nav-header">
                     <h2>Portofolio</h2>
                     <span className="close-r-menu"></span>
