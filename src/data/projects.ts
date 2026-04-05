@@ -20,7 +20,7 @@ export const projets:ProjectProps[] = [
             'Architecture responsive'
         ],
         url: '',
-        githubUrl: '',
+        githubUrl: 'https://github.com/brelnosse/portofolio',
         skills: [
             {
                 icon: faJs,
