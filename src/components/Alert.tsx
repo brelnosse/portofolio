@@ -10,7 +10,7 @@ const Alert:React.FC<{type: string; title: string; description: string; isAlertV
             <h1>
                 {type === 'error' ? <FontAwesomeIcon icon={fas.faExclamationCircle}/> :
                 type === 'success' ? <FontAwesomeIcon icon={fas.faCheckCircle}/>:
-                <FontAwesomeIcon icon={fas.faExclamationTriangle}/>}
+                type === 'info' ? <FontAwesomeIcon icon={fas.faInfoCircle}/> : <FontAwesomeIcon icon={fas.faExclamationTriangle}/>}
                 {title}
             </h1>
             <p>{description}</p>
@@ -22,7 +22,7 @@ const Alert:React.FC<{type: string; title: string; description: string; isAlertV
                     }}>
                         {type === 'success' ? <FontAwesomeIcon icon={fas.faCheckCircle}/> :
                         type === 'error' ? <FontAwesomeIcon icon={fas.faExclamationCircle}/>:
-                        <FontAwesomeIcon icon={fas.faExclamationTriangle}/>}
+                        type === 'info' ? <FontAwesomeIcon icon={fas.faInfoCircle}/> : <FontAwesomeIcon icon={fas.faExclamationTriangle}/>}
                         Ok
                     </button>
             </div>
