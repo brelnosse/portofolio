@@ -36,7 +36,7 @@ export const projets:ProjectProps[] = [
                 text: 'Firebase'
             },
             {
-                icon: faLock, // Si tu as une icône de verrou/sécurité
+                icon: faLock,
                 text: 'E2EE Security'
             },
         ] 
