@@ -1,8 +1,46 @@
-import { faCss, faCss3, faFigma, faHtml5, faJava, faJs, faNodeJs, faPhp, faReact } from "@fortawesome/free-brands-svg-icons";
+import { faCss, faCss3, faDartLang, faFigma, faFlutter, faHtml5, faJava, faJs, faNodeJs, faPhp, faReact } from "@fortawesome/free-brands-svg-icons";
 import { ProjectProps } from "../types/project.type";
-import { faChartLine, faCode, faDatabase, faFire, faPanorama } from "@fortawesome/free-solid-svg-icons";
+import { faChartLine, faCode, faDatabase, faFire, faLock, faPanorama } from "@fortawesome/free-solid-svg-icons";
 
 export const projets:ProjectProps[] = [
+{
+        title: 'Vanish',
+        color: '#B026FF',
+        type: 'mobile',
+        imgUrl: [
+            require('../assets/images/vanishFront.webp'), 
+            require('../assets/images/vanishBack.webp'), 
+            require('../assets/images/vanishLeft.webp'), 
+            require('../assets/images/vanishRight.webp'), 
+        ],
+        description: "Application de messagerie instantanée ultra-sécurisée axée sur la confidentialité. Vanish garantit l'anonymat et le contrôle des données grâce à un système de messages éphémères et un chiffrement de bout en bout.",
+        features: [
+            'Chiffrement E2EE & Messages éphémères',
+            'Protection anti-capture d’écran et sécurité biométrique',
+            'Architecture temps réel avec Firebase & Cloud Storage',
+            'Expérience utilisateur immersive (Dark Mode & Animations)',
+        ],
+        url: 'https://vanish-alpha.netlify.app/',
+        githubUrl: '',
+        skills: [
+            {
+                icon: faFlutter,
+                text: 'Flutter'
+            },
+            {
+                icon: faDartLang,
+                text: 'Dart'
+            },
+            {
+                icon: faFire,
+                text: 'Firebase'
+            },
+            {
+                icon: faLock, // Si tu as une icône de verrou/sécurité
+                text: 'E2EE Security'
+            },
+        ] 
+    },
     {
         title: 'Mon portfolio',
         color: '#2a5b69',
