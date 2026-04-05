@@ -14,6 +14,7 @@ import ProjectContainer from '../components/ProjetContainer';
 import About from '../components/About';
 import Alert from '../components/Alert';
 import { SectionContext } from '../context/SectionContext';
+import EasterEgg from '../components/EasterEgg';
 
 const Home:React.FC = () =>{
     const [skillsData, setSkillsData] = useState<SkillsCardProps[]>(Skills);
@@ -42,6 +43,7 @@ const Home:React.FC = () =>{
                 description={alertDatas.description}
                 isAlertVisible={isAlertVisible}
                 setIsAlertVisible={setIsAlertVisible}/>
+            <EasterEgg/>
         </div>
     );
 }
