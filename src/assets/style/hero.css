@@ -27,10 +27,10 @@ section.hero{
 }
 .heroImg{
     border-radius: 50%;
-    width: 18.125rem;
-    min-width: 18.125rem;
-    min-height: 18.125rem;
-    height: 18.125rem;
+    width: 20.125rem;
+    min-width: 20.125rem;
+    min-height: 20.125rem;
+    height: 20.125rem;
     position: relative;
     border: 0.25rem solid var(--border-color);
 }
@@ -38,6 +38,7 @@ section.hero{
     width: 100%;
     border-radius: 50%;
     height: 100%;
+    object-position: center top;
     object-fit: cover;
 }
 .heroImg .s{
@@ -214,8 +215,8 @@ section.hero .socialsContainer{
         justify-content: center;
     }
     .heroImg{
-        width: 18.125rem;
-        height: 18.125rem;
+        width: 20.125rem;
+        height: 20.125rem;
         margin: 2.5rem 0px;
     }
 }
