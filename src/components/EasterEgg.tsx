@@ -8,7 +8,7 @@ const handleClick = () => {
     setIsAlertVisible(true);
     setAlertDatas({
         type: "info",
-        title: "🥚 Indice trouvé !",
+        title: "Indice trouvé !",
         description: ""
     });
 
@@ -19,7 +19,7 @@ const handleClick = () => {
         i++;
         setAlertDatas({
             type: "info",
-            title: "🥚 Indice trouvé !",
+            title: "Indice trouvé !",
             description: text.slice(0, i)
         });
         if (i === text.length) clearInterval(interval);

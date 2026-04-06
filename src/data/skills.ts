@@ -12,7 +12,7 @@ export const Skills:SkillsCardProps[] = [
                 icon: faGithub,
                 text: 'Github'
             },
-            description: 'Exp. 4 ans'
+            description: '.......'
         }
     },
     {
@@ -23,7 +23,7 @@ export const Skills:SkillsCardProps[] = [
                 icon: faJava,
                 text: 'Java'
             },
-            description: 'Exp. 2 ans',
+            description: '.......',
         },
         active: true,
     },
@@ -36,7 +36,7 @@ export const Skills:SkillsCardProps[] = [
                 icon: faGears,
                 text: 'CI/CD'
             },
-            description: 'Exp. Moins d\'1 ans'
+            description: '.......'
         }
     },
     {
@@ -48,7 +48,7 @@ export const Skills:SkillsCardProps[] = [
                 icon: faVial,
                 text: 'tests unitaires'
             },
-            description: 'Exp. Moins d\'1 ans'
+            description: '.......'
         }
     },
     {
@@ -60,7 +60,7 @@ export const Skills:SkillsCardProps[] = [
                 icon: faExchangeAlt,
                 text: 'Rest API'
             },
-            description: 'Exp. 1 ans'
+            description: '.......'
         }
     },
     {
@@ -72,7 +72,7 @@ export const Skills:SkillsCardProps[] = [
                 icon: faPlug,
                 text: 'Swagger'
             },
-            description: 'Exp. Moins d\'1 ans'
+            description: '.......'
         }
     },
     {
@@ -84,7 +84,7 @@ export const Skills:SkillsCardProps[] = [
                 icon: faJs,
                 text: 'Typescript'
             },
-            description: 'Exp. Moins d\'1 ans'
+            description: '.......'
         }
     },
         {
@@ -96,7 +96,7 @@ export const Skills:SkillsCardProps[] = [
                 icon: faJs,
                 text: 'javascript'
             },
-            description: 'Exp. Moins 4 ans'
+            description: '.......'
         }
     },
     {
@@ -108,7 +108,7 @@ export const Skills:SkillsCardProps[] = [
                 icon: faReact,
                 text: 'React.js'
             },
-            description: 'Exp. Moins d\'1 ans',
+            description: '.......',
         },
     },
     {
@@ -120,7 +120,7 @@ export const Skills:SkillsCardProps[] = [
                 icon: faFigma,
                 text: 'Figma'
             },
-            description: 'Exp. 1 ans'
+            description: '.......'
         }
     },
     {
@@ -132,7 +132,7 @@ export const Skills:SkillsCardProps[] = [
                 icon: faCss3,
                 text: 'CSS3'
             },
-            description: 'Exp. 4 ans'
+            description: '.......'
         }
     },
     {
@@ -144,7 +144,7 @@ export const Skills:SkillsCardProps[] = [
                 icon: faTable,
                 text: 'SQL'
             },
-            description: 'Exp. 3 ans'
+            description: '.......'
         }
     },
     {
@@ -156,7 +156,7 @@ export const Skills:SkillsCardProps[] = [
                 icon: faTable,
                 text: 'PostgreSQL'
             },
-            description: 'Exp. Moins d\'1 ans'
+            description: '.......'
         }
     },
     {
@@ -168,7 +168,7 @@ export const Skills:SkillsCardProps[] = [
                 icon: faHtml5,
                 text: 'HTML'
             },
-            description: 'Exp. 4 ans'
+            description: '.......'
         }
     },
     {
@@ -180,7 +180,7 @@ export const Skills:SkillsCardProps[] = [
                 icon: faDatabase,
                 text: 'MongoDB'
             },
-            description: 'Exp. Moins d\'1 ans'
+            description: '.......'
         }
     },
     {
@@ -192,7 +192,7 @@ export const Skills:SkillsCardProps[] = [
                 icon: fas.faFire,
                 text: 'Firebase'
             },
-            description: 'Exp. Moins d\'1 ans'
+            description: '.......'
         }
     },
     {
@@ -204,7 +204,7 @@ export const Skills:SkillsCardProps[] = [
                 icon: faPhp,
                 text: 'PHP'
             },
-            description: 'Exp. 3 ans'
+            description: '.......'
         }
     },
     {
@@ -216,7 +216,7 @@ export const Skills:SkillsCardProps[] = [
                 icon: faNodeJs,
                 text: 'Node.js'
             },
-            description: 'Exp. 2 ans'
+            description: '.......'
         }
     },
     {
@@ -228,7 +228,7 @@ export const Skills:SkillsCardProps[] = [
                 icon: faFlutter,
                 text: 'Flutter'
             },
-            description: 'Exp. Moins d\'1 ans',
+            description: '.......',
         },
     },
 ]
