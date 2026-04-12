@@ -77,7 +77,7 @@ const Hero: React.FC<{isFormVisible: boolean; setIsFormVisible: (v: boolean) => 
     }, []);
 
     const handleDownload = () => {
-        window.open(require('../assets/pdf/CV_2026-02-14_Brel_NOSSE.pdf'), '_blank');
+        window.open(require('../assets/pdf/CV_ALT_Brel_NOSSE.pdf'), '_blank');
     };
 
     let currentLetterCount = 0;

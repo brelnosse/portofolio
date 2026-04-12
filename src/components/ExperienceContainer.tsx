@@ -19,6 +19,7 @@ const ExperienceContainer: React.FC = () => {
                             key={el.enterprise.split(' ').join(' ')+i}
                             enterprise={el.enterprise} 
                             period={el.period} 
+                            website={el.website}
                             postTitle={el.postTitle} 
                             location={el.location}
                             skills={el.skills}

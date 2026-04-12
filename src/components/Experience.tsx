@@ -4,7 +4,7 @@ import { ExperienceProps } from "../types/experience.type";
 import '../assets/style/experience.css';
 import MagicLink from './MagicLink';
 
-const Experience: React.FC<ExperienceProps> = ({enterprise, period, postTitle, location, skills, tools, ...props}) => {
+const Experience: React.FC<ExperienceProps> = ({enterprise, period, website, postTitle, location, skills, tools, ...props}) => {
     const [isVisible, setIsVisible] = useState(false);
     const domRef = useRef<HTMLDivElement>(null);
 
@@ -32,7 +32,7 @@ const Experience: React.FC<ExperienceProps> = ({enterprise, period, postTitle, l
 <div className={`experience ${isVisible ? 'visible' : ''}`} ref={domRef} {...props}> 
     {/* Bloc Titre Entreprise */}
     <div className="line">
-        <h3><MagicLink path='https://www.ovnicode.com/' text={enterprise}/></h3>
+        <h3><MagicLink path={website} text={enterprise}/></h3>
         <span className="date">{period}</span>
     </div>
     
