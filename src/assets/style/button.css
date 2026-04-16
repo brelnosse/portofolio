@@ -1,13 +1,14 @@
 .btn{
     color: var(--white);
     background-color: var(--primary-color);
-    padding: 0.5rem 0.8rem;
+    padding: 8px 20px;
     border: 1px solid var(--border-color);
     box-shadow: 0.125rem 0.25rem 0px 0px var(--border-color);
     border-radius: var(--border-radius);
     cursor: pointer;
     transition: all 0.2s;
     font-size: 1.1em;
+    font-family: 'poppins';
 }
 .btn.bold{
     font-weight: bold;
@@ -18,12 +19,15 @@
     transform: translateY(00.3125rem);
 }
 .btn svg{
-    font-size: 0.8em;
-    margin-right: 3px;
+    font-size: 1em;
+    margin-right: 5px;
 }
 .btn.btn-light{
     color: var(--black);
     background-color: var(--white);
+}
+.btn.btn-light svg{
+    color: var(--primary-color);
 }
 .btn.loading{
     cursor: not-allowed;

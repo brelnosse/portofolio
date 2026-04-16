@@ -189,7 +189,7 @@ const Navbar: React.FC<{isFormVisible: boolean; setIsFormVisible: (v: boolean) =
                     type={'default'} 
                     valueText="Contactez-moi" 
                     textStyle="bold" 
-                    valueIcon={fas.faAddressBook}
+                    valueIcon={fas.faPhone}
                     onClick={()=>{
                         setIsFormVisible(true);
                     }}

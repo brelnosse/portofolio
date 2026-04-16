@@ -26,7 +26,6 @@ const Home:React.FC = () =>{
         title: '',
         description:''
     });
-    console.log(context.activeSection)
     return (
         <div className="container">
             <Navbar isFormVisible={isFormVisible} setIsFormVisible={setIsFormVisible} setIsAlertVisible={setIsAlertVisible} setAlertDatas={setAlertDatas}/>

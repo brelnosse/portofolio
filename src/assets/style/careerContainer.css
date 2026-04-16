@@ -3,7 +3,7 @@ section.education{
     display: flex;
     flex-direction: column;
     justify-content: center;
-
+    position: relative;
 }
 .scholar-career_container {
     padding: 2.5rem 0.625rem;

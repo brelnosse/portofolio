@@ -1,6 +1,8 @@
 section.skills{
     display: flex;
     flex-direction: column;
+    position: relative;
+
 }
 .skills_container{
     display: flex;
