@@ -14,6 +14,8 @@ section.resume{
     flex-wrap: wrap;
     gap: 1.25rem;
     justify-content: center;
+    z-index: 100;
+    position: relative;
     will-change: transform; 
     transition: transform 0.1s ease-out;
 }
