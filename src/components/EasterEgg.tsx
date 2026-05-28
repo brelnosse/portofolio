@@ -8,18 +8,18 @@ const handleClick = () => {
     setIsAlertVisible(true);
     setAlertDatas({
         type: "info",
-        title: "Indice trouvé !",
+        title: "Indice !",
         description: ""
     });
 
     // Révèle le texte lettre par lettre
-    const text = "Parfois, ne pas trouver... c'est déjà trouver. 🥚";
+    const text = "Indice: Parfois, ne pas trouver... c'est déjà trouver.";
     let i = 0;
     const interval = setInterval(() => {
         i++;
         setAlertDatas({
             type: "info",
-            title: "Indice trouvé !",
+            title: "Indice !",
             description: text.slice(0, i)
         });
         if (i === text.length) clearInterval(interval);
