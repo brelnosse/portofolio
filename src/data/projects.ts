@@ -1,8 +1,48 @@
-import { faCss, faCss3, faDartLang, faFigma, faFlutter, faHtml5, faJava, faJs, faNodeJs, faPhp, faReact } from "@fortawesome/free-brands-svg-icons";
+import { faCss, faCss3, faDartLang, faFigma, faFlutter, faHtml5, faJava, faJs, faNode, faNodeJs, faPhp, faReact } from "@fortawesome/free-brands-svg-icons";
 import { ProjectProps } from "../types/project.type";
 import { faChartLine, faCode, faDatabase, faFire, faLock, faPanorama } from "@fortawesome/free-solid-svg-icons";
 
 export const projets:ProjectProps[] = [
+{
+    title: 'KmerCoin',
+    color: '#F97316',
+    type: 'fullstack',
+    imgUrl: [
+        require('../assets/images/kmercoinFront.webp'),
+        require('../assets/images/kmercoinBack.webp'),
+        require('../assets/images/kmercoinLeft.webp'),
+        require('../assets/images/kmercoinRight.webp'),
+    ],
+    description: "Marketplace sécurisée pensée pour le Cameroun. Les transactions passent par un système de séquestre Mobile Money avec confirmation QR code, négociation de prix intégrée et protection acheteur via litige. Les vendeurs sont vérifiés par KYC et les paiements ne sont libérés qu'après validation de la livraison.",
+    features: [
+        'Escrow Mobile Money + confirmation QR code',
+        'Système de négociation et achat direct',
+        'KYC vendeur & gestion des litiges',
+        'Notifications multi-canaux (SMS, Email, WebSocket)',
+        'Back-office admin complet',
+        'Authentification Google OAuth2'
+    ],
+    url: 'https://kmercoin.netlify.app',
+    githubUrl: '',
+    skills: [
+        {
+            icon: faJs,
+            text: 'TypeScript'
+        },
+        {
+            icon: faReact,
+            text: 'React.js'
+        },
+        {
+            icon: faNode,
+            text: 'Node.js'
+        },
+        {
+            icon: faDatabase,
+            text: 'Prisma / PostgreSQL'
+        },
+    ]
+},
 {
         title: 'Vanish',
         color: '#B026FF',
