@@ -122,7 +122,7 @@ const Hero: React.FC<{isFormVisible: boolean; setIsFormVisible: (v: boolean) => 
                 <h4>
                     <span className={`hero-line ${showLine ? 'line-visible' : 'line-hidden'}`}></span>
                     <span className={`hero-h4-text ${showH4Text ? 'element-visible' : 'element-hidden'}`}>
-                        Élève ingénieur en recherche d'alternance de 36 mois en dev full-stack | devOps | IoT pour septembre 2026
+                        Élève ingénieur en recherche d'alternance de 24 mois en dev full-stack | devOps | IoT pour septembre 2026
                     </span>
                 </h4>
                 <div className="actions">
