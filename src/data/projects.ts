@@ -4,6 +4,46 @@ import { faChartLine, faCode, faDatabase, faFire, faLock, faPanorama } from "@fo
 
 export const projets:ProjectProps[] = [
 {
+    title: 'PrintSpot',
+    color: '#2563eb',
+    type: 'fullstack',
+    imgUrl: [
+        require('../assets/images/printspotAppFront.webp'),
+        require('../assets/images/printspotAppBack.webp'),
+        require('../assets/images/printspotAppLeft.webp'),
+        require('../assets/images/printspotAppRight.webp'),
+    ],
+    description: "Marketplace sécurisée pensée pour le Cameroun. Les transactions passent par un système de séquestre Mobile Money avec confirmation QR code, négociation de prix intégrée et protection acheteur via litige. L'écosystème comprend une application mobile, un back-office web et un agent d'impression PC. Les paiements ne sont libérés qu'après validation de la livraison.",
+    features: [
+        'Escrow Mobile Money (KPay) + confirmation QR code',
+        'Agent d\'impression desktop connecté par code à 8 chiffres',
+        'KYC vendeur & gestion des signalements',
+        'Notifications multi-canaux (Push Expo, WhatsApp, SMS Orange, Email)',
+        'Gestion des tâches asynchrones (Redis & BullMQ)',
+        'Déploiement auto-hébergé via Coolify et Docker'
+    ],
+    url: 'https://printspot.app',
+    githubUrl: '',
+    skills: [
+        {
+            icon: faJs,
+            text: 'TypeScript'
+        },
+        {
+            icon: faReact,
+            text: 'React Native (Expo) / Vite'
+        },
+        {
+            icon: faNode,
+            text: 'NestJS'
+        },
+        {
+            icon: faDatabase,
+            text: 'PostgreSQL / TypeORM'
+        },
+    ]
+},
+{
     title: 'KmerCoin',
     color: '#F97316',
     type: 'fullstack',
